@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Hero from '../components/Hero.astro';
+import StoryCard from '../components/StoryCard.astro';
+import EditorialSidebar from '../components/EditorialSidebar.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { sampleNews } from '../data/sampleNews';
+---
+<BaseLayout>
+  <div class="wrap">
+    <SiteHeader />
+    <main id="main">
+      <Hero storyCount={sampleNews.length} />
+      <div class="disclaimer" role="note"><b>DESIGN PREVIEW</b><span>これは画面デザインの試作です。記事は架空のサンプルであり、実際の報道ではありません。</span></div>
+      <section id="news" aria-labelledby="stories-title">
+        <div class="section-head">
+          <div><div class="eyebrow">TODAY'S SELECTED STORIES</div><h2 id="stories-title">本日のピックアップ</h2></div>
+          <div class="subtitle">AI NEWS / SAMPLE EDITION 001</div>
+        </div>
+        <div class="content-grid">
+          <div class="stories">
+            {sampleNews.map((story) => <StoryCard story={story} />)}
+          </div>
+          <EditorialSidebar />
+        </div>
+      </section>
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>
