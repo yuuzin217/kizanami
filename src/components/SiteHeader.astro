@@ -1,0 +1,23 @@
+---
+const home = import.meta.env.BASE_URL;
+---
+<div class="topbar" aria-label="サイト情報">
+  <span>VOL. 001 <span aria-hidden="true">—</span> AN EDITORIAL VIEW OF THE WORLD</span>
+  <strong>MADE TO BE READ, NOT SCROLLED.</strong>
+  <span>PREVIEW EDITION · 2026</span>
+</div>
+<header class="mast">
+  <a class="brand" href={home} aria-label="KIZANAMI トップページ">KIZANAMI<span>.</span></a>
+  <div class="tagline">兆しを読む、世界を知る。<br />THOUGHTFULLY CURATED.</div>
+</header>
+<nav class="nav" aria-label="ニュースカテゴリ">
+  <div class="navlinks">
+    <a class="active" href={home} aria-current="page">トップ</a>
+    <a href="#news">AI</a>
+    <span title="準備中">政治 <small>SOON</small></span>
+    <span title="準備中">経済 <small>SOON</small></span>
+    <span title="準備中">テクノロジー <small>SOON</small></span>
+    <span title="準備中">国際 <small>SOON</small></span>
+  </div>
+  <div class="nav-aside" aria-label="デザイン試作">EDITORIAL PREVIEW <span aria-hidden="true">↗</span></div>
+</nav>
