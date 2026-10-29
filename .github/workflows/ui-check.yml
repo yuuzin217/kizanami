@@ -10,6 +10,7 @@ on:
       - 'tsconfig.json'
       - 'src/**'
       - 'tests/**'
+      - 'scripts/**'
       - 'public/**'
 
 permissions:
@@ -37,6 +38,8 @@ jobs:
           test -f dist/archive/index.html
           test -f dist/archive/2026-10-29/index.html
           test -f dist/news/ai-agent-operations-sample/index.html
+      - name: Verify all generated routes and links
+        run: npm run verify:site
       - name: Upload static site for UI review
         uses: actions/upload-artifact@v4
         with:
