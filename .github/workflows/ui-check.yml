@@ -22,12 +22,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      # The first PR generates the lockfile; commit it before merging.
-      - name: Resolve dependency lockfile (bootstrap only)
-        run: |
-          if [ ! -f package-lock.json ]; then
-            npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-          fi
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Check Astro and TypeScript
@@ -36,11 +30,3 @@ jobs:
         run: npm run build
       - name: Ensure static entrypoint exists
         run: test -f dist/index.html
-      - name: Upload generated lockfile for initial PR
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: kizanami-lockfile
-          path: package-lock.json
-          if-no-files-found: error
-          retention-days: 7
