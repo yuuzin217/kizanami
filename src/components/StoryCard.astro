@@ -1,0 +1,18 @@
+---
+import type { SampleNews } from '../data/sampleNews';
+interface Props { story: SampleNews }
+const { story } = Astro.props;
+---
+<article class="story" aria-labelledby={`title-${story.id}`}>
+  <div class="story-num" aria-hidden="true">{story.id}</div>
+  <div class="story-body">
+    <div class="story-cat">{story.category} / SAMPLE</div>
+    <h3 id={`title-${story.id}`}>{story.title}</h3>
+    <p>{story.excerpt}</p>
+    <details class="story-expand">
+      <summary>サンプルを読む <span aria-hidden="true">↗</span></summary>
+      <p class="detail-text">{story.description}</p>
+      <small>※ 実際の報道・出典ではありません。記事詳細ページはIssue #3で実装予定です。</small>
+    </details>
+  </div>
+</article>
