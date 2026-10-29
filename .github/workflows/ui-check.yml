@@ -9,6 +9,8 @@ on:
       - 'package-lock.json'
       - 'tsconfig.json'
       - 'src/**'
+      - 'tests/**'
+      - 'scripts/**'
       - 'public/**'
 
 permissions:
@@ -26,10 +28,18 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Check Astro and TypeScript
         run: npm run check
+      - name: Test news data validation
+        run: npm run test
       - name: Build static site
         run: npm run build
       - name: Ensure static entrypoint exists
-        run: test -f dist/index.html
+        run: |
+          test -f dist/index.html
+          test -f dist/archive/index.html
+          test -f dist/archive/2026-10-29/index.html
+          test -f dist/news/ai-agent-operations-sample/index.html
+      - name: Verify all generated routes and links
+        run: npm run verify:site
       - name: Upload static site for UI review
         uses: actions/upload-artifact@v4
         with:

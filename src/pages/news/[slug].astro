@@ -1,0 +1,44 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { newsArticles } from '../../data/news';
+import { categoryLabels, formatJstDate, formatPublicationDate } from '../../data/newsModel';
+import type { NewsArticle } from '../../data/newsModel';
+
+export const getStaticPaths = (() => newsArticles.map((article) => ({
+  params: { slug: article.slug }, props: { article },
+}))) satisfies GetStaticPaths;
+interface Props { article: NewsArticle }
+const { article } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title={`${article.title} | KIZANAMI`} description={article.summary}>
+  <div class="wrap">
+    <SiteHeader />
+    <main id="main" class="article-page">
+      <nav aria-label="パンくずリスト" class="breadcrumbs"><a href={base}>トップ</a><span aria-hidden="true">/</span><a href={`${base}archive/`}>過去の記事</a><span aria-hidden="true">/</span><span aria-current="page">記事詳細</span></nav>
+      <article class="article-content">
+        <div class="eyebrow">{categoryLabels[article.category]} / {article.isSample ? 'SAMPLE ARTICLE' : 'SELECTED STORY'}</div>
+        <h1>{article.title}</h1>
+        <p class="article-lead">{article.summary}</p>
+        <div class="article-meta">
+          <div><span>掲載日（JST）</span><time datetime={article.curatedAt}>{formatJstDate(article.curatedAt)}</time></div>
+          <div><span>原情報の発表日（JST）</span><time datetime={article.publishedAt}>{formatPublicationDate(article.publishedAt)}</time></div>
+        </div>
+        {article.isSample && <div class="article-notice" role="note">この記事はデザイン検証用の架空サンプルです。実際のニュースや出典を表すものではありません。</div>}
+        <section aria-labelledby="importance-title" class="article-section">
+          <h2 id="importance-title">なぜ重要か</h2>
+          <p>{article.whyItMatters}</p>
+        </section>
+        <section aria-labelledby="source-title" class="article-section source-section">
+          <h2 id="source-title">出典</h2>
+          {article.sourceUrl ? <p><a href={article.sourceUrl} target="_blank" rel="noopener noreferrer">{article.sourceName} <span aria-hidden="true">↗</span><span class="visually-hidden">（新しいタブで開きます）</span></a></p> : <p>{article.sourceName}（このサンプルには外部リンクがありません）</p>}
+        </section>
+      </article>
+      <div class="article-bottom"><a href={`${base}archive/${article.curatedAt}/`}>同じ日付の記事を見る <span aria-hidden="true">↗</span></a><a href={base}>トップへ戻る</a></div>
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

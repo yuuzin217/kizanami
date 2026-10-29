@@ -6,7 +6,7 @@ KIZANAMI（キザナミ）は、社会やテクノロジーの変化の兆しを
 
 初期MVPでは検証用のAIニュース記事を表示し、正式運用では**AIニュースを毎日3件**届けることを目指します。将来的には政治・AI政策・IT・経済・国際ニュースなどへの拡張を想定しています。
 
-> **開発状況:** 現在は企画・デザイン確定段階です。Webアプリ、ニュース自動取得、GitHub Pagesへの公開はまだ実装・実施されていません。
+> **開発状況:** Astroのトップページ、記事詳細・日付別アーカイブを実装済みです。掲載記事はすべて架空サンプルです。実ニュースの自動取得・ChatGPT連携、およびGitHub Pagesへの公開はまだ実施されていません。
 
 ## サイト・リポジトリ
 
@@ -42,10 +42,34 @@ KIZANAMI（キザナミ）は、社会やテクノロジーの変化の兆しを
 | サイト生成 | 静的サイト生成（SSG） |
 | ホスティング | GitHub Pages（サブパス `/kizanami/`） |
 | CI/CD | GitHub Actions |
-| 記事データ | JSONまたはMarkdown等の静的ファイル（詳細は実装時に決定） |
+| 記事データ | JSONまたはMarkdown等の静的ファイル（`src/data/articles.json`、ビルド時検証） |
 | DB / CMS | MVPでは導入しない |
 
-実装後に開発・ビルド・記事追加・デプロイの具体的なコマンドと運用手順を追加します。現在はアプリケーションコードやパッケージ設定がないため、実行可能なセットアップ手順はありません。
+## ローカル開発と検証
+
+Node.js 22系を使用します。リポジトリ直下で実行してください。
+
+```bash
+npm ci
+npm run dev
+npm run check
+npm run test
+npm run build
+npm run verify:site
+```
+
+GitHub Pages用の `/kizanami/` パスは設定済みですが、**サイトはまだ公開していません**。デプロイの設定・確認はIssue #4の対象です。
+
+## ニュース記事の追加・更新
+
+1. [`src/data/articles.json`](./src/data/articles.json) に記事オブジェクトを追加します。既存のサンプルをひな形にします。
+2. `id` と `slug` は全記事で一意にし、小文字英数字とハイフンを使います。記事URLは `/kizanami/news/<slug>/` です。
+3. `category` は `src/data/newsModel.ts` の `categoryLabels` に定義済みのキー（初期は `ai`）を指定します。新ジャンルはその設定に表示名を追加します。
+4. `curatedAt` は編集した日付（JST、`YYYY-MM-DD`）、`publishedAt` は原情報の公開日時（タイムゾーン付きISO 8601、例 `2026-10-29T07:00:00+09:00`）です。
+5. `title`、`summary`、`whyItMatters`、`sourceName` は必須です。実際の記事は `isSample: false` とし、出典の**HTTPS URL**を `sourceUrl` に設定してください。架空記事は `isSample: true` と `sourceUrl: null` を使い、実在の出典と混同させません。
+6. `npm run test && npm run check && npm run build && npm run verify:site` で検証します。不正データはビルド時にエラーとなります。トップページは最新編集日の記事から最大3件、アーカイブは編集日付順に表示されます。
+
+記事原文・画像の利用条件を遵守し、事実確認・重複・出典URLを確認してください。ChatGPT定期タスクの自動連携はIssue #5で検証するまで未実装です。
 
 ## MVPとロードマップ
 

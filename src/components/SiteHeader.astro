@@ -1,5 +1,7 @@
 ---
 const home = import.meta.env.BASE_URL;
+const isHome = Astro.url.pathname === home;
+const isArchive = Astro.url.pathname.startsWith(`${home}archive/`);
 ---
 <div class="topbar" aria-label="サイト情報">
   <span>VOL. 001 <span aria-hidden="true">—</span> AN EDITORIAL VIEW OF THE WORLD</span>
@@ -12,8 +14,9 @@ const home = import.meta.env.BASE_URL;
 </header>
 <nav class="nav" aria-label="ニュースカテゴリ">
   <div class="navlinks">
-    <a class="active" href={home} aria-current="page">トップ</a>
-    <a href="#news">AI</a>
+    <a class:list={{active:isHome}} href={home} aria-current={isHome ? 'page' : undefined}>トップ</a>
+    <a href={`${home}#news`}>AI</a>
+    <a class:list={{active:isArchive}} href={`${home}archive/`} aria-current={isArchive ? 'page' : undefined}>過去の記事</a>
     <span title="準備中">政治 <small>SOON</small></span>
     <span title="準備中">経済 <small>SOON</small></span>
     <span title="準備中">テクノロジー <small>SOON</small></span>

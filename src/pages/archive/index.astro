@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { newsArticles } from '../../data/news';
+import { categoryLabels, getArchiveDays, getArticlesForDate, formatJstDate } from '../../data/newsModel';
+const days = getArchiveDays(newsArticles);
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="過去の記事 | KIZANAMI" description="KIZANAMIに掲載したニュースを日付別に振り返るアーカイブ。">
+  <div class="wrap">
+    <SiteHeader />
+    <main id="main" class="archive-page">
+      <div class="eyebrow">THE ARCHIVE / ISSUES</div>
+      <h1>過去の記事</h1>
+      <p class="archive-intro">日付ごとに、これまでのピックアップを振り返る。<br />掲載日は日本時間（JST）です。</p>
+      {days.length === 0 && <p>記事はまだありません。</p>}
+      {days.map((day) => <section class="archive-day" aria-labelledby={`day-${day}`}>
+        <div class="archive-day-head"><h2 id={`day-${day}`}><a href={`${base}archive/${day}/`}>{formatJstDate(day)}</a></h2><span>{getArticlesForDate(newsArticles, day).length}件</span></div>
+        <ul class="archive-items">
+          {getArticlesForDate(newsArticles, day).map((article) => <li>
+            <div><span class="archive-category">{categoryLabels[article.category]} / {article.isSample ? 'SAMPLE' : 'NEWS'}</span><a href={`${base}news/${article.slug}/`}>{article.title}</a></div>
+            <span aria-hidden="true">↗</span>
+          </li>)}
+        </ul>
+      </section>)}
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

@@ -1,18 +1,19 @@
 ---
-import type { SampleNews } from '../data/sampleNews';
-interface Props { story: SampleNews }
-const { story } = Astro.props;
+import type { NewsArticle } from '../data/newsModel';
+import { categoryLabels, formatPublicationDate } from '../data/newsModel';
+interface Props { story: NewsArticle; number: number }
+const { story, number } = Astro.props;
+const href = `${import.meta.env.BASE_URL}news/${story.slug}/`;
 ---
 <article class="story" aria-labelledby={`title-${story.id}`}>
-  <div class="story-num" aria-hidden="true">{story.id}</div>
+  <div class="story-num" aria-hidden="true">{String(number).padStart(2, '0')}</div>
   <div class="story-body">
-    <div class="story-cat">{story.category} / SAMPLE</div>
-    <h3 id={`title-${story.id}`}>{story.title}</h3>
-    <p>{story.excerpt}</p>
-    <details class="story-expand">
-      <summary>サンプルを読む <span aria-hidden="true">↗</span></summary>
-      <p class="detail-text">{story.description}</p>
-      <small>※ 実際の報道・出典ではありません。記事詳細ページはIssue #3で実装予定です。</small>
-    </details>
+    <div class="story-cat">{categoryLabels[story.category]} / {story.isSample ? 'SAMPLE' : 'NEWS'}</div>
+    <h3 id={`title-${story.id}`}><a class="story-title-link" href={href}>{story.title}</a></h3>
+    <p>{story.summary}</p>
+    <div class="story-meta">
+      <time datetime={story.publishedAt}>{formatPublicationDate(story.publishedAt)}</time>
+      <a href={href} aria-label={`${story.title} の記事詳細を読む`}>記事を読む <span aria-hidden="true">↗</span></a>
+    </div>
   </div>
 </article>
