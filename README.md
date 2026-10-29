@@ -58,7 +58,29 @@ npm run build
 npm run verify:site
 ```
 
-GitHub Pages用の `/kizanami/` パスは設定済みですが、**サイトはまだ公開していません**。デプロイの設定・確認はIssue #4の対象です。
+GitHub Pages用の `/kizanami/` パスは設定済みです。**サイトはまだ公開していません**。公開操作は承認後に手動で行います。
+
+## GitHub Pagesへの公開手順（手動・承認制）
+
+公開予定URL: https://yuuzin217.github.io/kizanami/ （公開確認前はアクセスできると想定しない）
+
+1. Issue #4と公開内容を確認し、公開について明示的な承認を得ます。現在の記事は**すべて架空サンプル**であり、全ページに検索エンジン向けの `noindex` を指定しています。公開後に実ニュースが自動更新されるわけではありません。
+2. GitHubの **Settings → Pages → Build and deployment → Source** を `GitHub Actions` に設定します。デプロイ環境 `github-pages` の「Deployment branches」を `main` のみに制限することを推奨します。可能なプラン・設定であれば追加承認者（Required reviewers）も設定します。
+3. **Actions → Publish KIZANAMI to GitHub Pages → Run workflow → Branch: main → Run workflow** を実行します。この操作はサイトを公開するため、承認前に実行しないでください。
+4. ワークフロー内で `npm ci`、Astro check、Nodeテスト、静的ビルド、全ルート・リンク検証がPASSした後にだけPagesのartifactをアップロードし、デプロイします。
+5. 実行後にワークフローのDeployment URLを確認し、トップ・記事詳細・日付別アーカイブ・CSS/フォント表示・スマホ表示・404を点検します。問題があれば作業を止め、影響範囲に応じて再デプロイまたはPagesの公開停止を判断します。
+
+安全性：`.github/workflows/pages.yml` は **`workflow_dispatch` のみ**で起動し、pushやPRの作成・マージではデプロイしません。さらに `main` 以外ではbuild・deployジョブが実行されず、Pagesへの書き込み権限はdeployジョブに限定します。PR用の `UI checks` はテスト・ビルド・プレビュー成果物の生成だけを行い、サイトは公開しません。
+
+GitHub Pages初回セットアップ時は、RepositoryのPages機能の利用可否・ワークフロー権限・環境保護設定を確認してください。権限や設定が不足している場合はデプロイできません。GitHub Actionsからの公開完了を確認するまでは「未公開」と扱います。
+
+## CIとトラブルシューティング
+
+- PRでは `UI checks` が `npm ci` / `npm run check` / `npm run test` / `npm run build` / `npm run verify:site` を実行し、プレビュー用成果物を作成します。
+- CIが失敗した場合は、まずActionsの該当ジョブ・失敗したステップのログを確認します。記事データの不正値、重複slug、内部リンク、`/kizanami/` のbaseパスに注意してください。
+- `npm ci` が失敗する場合は `package.json` とコミット済みの `package-lock.json` の一致を確認し、lockfileをその場で自動生成して問題を隠さないでください。
+- GitHub Pagesでリソース404が起こる場合は、`astro.config.mjs` の `site`/`base`、生成HTML内のアセットパス、PagesのSource設定を確認してください。
+- `noindex` の解除、公開コンテンツの実ニュースへの移行、毎日の自動デプロイは**このIssueの対象外**です。別途承認・検証が必要です。
 
 ## ニュース記事の追加・更新
 
