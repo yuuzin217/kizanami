@@ -1,0 +1,62 @@
+# Deliberately manual. Do NOT add a push/schedule trigger without explicit release approval.
+name: Publish KIZANAMI to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+# Prevent concurrent publication; never cancel an in-flight deployment.
+concurrency:
+  group: kizanami-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    # A manual run must be initiated from the reviewed default branch.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout reviewed main
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Check Astro and TypeScript
+        run: npm run check
+      - name: Test news data validation
+        run: npm run test
+      - name: Build static site
+        run: npm run build
+      - name: Verify all generated routes and links
+        run: npm run verify:site
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+
+  deploy:
+    # This job only runs after a successful build, never on PRs or pushes.
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

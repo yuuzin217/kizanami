@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - '.github/workflows/ui-check.yml'
+      - '.github/workflows/pages.yml'
+      - 'README.md'
       - 'astro.config.mjs'
       - 'package.json'
       - 'package-lock.json'
@@ -36,8 +38,6 @@ jobs:
         run: |
           test -f dist/index.html
           test -f dist/archive/index.html
-          test -f dist/archive/2026-10-29/index.html
-          test -f dist/news/ai-agent-operations-sample/index.html
       - name: Verify all generated routes and links
         run: npm run verify:site
       - name: Upload static site for UI review
