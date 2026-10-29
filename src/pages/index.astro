@@ -5,22 +5,28 @@ import Hero from '../components/Hero.astro';
 import StoryCard from '../components/StoryCard.astro';
 import EditorialSidebar from '../components/EditorialSidebar.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { sampleNews } from '../data/sampleNews';
+import { newsArticles } from '../data/news';
+import { getLatestArticles, getArchiveDays, formatJstDate } from '../data/newsModel';
+const latest = getLatestArticles(newsArticles);
+const latestDate = getArchiveDays(newsArticles)[0];
+const hasSamples = latest.some((story) => story.isSample);
 ---
 <BaseLayout>
   <div class="wrap">
     <SiteHeader />
     <main id="main">
-      <Hero storyCount={sampleNews.length} />
-      <div class="disclaimer" role="note"><b>DESIGN PREVIEW</b><span>これは画面デザインの試作です。記事は架空のサンプルであり、実際の報道ではありません。</span></div>
+      <Hero storyCount={latest.length} />
+      {hasSamples && <div class="disclaimer" role="note"><b>DESIGN PREVIEW</b><span>「SAMPLE」と表示された記事は架空のサンプルであり、実際の報道ではありません。</span></div>}
       <section id="news" aria-labelledby="stories-title">
         <div class="section-head">
-          <div><div class="eyebrow">TODAY'S SELECTED STORIES</div><h2 id="stories-title">本日のピックアップ</h2></div>
-          <div class="subtitle">AI NEWS / SAMPLE EDITION 001</div>
+          <div><div class="eyebrow">LATEST EDITION / AI NEWS</div><h2 id="stories-title">最新のピックアップ</h2></div>
+          <div class="subtitle">{latestDate ? `${formatJstDate(latestDate)}（JST）` : '記事準備中'}</div>
         </div>
         <div class="content-grid">
           <div class="stories">
-            {sampleNews.map((story) => <StoryCard story={story} />)}
+            {latest.length === 0 && <p>現在、掲載できるニュースはありません。</p>}
+            {latest.map((story, index) => <StoryCard story={story} number={index + 1} />)}
+            <a class="archive-link" href={`${import.meta.env.BASE_URL}archive/`}>過去の記事を読む <span aria-hidden="true">↗</span></a>
           </div>
           <EditorialSidebar />
         </div>
