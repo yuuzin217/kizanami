@@ -1,0 +1,39 @@
+name: UI checks
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/ui-check.yml'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - 'src/**'
+      - 'public/**'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Check Astro and TypeScript
+        run: npm run check
+      - name: Build static site
+        run: npm run build
+      - name: Ensure static entrypoint exists
+        run: test -f dist/index.html
+      - name: Upload static site for UI review
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: dist/
+          if-no-files-found: error
+          retention-days: 7

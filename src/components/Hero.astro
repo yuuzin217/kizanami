@@ -1,0 +1,33 @@
+---
+interface Props { storyCount: number }
+const { storyCount } = Astro.props;
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <div class="eyebrow edition-label"><span class="dot" aria-hidden="true">●</span> THE DAILY EDITION <span class="divider" aria-hidden="true"></span> ISSUE NO. 001</div>
+    <h1 id="hero-title">世界は今日も、<br /><em>静かに動く。</em></h1>
+    <p class="lead">大切なのは、情報の量ではなく、何を知るか。<br />今日の動きを、少し深く、少し丁寧に。<br />ニュースに、余白のある時間を。</p>
+    <a class="hero-cta" href="#news">今日の{storyCount}本を読む <span aria-hidden="true">↗</span></a>
+    <div class="stats" aria-label="試作ページの掲載情報">
+      <div class="stat"><strong>{String(storyCount).padStart(2, '0')}</strong><small>SAMPLE STORIES</small></div>
+      <div class="stat"><strong>01</strong><small>ACTIVE CATEGORY</small></div>
+      <div class="stat"><strong>3′</strong><small>TO READ</small></div>
+    </div>
+  </div>
+  <div class="art-stage" role="img" aria-label="重なる紙面とテラコッタ色の球体を使った立体的なブランドイメージ">
+    <div class="stage-wash"></div>
+    <div class="sheet sheet-back"></div>
+    <div class="sheet sheet-middle"></div>
+    <div class="sheet sheet-main">
+      <div class="cover-border"></div>
+      <div class="cover-top"><span>KIZANAMI / EDITION 001</span><em>2026</em></div>
+      <div class="sphere"></div>
+      <div class="orb-rings"></div>
+      <div class="cover-corner">Ideas in<br /><span>motion.</span></div>
+      <div class="cover-bottom">SIGNS OF CHANGE<br />IN EVERY STORY</div>
+    </div>
+    <div class="glass-label"><small>CURATED FOR YOU</small><strong>Every morning.</strong></div>
+    <div class="floating-seal">A quieter<br />view of<br />today.</div>
+    <div class="art-caption">FIG. 01 / LAYERS OF PERSPECTIVE</div>
+  </div>
+</section>
