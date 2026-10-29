@@ -1,0 +1,80 @@
+[
+  {
+    "id": "ai-2026-10-29-01",
+    "slug": "ai-agent-operations-sample",
+    "category": "ai",
+    "title": "AIエージェントの実運用が、次の競争領域へ",
+    "summary": "PoCの次は信頼性と運用性。企業でAIを使い続けるための視点。",
+    "whyItMatters": "企業でAIエージェントを利用する際は、精度だけでなく監査可能性や運用負荷にも注目するという想定のサンプルです。",
+    "sourceName": "架空サンプル（出典なし）",
+    "sourceUrl": null,
+    "publishedAt": "2026-10-29T07:00:00+09:00",
+    "curatedAt": "2026-10-29",
+    "isSample": true
+  },
+  {
+    "id": "ai-2026-10-29-02",
+    "slug": "model-evaluation-sample",
+    "category": "ai",
+    "title": "生成AIの品質評価、何を基準に比較する？",
+    "summary": "見かけのスコアを超えて、実環境でモデルの価値を測る。",
+    "whyItMatters": "複数のモデルを比較するとき、再現性・安全性・実業務への適合性も評価するという例示用記事です。",
+    "sourceName": "架空サンプル（出典なし）",
+    "sourceUrl": null,
+    "publishedAt": "2026-10-29T06:00:00+09:00",
+    "curatedAt": "2026-10-29",
+    "isSample": true
+  },
+  {
+    "id": "ai-2026-10-29-03",
+    "slug": "ai-cost-architecture-sample",
+    "category": "ai",
+    "title": "AI開発のコストを見直す、設計の新しい常識",
+    "summary": "品質を守りながらコストを抑える、AIシステム設計の工夫。",
+    "whyItMatters": "小規模モデル・キャッシュ・適切なルーティングを組み合わせてコストを考えるという、架空の編集テーマです。",
+    "sourceName": "架空サンプル（出典なし）",
+    "sourceUrl": null,
+    "publishedAt": "2026-10-29T05:00:00+09:00",
+    "curatedAt": "2026-10-29",
+    "isSample": true
+  },
+  {
+    "id": "ai-2026-10-28-01",
+    "slug": "retrieval-design-sample",
+    "category": "ai",
+    "title": "検索拡張システムに求められる説明可能性",
+    "summary": "引用元をたどれる設計が、信頼性の第一歩になる。",
+    "whyItMatters": "架空の検証記事です。回答の根拠を出典へ戻って調べられる体験を考えるための例示です。",
+    "sourceName": "架空サンプル（出典なし）",
+    "sourceUrl": null,
+    "publishedAt": "2026-10-28T07:00:00+09:00",
+    "curatedAt": "2026-10-28",
+    "isSample": true
+  },
+  {
+    "id": "ai-2026-10-28-02",
+    "slug": "accessibility-ai-sample",
+    "category": "ai",
+    "title": "AIプロダクトのアクセシビリティを考える",
+    "summary": "使いやすさを設計の初期段階から組み込む。",
+    "whyItMatters": "これは架空の試作用記事です。多様な利用環境で情報が届くようにする設計の重要性を例示しています。",
+    "sourceName": "架空サンプル（出典なし）",
+    "sourceUrl": null,
+    "publishedAt": "2026-10-28T06:00:00+09:00",
+    "curatedAt": "2026-10-28",
+    "isSample": true
+  },
+  {
+    "id": "ai-2026-10-28-03",
+    "slug": "small-models-sample",
+    "category": "ai",
+    "title": "小規模モデルを選ぶという選択肢",
+    "summary": "高性能モデル一択ではない、用途から考える構成。",
+    "whyItMatters": "用途・速度・コストによってモデルを使い分ける架空のテーマです。実在する報道記事ではありません。",
+    "sourceName": "架空サンプル（出典なし）",
+    "sourceUrl": null,
+    "publishedAt": "2026-10-28T05:00:00+09:00",
+    "curatedAt": "2026-10-28",
+    "isSample": true
+  }
+]
