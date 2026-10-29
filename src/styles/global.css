@@ -191,3 +191,14 @@ body{font-family:var(--sans)}
 .navlinks a,.navlinks>span{font-size:10px}
 .navlinks>span small{display:none}}
 @media(prefers-reduced-motion:reduce){.art-stage:hover .sheet-main{transform:rotate(-3deg) rotateY(-11deg) rotateX(3deg) translateZ(35px)}}
+
+/* Text colors are darker than the decorative accent to meet WCAG AA on paper. */
+:root{--accent-text:#9f432e;--secondary-text:#62594f}
+.topbar,.mast .tagline,.edition-label,.lead,.stat small,.disclaimer,
+.section-head .subtitle,.story p,.mini-issue p,.footer,.nav-aside,
+.navlinks a,.navlinks>span,.story-expand small,.art-caption,
+.glass-label small{color:var(--secondary-text)}
+.topbar strong,.story-cat,.disclaimer b,.navlinks a:hover,
+.navlinks>span small,.story-expand>summary,.upcoming>div span:last-child,
+.cover-top em{color:var(--accent-text)}
+.story-expand .detail-text{color:var(--secondary-text)}
