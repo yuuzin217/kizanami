@@ -28,10 +28,6 @@ const base = import.meta.env.BASE_URL;
           <div><span>原情報の発表日（JST）</span><time datetime={article.publishedAt}>{formatPublicationDate(article.publishedAt)}</time></div>
         </div>
         {article.isSample && <div class="article-notice" role="note">この記事はデザイン検証用の架空サンプルです。実際のニュースや出典を表すものではありません。</div>}
-        <section aria-labelledby="summary-title" class="article-section">
-          <h2 id="summary-title">概要</h2>
-          <p>{article.summary}</p>
-        </section>
         <section aria-labelledby="importance-title" class="article-section">
           <h2 id="importance-title">なぜ重要か</h2>
           <p>{article.whyItMatters}</p>
