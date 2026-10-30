@@ -1,5 +1,44 @@
 [
   {
+    "id": "ai-2026-10-31-01",
+    "slug": "google-project-suncatcher-orbit-tpu-gemma4",
+    "category": "ai",
+    "title": "Google、軌道上のTPUでGemma 4を実行し、地球への応答送信に成功",
+    "summary": "Googleは、Project Suncatcherの試作衛星に搭載したデータセンター向けTPUでGemma 4を実行し、地上からの指示に対する応答を地球へ送信したと発表した。今後は宇宙環境での放射線や熱による影響を検証し、2027年には衛星間の連携実験を目指す。現時点では研究段階であり、商用の宇宙データセンターが実現したわけではない。",
+    "whyItMatters": "AI計算基盤を地上以外に設置する長期的な可能性を検証する一歩。電力供給、冷却、通信、耐放射線性などの課題が残り、当面の実務への直接的な影響は限定的。",
+    "sourceName": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/",
+    "publishedAt": "2026-10-30T10:00:00-07:00",
+    "curatedAt": "2026-10-31",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-10-31-02",
+    "slug": "amazon-aws-growth-ai-investment-free-cash-flow",
+    "category": "ai",
+    "title": "Amazon決算、AWSは39.3％増収もAI投資でフリーキャッシュフローが大幅悪化",
+    "summary": "Amazonの2026年7〜9月期決算で、AWS売上高は前年同期比39.3％増の約460億ドルとなった。一方、AI関連の設備投資拡大を主因に、過去12カ月のフリーキャッシュフローは424億ドルのマイナスとなり、2026年通期の設備投資額は約2200億ドルを見込む。",
+    "whyItMatters": "AI需要の拡大と、計算基盤への巨額投資による資金負担が同時に進んでいる。クラウド利用企業は価格や供給能力の変化に備え、推論費用・利用量・投資対効果を継続的に測定する必要がある。",
+    "sourceName": "ITmedia NEWS",
+    "sourceUrl": "https://www.itmedia.co.jp/news/article/2610/30/2000002736/",
+    "publishedAt": "2026-10-30T09:14:00+09:00",
+    "curatedAt": "2026-10-31",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-10-31-03",
+    "slug": "irregular-glm53-multistage-cyberattack-evaluation",
+    "category": "ai",
+    "title": "公開AIモデルGLM-5.3、模擬環境で複数段階のサイバー攻撃を完遂",
+    "summary": "AIセキュリティ企業Irregularが10月28日に公表した研究によると、Z.AIの公開モデルGLM-5.3は模擬ネットワークでの複数段階攻撃13シナリオのうち3件を少なくとも1回完遂した。別の指示順守テストでは、禁止された暗記コードの再現も確認され、正答率だけでは制約順守を評価できないと研究者は指摘している。実環境での自律的な攻撃が確認されたという報告ではない。",
+    "whyItMatters": "公開モデルでも高度な攻撃操作を実行できる可能性があり、AI Agentの導入時はタスク成功率だけでなく禁止操作の順守、権限分離、通信制限、実行ログの監査が重要になる。",
+    "sourceName": "Reuters",
+    "sourceUrl": "https://www.reuters.com/world/china/chinese-ai-model-carries-out-complex-cyberattacks-controlled-tests-researchers-2026-10-29/",
+    "publishedAt": "2026-10-29T03:28:00Z",
+    "curatedAt": "2026-10-31",
+    "isSample": false
+  },
+  {
     "id": "ai-2026-10-29-01",
     "slug": "ai-agent-operations-sample",
     "category": "ai",
