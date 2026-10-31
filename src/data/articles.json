@@ -1,5 +1,44 @@
 [
   {
+    "id": "ai-2026-11-01-01",
+    "slug": "quad-indo-pacific-trusted-ai-funding",
+    "category": "ai",
+    "title": "日米豪印Quad、インド太平洋の信頼できるAIに8500万ドル超を支援へ",
+    "summary": "日米豪印の外相は10月31日、インド太平洋地域の信頼できるAI技術を支援するため、8500万ドル超の資金拠出を表明した。半導体などのサプライチェーンの脆弱性を事前に特定する新たな取り組みも進める方針で、具体的な成果は今後の実施状況に左右される。",
+    "whyItMatters": "AIの導入・開発はモデル性能だけでなく、信頼性の高い技術基盤と半導体供給網にも依存する。政策支援や供給網の多様化は、企業のAI調達やリスク管理の判断材料となる。",
+    "sourceName": "Reuters",
+    "sourceUrl": "https://www.reuters.com/world/china/rubio-host-meeting-indo-pacific-quad-wrap-up-g20-gathering-2026-10-31/",
+    "publishedAt": "2026-10-31T19:02:00+09:00",
+    "curatedAt": "2026-11-01",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-01-02",
+    "slug": "openai-reported-funding-target-cut",
+    "category": "ai",
+    "title": "OpenAI、資金調達目標を約300億ドルから200億ドルへ縮小と報道",
+    "summary": "Financial Timesは10月30日、OpenAIが最新の資金調達目標を約300億ドルから約200億ドルに引き下げたと報じた。Reutersも10月31日付で伝え、背景にはAI投資負担への懸念を受けたテクノロジー株の下落や一部投資家の出資縮小があるとした。資金調達条件は報道段階で、確定した取引ではない。",
+    "whyItMatters": "AI基盤モデルの開発には巨額の資金が必要で、資本市場の変化は計算資源の調達や事業者の価格・供給戦略に影響し得る。AIサービスの長期利用では提供元の継続性も評価対象となる。",
+    "sourceName": "Reuters",
+    "sourceUrl": "https://www.reuters.com/business/openai-cuts-funding-target-by-10-billion-ft-reports-2026-10-31/",
+    "publishedAt": "2026-10-31T09:17:00+09:00",
+    "curatedAt": "2026-11-01",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-01-03",
+    "slug": "shared-robots-ai-training-preference",
+    "category": "ai",
+    "title": "OpenAI・Google・Microsoft・Anthropic、AI学習拒否の共通信号を支持",
+    "summary": "OpenAI、Google、Microsoft、Anthropicは10月30日、Webサイトがrobots.txtで生成AIの学習利用に関する希望を一括して表明できる共通の仕組みを支持した。提案された「__usage_ai-training」は学習利用の意思表示であり、クローラーのアクセス自体を禁止するものではない。現段階ではIETFの正式標準ではなく、各社の対応時期も異なる。",
+    "whyItMatters": "サイト運営者がAI学習への利用方針を複数の事業者へまとめて伝えやすくなる可能性がある。ただし導入が完了するまでは、既存のクローラー別設定も維持する必要がある。",
+    "sourceName": "The Verge",
+    "sourceUrl": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+    "publishedAt": "2026-10-31T05:26:00+09:00",
+    "curatedAt": "2026-11-01",
+    "isSample": false
+  },
+  {
     "id": "ai-2026-10-29-01",
     "slug": "ai-agent-operations-sample",
     "category": "ai",
