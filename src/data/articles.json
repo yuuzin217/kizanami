@@ -1,5 +1,44 @@
 [
   {
+    "id": "ai-2026-11-02-01",
+    "slug": "character-ai-bankruptcy-asset-sale-court-approval",
+    "category": "ai",
+    "title": "Character.AI、破産手続きで資産売却を進行へ　米裁判所が入札手続きを承認",
+    "summary": "米破産裁判所は10月30日、Character.AIの資産売却に向けた入札手続きを認め、41州の司法長官による異議を退けた。Disneyはチャットボット技術の非独占ライセンスに2000万ドルを提示しているが、プラットフォームや利用者の会話履歴は取得しない方針。資産売却自体はまだ承認されておらず、11月30日に改めて審理される見通しだ。",
+    "whyItMatters": "AIサービスは利用者保護、訴訟対応、計算資源・人材コストを同時に負担する。企業がAIサービスを選ぶ際には、提供元の事業継続性や利用者データの取り扱いも確認すべきだ。",
+    "sourceName": "Reuters",
+    "sourceUrl": "https://www.reuters.com/legal/litigation/characterai-moves-ahead-with-asset-sale-over-states-objections-2026-10-30/",
+    "publishedAt": "2026-10-31T04:10:00+09:00",
+    "curatedAt": "2026-11-02",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-02-02",
+    "slug": "south-korea-october-chip-exports-ai-investment-boom",
+    "category": "ai",
+    "title": "韓国の10月輸出が93.7％増、AI投資を背景に半導体輸出が急伸",
+    "summary": "韓国政府が11月1日に公表した10月の輸出額は、前年同月比93.7％増の1152億8000万ドルとなった。AI向け設備投資の拡大を背景に半導体輸出は259.4％増の564億4000万ドルとなったが、前年との営業日数の違いも輸出全体の伸びを押し上げている。",
+    "whyItMatters": "AIインフラ需要が半導体市場だけでなく国全体の貿易統計に大きく影響していることを示す。GPU・メモリの調達計画では需要拡大と価格変動の両方を考慮する必要がある。",
+    "sourceName": "Reuters",
+    "sourceUrl": "https://www.reuters.com/world/asia-pacific/south-korea-exports-nearly-double-october-strongest-growth-since-1974-2026-11-01/",
+    "publishedAt": "2026-11-01T09:39:00+09:00",
+    "curatedAt": "2026-11-02",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-02-03",
+    "slug": "samsung-yokohama-advanced-packaging-ai-chips",
+    "category": "ai",
+    "title": "Samsung会長、横浜の先端半導体パッケージ研究拠点を視察",
+    "summary": "Samsung Electronicsの李在鎔会長は11月1日、横浜のAdvanced Package Labを訪れ、AI半導体向けの先端パッケージ材料・製造工程の研究状況を確認した。同社は2024年から5年間で400億円を投じる計画で、ウエハー接合やガラス基板などの研究を進め、日本の材料・装置企業との連携を強化する方針だ。",
+    "whyItMatters": "AI半導体の性能や消費電力は演算チップだけでなく、HBMなどを接続する実装技術にも左右される。日本の半導体材料・製造装置の供給網がAIインフラの競争力に果たす役割を示している。",
+    "sourceName": "The Korea Times",
+    "sourceUrl": "https://www.koreatimes.co.kr/business/companies/20261101/samsung-chairman-highlights-chip-packaging-visits-japanese-unit",
+    "publishedAt": "2026-11-01T16:01:00+09:00",
+    "curatedAt": "2026-11-02",
+    "isSample": false
+  },
+  {
     "id": "ai-2026-11-01-01",
     "slug": "quad-indo-pacific-trusted-ai-funding",
     "category": "ai",
