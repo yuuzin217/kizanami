@@ -115,5 +115,44 @@
     "publishedAt": "2026-10-29T03:28:00Z",
     "curatedAt": "2026-10-31",
     "isSample": false
+  },
+  {
+    "id": "ai-2026-11-03-01",
+    "slug": "anthropic-japan-ipo-share-sale-3-5-billion",
+    "category": "ai",
+    "title": "Anthropic、IPOで日本投資家向けに最大35億ドルの株式売却へ　届出で判明",
+    "summary": "Reutersは11月2日、Anthropicが米国での上場に伴い、日本で最大5529億円（約35億ドル）の株式を売却する計画だと報じた。新株で得る資金は運転資金や営業費用、設備投資に充てる方針で、みずほ証券が日本での売却を担う。届出にはIPO全体の規模や評価額は示されていない。",
+    "whyItMatters": "日本の投資家が米国の大型AI上場に参加できる規模と経路が具体化した。AI企業の資金調達が計算資源や事業拡大に直結する中、上場時の開示は提供元の継続性や成長計画を評価する材料にもなる。",
+    "sourceName": "Reuters",
+    "sourceUrl": "https://wncy.com/2026/11/02/anthropic-plans-to-sell-3-5-billion-of-shares-to-japan-investors-in-ipo-filing-shows/",
+    "publishedAt": "2026-11-02T06:31:09+00:00",
+    "curatedAt": "2026-11-03",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-03-02",
+    "slug": "hkma-project-sage-agentic-finance",
+    "category": "ai",
+    "title": "香港金融管理局、AIエージェント金融の統制枠組み「Project SAGE」を開始",
+    "summary": "香港金融管理局（HKMA）は11月2日、AIエージェントが金融サービスを行うエージェンティック金融の責任ある普及を支援するProject SAGEを開始し、専門家グループを設立した。取り組みはユースケースの検証、エージェントの本人確認（Know Your Agent）、相互運用の標準、法的・規制的な枠組みの4分野を扱い、銀行のガバナンスに関する討議文書も公表された。",
+    "whyItMatters": "AIエージェントが決済や調達、財務管理を自律的に行う際は、本人確認や委任権限、責任の所在が共通の課題になる。規制当局が標準作りを主導することで、金融機関や事業会社がエージェント導入時の統制を設計する際の参照点になる。",
+    "sourceName": "The Standard",
+    "sourceUrl": "https://www.thestandard.com.hk/finance/article/347196/HKMA-unveils-four-key-areas-of-fintech-initiatives-DART-framework",
+    "publishedAt": "2026-11-02T11:38:39+08:00",
+    "curatedAt": "2026-11-03",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-03-03",
+    "slug": "adnoc-openai-frontier-first-energy-deployment",
+    "category": "ai",
+    "title": "ADNOC、エネルギー企業で初めてOpenAI Frontierを導入　OpenAI・G42と複数年契約",
+    "summary": "アブダビの国営エネルギー企業ADNOCは11月2日、エネルギー会議ADIPECでOpenAIとG42と複数年のパートナーシップを締結し、エネルギー企業として初めてOpenAI Frontierを導入すると発表した。まずは油田の開発計画を地下・設備・経済性の検討を統合して判断する用途と、地下にある原油の価値を評価する用途から始め、重要な判断には人間の専門家が監督を維持する。",
+    "whyItMatters": "生成AIの利用が文書作成から、生産や投資といった基幹業務の意思決定連携へ広がる事例である。効果は今後の実装で検証される段階であり、導入企業は精度だけでなく、権限管理や人間による監督、基幹データの保護を合わせて設計する必要がある。",
+    "sourceName": "Gulf News",
+    "sourceUrl": "https://gulfnews.com/amp/story/business%2Fadnoc-becomes-first-energy-company-to-deploy-openai-frontier-1.500732483",
+    "publishedAt": "2026-11-02T12:20:26+04:00",
+    "curatedAt": "2026-11-03",
+    "isSample": false
   }
 ]
