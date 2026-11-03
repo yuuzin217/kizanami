@@ -6,7 +6,7 @@ const isArchive = Astro.url.pathname.startsWith(`${home}archive/`);
 <div class="topbar" aria-label="サイト情報">
   <span>VOL. 001 <span aria-hidden="true">—</span> AN EDITORIAL VIEW OF THE WORLD</span>
   <strong>MADE TO BE READ, NOT SCROLLED.</strong>
-  <span>PREVIEW EDITION · 2026</span>
+  <span>DAILY EDITION · 2026</span>
 </div>
 <header class="mast">
   <a class="brand" href={home} aria-label="KIZANAMI トップページ">KIZANAMI<span>.</span></a>
@@ -17,10 +17,10 @@ const isArchive = Astro.url.pathname.startsWith(`${home}archive/`);
     <a class:list={{active:isHome}} href={home} aria-current={isHome ? 'page' : undefined}>トップ</a>
     <a href={`${home}#news`}>AI</a>
     <a class:list={{active:isArchive}} href={`${home}archive/`} aria-current={isArchive ? 'page' : undefined}>過去の記事</a>
-    <span title="準備中">政治 <small>SOON</small></span>
-    <span title="準備中">経済 <small>SOON</small></span>
-    <span title="準備中">テクノロジー <small>SOON</small></span>
-    <span title="準備中">国際 <small>SOON</small></span>
+    <span class="inactive" title="準備中">政治 <small>SOON</small></span>
+    <span class="inactive" title="準備中">経済 <small>SOON</small></span>
+    <span class="inactive" title="準備中">テクノロジー <small>SOON</small></span>
+    <span class="inactive" title="準備中">国際 <small>SOON</small></span>
   </div>
-  <div class="nav-aside" aria-label="デザイン試作">EDITORIAL PREVIEW <span aria-hidden="true">↗</span></div>
+  <div class="nav-aside" aria-label="編集部">EDITORIAL <span aria-hidden="true">↗</span></div>
 </nav>

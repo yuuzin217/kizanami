@@ -97,6 +97,11 @@ export function getArchiveDays(articles: readonly NewsArticle[]): string[] {
   return [...new Set(articles.map((article) => article.curatedAt))].sort((a, b) => b.localeCompare(a));
 }
 
+/** Return the edition number computed from the count of distinct editorial days. */
+export function getEditionNumber(articles: readonly NewsArticle[]): number {
+  return getArchiveDays(articles).length;
+}
+
 export function getArticlesForDate(articles: readonly NewsArticle[], date: string): NewsArticle[] {
   return articles.filter((article) => article.curatedAt === date);
 }

@@ -158,6 +158,7 @@ body{font-family:var(--sans)}
 .navlinks a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--terracotta)}
 .navlinks a:hover{color:var(--terracotta)}
 .navlinks>span{color:#978e84;cursor:default}
+.navlinks>span.inactive{text-decoration:line-through;text-decoration-thickness:2px}
 .navlinks>span small{font-size:7px;color:var(--terracotta);vertical-align:top;margin-left:2px}
 .nav-aside{white-space:nowrap;font-size:10px;font-weight:800;letter-spacing:.1em;color:#8c8175}
 .nav-aside span{color:var(--terracotta)}
@@ -172,7 +173,7 @@ body{font-family:var(--sans)}
 .story-expand .detail-text{max-width:70ch;color:#655b51;font-size:12px;margin:8px 0 8px}
 .story-expand small{display:block;color:#8c8175;font-size:10px;line-height:1.7}
 .upcoming>div{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);color:var(--ink);gap:8px}
-.upcoming>div span:first-child{font-size:13px;font-family:Georgia,serif}
+.upcoming>div span:first-child{font-size:13px;font-family:Georgia,serif;text-decoration:line-through}
 .upcoming>div span:last-child{font-size:9px;letter-spacing:.08em;color:var(--terracotta)}
 .skip-link{position:absolute;left:1rem;top:-5rem;background:var(--ink);color:#fff;padding:.8rem 1rem;z-index:1000}
 .skip-link:focus{top:1rem}

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateNewsItems, getLatestArticles, getArchiveDays, getArticlesForDate, getArticleBySlug, formatJstDate } from '../src/data/newsModel.ts';
+import { validateNewsItems, getLatestArticles, getArchiveDays, getEditionNumber, getArticlesForDate, getArticleBySlug, formatJstDate } from '../src/data/newsModel.ts';
 
 const sample = (extra = {}) => ({
   id: 'sample-1', slug: 'first-sample', category: 'ai', title: '架空のニュース',
@@ -64,4 +64,19 @@ test('real news requires safe HTTPS source and non-sample status', () => {
 test('adding an already defined category needs no schema refactor', () => {
   const list = validateNewsItems([sample({category:'politics'})]);
   assert.equal(list[0].category, 'politics');
+});
+
+test('getEditionNumber returns number of distinct curatedAt days, or 0 for empty array', () => {
+  assert.equal(getEditionNumber([]), 0);
+  const sameDate = [
+    sample({ id: 's1', slug: 's1', curatedAt: '2026-10-28' }),
+    sample({ id: 's2', slug: 's2', curatedAt: '2026-10-28' }),
+  ];
+  assert.equal(getEditionNumber(sameDate), 1);
+  const distinctDates = [
+    sample({ id: 's1', slug: 's1', curatedAt: '2026-10-28' }),
+    sample({ id: 's2', slug: 's2', curatedAt: '2026-10-29' }),
+    sample({ id: 's3', slug: 's3', curatedAt: '2026-10-30' }),
+  ];
+  assert.equal(getEditionNumber(distinctDates), 3);
 });

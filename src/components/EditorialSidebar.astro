@@ -1,3 +1,12 @@
+---
+interface Props {
+  editionNumber: number;
+  storyCount: number;
+  year: string;
+}
+const { editionNumber, storyCount, year } = Astro.props;
+const padded = String(editionNumber).padStart(3, '0');
+---
 <aside class="sidebar" aria-label="編集部ノートと今後のカテゴリ">
   <div>
     <h3 class="aside-kicker">From the editor's desk</h3>
@@ -6,10 +15,10 @@
     <div class="signature">KIZANAMI / EDITORIAL</div>
   </div>
   <div class="side-divider">
-    <h4 class="side-head">PREVIEW EDITION</h4>
+    <h4 class="side-head">LATEST EDITION</h4>
     <div class="mini-issue">
-      <div class="issue-cover" aria-hidden="true"><b>KIZANAMI.</b><span>001 / 2026</span></div>
-      <div><strong>Issue 001.</strong><p>AI特集 / 3 Samples<br />DESIGN PREVIEW<br />Read slowly. Think clearly.</p></div>
+      <div class="issue-cover" aria-hidden="true"><b>KIZANAMI.</b><span>{padded} / {year}</span></div>
+      <div><strong>Issue {padded}.</strong><p>AI特集 / 今日の{storyCount}本<br />THE DAILY EDITION<br />Read slowly. Think clearly.</p></div>
     </div>
     <div class="upcoming">
       <h4 class="side-head">EXPLORE MORE</h4>
