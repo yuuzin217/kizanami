@@ -154,5 +154,44 @@
     "publishedAt": "2026-11-02T12:20:26+04:00",
     "curatedAt": "2026-11-03",
     "isSample": false
+  },
+  {
+    "id": "ai-2026-11-04-01",
+    "slug": "anthropic-q3-revenue-up-47-percent-amended-filing",
+    "category": "ai",
+    "title": "Anthropic、7〜9月期の売上高が前期比47％増の169億ドル　IPO修正届出で業績開示",
+    "summary": "Anthropicは11月2日に公表した新規株式公開（IPO）申請書類の修正版で、2026年7〜9月期の売上高が前期比47％増の169億5600万ドルだったことを明らかにした。新モデルの投入などによる利用拡大が寄与した。一方で純損失は232億9100万ドルとなり、前期の663億900万ドルの赤字からは縮小した。",
+    "whyItMatters": "フロンティアAI企業の成長速度と損失規模が四半期単位で具体化したことで、上場時の評価や資金調達の持続性を判断する材料が増えた。販売株数や想定価格、上場時期は依然として示されておらず、確定情報と未定事項を分けて見る必要がある。",
+    "sourceName": "イザ！",
+    "sourceUrl": "https://www.iza.ne.jp/article/20261103-WL6DLVRJWZMUFN7O2NW5CBN55M/?outputType=amp",
+    "publishedAt": "2026-11-03T12:20:03+09:00",
+    "curatedAt": "2026-11-04",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-04-02",
+    "slug": "openai-astra-physical-engineering-mazda-chip-ganassi",
+    "category": "ai",
+    "title": "OpenAI、GPT-6 Astraで試作デバイスを設計　Mazdaなどと物理エンジニアリングを検証",
+    "summary": "OpenAIは11月3日、GPT-6 Astraが筐体や内部構造の設計、電気部品の選定、プリント基板の設計、ファームウェアまでを担い、Codexと対話するための試作デバイスを1週間足らずで設計したと公表した。受託製造業者が1か月足らずで少量の試作品を製造したが、製造上の制約や公差、組み立て要件への配慮には複数回の修正が必要だった。レーシングチームのChip Ganassi Racingとの協業拡大と、Mazdaとの車両設計に関する研究協業も併せて進めている。",
+    "whyItMatters": "AIエージェントの適用範囲がソフトウェア開発から物理製品の設計・シミュレーションへ広がる事例である。ただし製造可能性の確保には依然として人間のエンジニアによるレビューが前提であり、導入時は設計ベンチマークの成績と実製造での手戻りを分けて評価する必要がある。",
+    "sourceName": "The Decoder",
+    "sourceUrl": "https://the-decoder.com/openai-says-gpt-6-astra-designed-a-hardware-device-from-scratch-in-under-a-week/",
+    "publishedAt": "2026-11-03T20:15:45+00:00",
+    "curatedAt": "2026-11-04",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-04-03",
+    "slug": "uk-ncsc-ai-malware-critical-infrastructure-2028",
+    "category": "ai",
+    "title": "英NCSC、2028年までにAIマルウェアによる重要インフラへのランサムウェア攻撃の可能性が高いと評価",
+    "summary": "英国の国家サイバーセキュリティセンター（NCSC）は11月3日に公表した年次レビュー2026で、2028年までにAIを活用したマルウェアが英国の重要国家インフラへのランサムウェア攻撃に使われる可能性が高いと評価した。リスクの中心はAIが新しい攻撃手法を生むことではなく、長年放置されてきた脆弱性を発見し悪用する規模と速度が高まる点にあるとしている。これは確率表現による評価であり、特定の攻撃の発生を断定したものではない。",
+    "whyItMatters": "重要インフラやそのサプライチェーンに関わる組織は、攻撃の高速化を前提に、既知の脆弱性への対応やサポート終了システムの更新といった基礎的な防御を急ぐ必要がある。AIを防御側に活用する取り組みと併せ、技術基盤そのものの棚卸しが求められる。",
+    "sourceName": "Cointelegraph",
+    "sourceUrl": "https://cointelegraph.com/news/uk-warns-ai-ransomware-attack-on-infrastructure-highly-likely-by-2028",
+    "publishedAt": "2026-11-03T03:58:45.868Z",
+    "curatedAt": "2026-11-04",
+    "isSample": false
   }
 ]
