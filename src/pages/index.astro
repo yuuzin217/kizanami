@@ -6,16 +6,18 @@ import StoryCard from '../components/StoryCard.astro';
 import EditorialSidebar from '../components/EditorialSidebar.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { newsArticles } from '../data/news';
-import { getLatestArticles, getArchiveDays, formatJstDate } from '../data/newsModel';
+import { getLatestArticles, getArchiveDays, getEditionNumber, formatJstDate } from '../data/newsModel';
 const latest = getLatestArticles(newsArticles);
 const latestDate = getArchiveDays(newsArticles)[0];
 const hasSamples = latest.some((story) => story.isSample);
+const editionNumber = getEditionNumber(newsArticles);
+const year = latestDate ? latestDate.split('-')[0] : '';
 ---
 <BaseLayout>
   <div class="wrap">
     <SiteHeader />
     <main id="main">
-      <Hero storyCount={latest.length} />
+      <Hero storyCount={latest.length} editionNumber={editionNumber} />
       {hasSamples && <div class="disclaimer" role="note"><b>DESIGN PREVIEW</b><span>「SAMPLE」と表示された記事は架空のサンプルであり、実際の報道ではありません。</span></div>}
       <section id="news" aria-labelledby="stories-title">
         <div class="section-head">
@@ -28,7 +30,7 @@ const hasSamples = latest.some((story) => story.isSample);
             {latest.map((story, index) => <StoryCard story={story} number={index + 1} />)}
             <a class="archive-link" href={`${import.meta.env.BASE_URL}archive/`}>過去の記事を読む <span aria-hidden="true">↗</span></a>
           </div>
-          <EditorialSidebar />
+          <EditorialSidebar editionNumber={editionNumber} storyCount={latest.length} year={year} />
         </div>
       </section>
     </main>
