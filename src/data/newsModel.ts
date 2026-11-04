@@ -102,6 +102,24 @@ export function getEditionNumber(articles: readonly NewsArticle[]): number {
   return getArchiveDays(articles).length;
 }
 
+/** Distinct categories used by at least one article in the set (matches header “active” categories). */
+export function getActiveCategoryCount(articles: readonly NewsArticle[]): number {
+  return new Set(articles.map((article) => article.category)).size;
+}
+
+/** Typical Japanese silent reading speed used to estimate hero “TO READ” minutes from character count. */
+export const READING_CHARS_PER_MINUTE = 500;
+
+/** Estimated minutes to read title, summary, and whyItMatters for the given articles. */
+export function estimateReadingMinutes(articles: readonly NewsArticle[]): number {
+  if (articles.length === 0) return 0;
+  const totalChars = articles.reduce(
+    (sum, article) => sum + article.title.length + article.summary.length + article.whyItMatters.length,
+    0,
+  );
+  return Math.max(1, Math.ceil(totalChars / READING_CHARS_PER_MINUTE));
+}
+
 export function getArticlesForDate(articles: readonly NewsArticle[], date: string): NewsArticle[] {
   return articles.filter((article) => article.curatedAt === date);
 }

@@ -6,18 +6,20 @@ import StoryCard from '../components/StoryCard.astro';
 import EditorialSidebar from '../components/EditorialSidebar.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { newsArticles } from '../data/news';
-import { getLatestArticles, getArchiveDays, getEditionNumber, formatJstDate } from '../data/newsModel';
+import { getLatestArticles, getArchiveDays, getEditionNumber, getActiveCategoryCount, estimateReadingMinutes, formatJstDate } from '../data/newsModel';
 const latest = getLatestArticles(newsArticles);
 const latestDate = getArchiveDays(newsArticles)[0];
 const hasSamples = latest.some((story) => story.isSample);
 const editionNumber = getEditionNumber(newsArticles);
+const categoryCount = getActiveCategoryCount(newsArticles);
+const readingMinutes = estimateReadingMinutes(latest);
 const year = latestDate ? latestDate.split('-')[0] : '';
 ---
 <BaseLayout>
   <div class="wrap">
     <SiteHeader />
     <main id="main">
-      <Hero storyCount={latest.length} editionNumber={editionNumber} />
+      <Hero storyCount={latest.length} editionNumber={editionNumber} categoryCount={categoryCount} readingMinutes={readingMinutes} />
       {hasSamples && <div class="disclaimer" role="note"><b>DESIGN PREVIEW</b><span>「SAMPLE」と表示された記事は架空のサンプルであり、実際の報道ではありません。</span></div>}
       <section id="news" aria-labelledby="stories-title">
         <div class="section-head">
