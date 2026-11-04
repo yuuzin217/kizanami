@@ -89,7 +89,7 @@ GitHub Pages初回セットアップ時は、RepositoryのPages機能の利用�
 3. `category` は `src/data/newsModel.ts` の `categoryLabels` に定義済みのキー（初期は `ai`）を指定します。新ジャンルはその設定に表示名を追加します。
 4. `curatedAt` は編集した日付（JST、`YYYY-MM-DD`）、`publishedAt` は原情報の公開日時（タイムゾーン付きISO 8601、例 `2026-10-29T07:00:00+09:00`）です。
 5. `title`、`summary`、`whyItMatters`、`sourceName` は必須です。実際の記事は `isSample: false` とし、出典の**HTTPS URL**を `sourceUrl` に設定してください。架空記事は `isSample: true` と `sourceUrl: null` を使い、実在の出典と混同させません。
-6. `npm run test && npm run check && npm run build && npm run verify:site` で検証します。不正データはビルド時にエラーとなります。トップページは最新編集日の記事から最大3件、アーカイブは編集日付順に表示され、号数（Edition）は記事データの一意な編集日（curatedAt）の総数から自動算出されます。
+6. `npm run test && npm run check && npm run build && npm run verify:site` で検証します。不正データはビルド時にエラーとなります。トップページは最新編集日の記事から最大3件、アーカイブは編集日付順に表示され、号数（Edition）は記事データの一意な編集日（curatedAt）の総数から自動算出されます。ACTIVE CATEGORY は全記事で使われているカテゴリの種類数、TO READ は最新編集日の記事の title+summary+whyItMatters を500文字/分で割って切り上げた読了時間から自動算出されます。
 
 記事原文・画像の利用条件を遵守し、事実確認・重複・出典URLを確認してください。ChatGPT定期タスクの自動連携はIssue #5で検証するまで未実装です。
 

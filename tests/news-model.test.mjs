@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateNewsItems, getLatestArticles, getArchiveDays, getEditionNumber, getArticlesForDate, getArticleBySlug, formatJstDate } from '../src/data/newsModel.ts';
+import { validateNewsItems, getLatestArticles, getArchiveDays, getEditionNumber, getActiveCategoryCount, estimateReadingMinutes, getArticlesForDate, getArticleBySlug, formatJstDate } from '../src/data/newsModel.ts';
 
 const sample = (extra = {}) => ({
   id: 'sample-1', slug: 'first-sample', category: 'ai', title: '架空のニュース',
@@ -79,4 +79,31 @@ test('getEditionNumber returns number of distinct curatedAt days, or 0 for empty
     sample({ id: 's3', slug: 's3', curatedAt: '2026-10-30' }),
   ];
   assert.equal(getEditionNumber(distinctDates), 3);
+});
+
+test('getActiveCategoryCount counts distinct categories, or 0 for empty array', () => {
+  assert.equal(getActiveCategoryCount([]), 0);
+  const sameCategory = [
+    sample({ id: 's1', slug: 's1' }),
+    sample({ id: 's2', slug: 's2' }),
+  ];
+  assert.equal(getActiveCategoryCount(sameCategory), 1);
+  const twoCategories = [
+    sample({ id: 's1', slug: 's1', category: 'ai' }),
+    sample({ id: 's2', slug: 's2', category: 'politics' }),
+  ];
+  assert.equal(getActiveCategoryCount(twoCategories), 2);
+});
+
+test('estimateReadingMinutes uses 500 chars/min with ceil and minimum 1 when articles exist', () => {
+  assert.equal(estimateReadingMinutes([]), 0);
+  const shortArticle = [sample({ title: '短', summary: '文', whyItMatters: '章' })];
+  assert.equal(estimateReadingMinutes(shortArticle), 1);
+  const longBody = 'あ'.repeat(501);
+  const longArticle = [sample({ title: longBody, summary: '', whyItMatters: '' })];
+  assert.ok(estimateReadingMinutes(longArticle) >= 2);
+  const justOverOneMinute = [sample({ title: 'あ'.repeat(501), summary: '', whyItMatters: '' })];
+  assert.equal(estimateReadingMinutes(justOverOneMinute), 2);
+  const exactlyFiveHundred = [sample({ title: 'あ'.repeat(500), summary: '', whyItMatters: '' })];
+  assert.equal(estimateReadingMinutes(exactlyFiveHundred), 1);
 });
