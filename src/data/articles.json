@@ -193,5 +193,44 @@
     "publishedAt": "2026-11-03T03:58:45.868Z",
     "curatedAt": "2026-11-04",
     "isSample": false
+  },
+  {
+    "id": "ai-2026-11-05-01",
+    "slug": "tencent-hy4-full-release-defensive-cyber-training",
+    "category": "ai",
+    "title": "Tencent、正式版AIモデル「Hy4」を公開　攻撃的なサイバー学習を制限",
+    "summary": "Tencentは11月4日、AIモデル「Hy4」の正式版を公開した。サイバーセキュリティに関する学習は脆弱性の特定や修正といった防御用途に限定し、攻撃ツールの開発や侵入、脆弱性テストに関する素材は除外したとしている。同社内のセキュリティ専門家によるテストでは、攻撃支援のリスクが高まった兆候はなく、有害な生物学実験を容易にする能力も確認されなかったと説明し、モデルウェイトと安全性テストの報告書は後日公開する予定だ。",
+    "whyItMatters": "高性能モデルの公開にあたり、学習データの段階から攻撃能力を抑える設計が大手企業の具体的な選択肢になりつつある。オープンなモデルを利用する組織は、性能だけでなく、提供元がどのような安全対策と検証結果を公開しているかを確認する必要がある。",
+    "sourceName": "TimesLIVE",
+    "sourceUrl": "https://www.timeslive.co.za/news/sci-tech/2026-11-04-tencent-releases-new-ai-model-pledges-safeguards-against-cyberattack-use/",
+    "publishedAt": "2026-11-04T13:57:08+00:00",
+    "curatedAt": "2026-11-05",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-05-02",
+    "slug": "google-gemini-search-off-by-default-k12-schools",
+    "category": "ai",
+    "title": "Google、学校向けGeminiと検索を初期オフに　AIを拒む学校は検索も利用不可で反発",
+    "summary": "Googleは11月3日、初等・中等教育（K-12）の生徒アカウント向けに、Gemini、Gemini Notebook、Gemini in Classroom、Google Searchを、学校の管理者が有効化するまで初期状態でオフにすると発表した。一方で検索とAIは深く統合されているため、AIを全面的に使わない学校では生徒が検索も利用できなくなり、政治家などから反発が出た。Googleはその後、各サービスを個別に有効化できると補足し、検索では答えを直接示さず段階的に導くGuided Learningを提供するとしている。",
+    "whyItMatters": "学校現場では、AIの初期設定を誰が決めるかという統制の問題が、検索という基盤サービスへのアクセスと結びついて表面化した。教育機関や企業がプラットフォームを導入する際は、機能ごとの有効化の可否や、特定機能を止めた場合に失われるサービスを事前に確認する必要がある。",
+    "sourceName": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/11/04/google-faces-backlash-for-plan-that-would-turn-off-search-for-schools-that-restrict-ai/",
+    "publishedAt": "2026-11-04T16:17:22+00:00",
+    "curatedAt": "2026-11-05",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-05-03",
+    "slug": "amd-q3-2026-record-revenue-data-center-97-percent",
+    "category": "ai",
+    "title": "AMD、7〜9月期の売上高が過去最高の約134億ドル　データセンターは97％増",
+    "summary": "AMDが11月3日に公表した2026年7〜9月期決算では、売上高が前年同期比45％増の133億8000万ドルと過去最高になった。データセンター部門の売上高は97％増の約85億ドルで全体の約64％を占め、サーバー向けEPYCプロセッサーとAIアクセラレーターInstinctの需要が寄与した。第4四半期の売上高については約170億ドル（プラスマイナス3％）という会社見通しを示している。",
+    "whyItMatters": "AIインフラへの投資拡大が、GPUの主要供給企業以外にも大規模に波及していることが四半期決算で裏付けられた。ただしデータセンター売上にはAI専用チップ以外のサーバー向けCPUも含まれ、見通しは会社の予測であるため、実績と分けて評価する必要がある。",
+    "sourceName": "TechBooky",
+    "sourceUrl": "https://www.techbooky.com/amd-revenue-hits-13-4b-as-data-centre-sales-nearly-double/",
+    "publishedAt": "2026-11-04T10:05:00+00:00",
+    "curatedAt": "2026-11-05",
+    "isSample": false
   }
 ]
