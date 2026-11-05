@@ -7,7 +7,7 @@ import EditorialSidebar from '../components/EditorialSidebar.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { newsArticles } from '../data/news';
 import { getLatestArticles, getArchiveDays, getEditionNumber, getActiveCategoryCount, estimateReadingMinutes, formatJstDate } from '../data/newsModel';
-const latest = getLatestArticles(newsArticles);
+const latest = getLatestArticles(newsArticles, 6);
 const latestDate = getArchiveDays(newsArticles)[0];
 const hasSamples = latest.some((story) => story.isSample);
 const editionNumber = getEditionNumber(newsArticles);
@@ -23,7 +23,7 @@ const year = latestDate ? latestDate.split('-')[0] : '';
       {hasSamples && <div class="disclaimer" role="note"><b>DESIGN PREVIEW</b><span>「SAMPLE」と表示された記事は架空のサンプルであり、実際の報道ではありません。</span></div>}
       <section id="news" aria-labelledby="stories-title">
         <div class="section-head">
-          <div><div class="eyebrow">LATEST EDITION / AI NEWS</div><h2 id="stories-title">最新のピックアップ</h2></div>
+          <div><div class="eyebrow">LATEST EDITION / POLITICS & AI NEWS</div><h2 id="stories-title">最新のピックアップ</h2></div>
           <div class="subtitle">{latestDate ? `${formatJstDate(latestDate)}（JST）` : '記事準備中'}</div>
         </div>
         <div class="content-grid">

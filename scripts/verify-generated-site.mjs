@@ -48,7 +48,7 @@ for (const relativePath of requiredPages) {
 }
 const home = readPage('index.html');
 const latestDate = dates.sort().at(-1);
-const latestCount = Math.min(3, articles.filter((article) => article.curatedAt === latestDate).length);
+const latestCount = Math.min(6, articles.filter((article) => article.curatedAt === latestDate).length);
 assert.equal((home.match(/class="story"/g) || []).length, latestCount, 'Wrong number of featured articles');
 for (const article of articles) {
   const html = readPage('news/' + article.slug + '/index.html');
