@@ -232,5 +232,83 @@
     "publishedAt": "2026-11-04T10:05:00+00:00",
     "curatedAt": "2026-11-05",
     "isSample": false
+  },
+  {
+    "id": "international-2026-11-06-01",
+    "slug": "japan-non-nuclear-exception-security-strategy",
+    "category": "international",
+    "title": "政府、非核三原則の例外明記を検討　緊急時の核持ち込みを国家安保戦略に",
+    "summary": "政府が年末に改定する国家安全保障戦略に、非核三原則の例外を明記する案を検討していることが分かった。2010年の岡田克也外相答弁に沿い、緊急時に核兵器の持ち込みを認める見解を盛り込む案が有力で、三原則自体の見直しは見送る方向だ。これは関係者が明らかにした検討段階の内容であり、正式決定ではない。",
+    "whyItMatters": "例外が公式文書に明記されれば、従来の国会答弁より強い形で米国の拡大抑止への関与を示すことになり、日本の安全保障政策の焦点になる。一方で、持ち込みを認める基準や日米双方の意思決定手続きをどう定めるかが課題となり、中国など周辺国の反発を強める可能性もある。今後は自民党内で慎重意見がある中、連立相手の日本維新の会との文言調整が焦点になる。",
+    "sourceName": "Kyodo News",
+    "sourceUrl": "https://english.kyodonews.net/articles/-/90511",
+    "publishedAt": "2026-11-05T23:57:00+09:00",
+    "curatedAt": "2026-11-06",
+    "isSample": false
+  },
+  {
+    "id": "economy-2026-11-06-02",
+    "slug": "japan-food-consumption-tax-cut-bill-lower-house",
+    "category": "economy",
+    "title": "食料品の消費税減税法案、6日にも衆院通過の見通し　焦点は参院審議へ",
+    "summary": "食料品の消費税減税法案は、早ければ6日にも衆議院を通過する見通しとなった。6日の財務金融委員会に高市首相が1時間出席することで与野党が合意したが、減税と併せて導入される支援給付の所得上限はまだ固まっていない。与党が過半数を割る参議院では、態度を決めていない国民民主党と公明党の対応が鍵になる。衆院通過は見通し段階であり、法案の成立が確定したわけではない。",
+    "whyItMatters": "飲食料品の税率を8％から1％へ2年間下げる案は物価高対策の柱だが、財源の裏付けや支援給付の対象線引きが未確定のまま採決が迫っている点が争点になっている。暮らしへの影響が大きい一方、衆院を通過しても少数与党の参院で修正や否決の可能性が残り、今後の国会審議と予算編成過程で数字が固まるかが焦点になる。",
+    "sourceName": "FNNプライムオンライン",
+    "sourceUrl": "https://www.fnn.jp/articles/-/1146486?obtp_src=FNNjp_AR_2&obOrigUrl=true",
+    "publishedAt": "2026-11-05T12:27:00+09:00",
+    "curatedAt": "2026-11-06",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-06-03",
+    "slug": "takaichi-macron-eu-ev-incentive-concern",
+    "category": "international",
+    "title": "高市首相、EUの欧州製EV優遇策に強い懸念を伝達　マクロン大統領と電話会談",
+    "summary": "高市早苗首相は5日、フランスのマクロン大統領と約30分間電話会談し、欧州連合（EU）が検討する欧州製の電気自動車（EV）などを優遇する「産業加速法案」について、日本メーカーに打撃となる恐れがあるとして強い懸念を伝え、適切な対応を求めた。両首脳は懸案解決に向けて緊密に連携を続けることで一致し、中東情勢の早期沈静化やエネルギー安全保障での意思疎通も確認した。EU側の制度が最終的にどうなるかは未確定である。",
+    "whyItMatters": "EUの優遇策が日本製EVを補助や税優遇の対象から外せば、日本の自動車メーカーの欧州戦略や輸出に直接影響する。日本にとっては自由貿易の原則を守りつつ、自国産業を保護する欧州の産業政策にどう対応するかが通商外交の焦点になる。フランスとの協議の行方と、EU法案の最終的な対象範囲が注目される。",
+    "sourceName": "産経ニュース",
+    "sourceUrl": "https://www.sankei.com/article/20261105-ICSMROGJJBMXHNNYABDZ6JEWCQ/?outputType=asynd",
+    "publishedAt": "2026-11-05T19:28:13+09:00",
+    "curatedAt": "2026-11-06",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-06-01",
+    "slug": "google-gemini-omni-1-2-flash-15-second-video-ga",
+    "category": "ai",
+    "title": "Google、Gemini Omni 1.2 Flashを一般提供　動画は15秒に、価格は30％引き下げ",
+    "summary": "Googleは11月5日、動画生成・編集モデル「Gemini Omni 1.2 Flash」をGemini APIとGemini for businessで一般提供したと発表した。生成できる動画は従来の最大10秒から15秒（3〜15秒を1秒単位で指定可能）に伸び、720pの価格は1秒当たり0.07ドルと従来比30％下がった。会話形式で同じクリップを繰り返し編集できる機能や、参照画像への追従強化も含まれる。",
+    "whyItMatters": "15秒の広告尺を1回の生成で作れ、再生成ではなく部分修正で調整できるようになると、動画制作の試行コストが下がる。性能や一貫性はGoogle自身の発表とデモに基づく主張であり、高速スポーツや複雑な物理表現は開発中と同社も明記しているため、実務では自社素材での検証が前提になる。",
+    "sourceName": "BigGo Finance",
+    "sourceUrl": "https://finance.biggo.com/news/688c5df0-2c1d-41c6-a615-60544418082e",
+    "publishedAt": "2026-11-05T17:55:29+00:00",
+    "curatedAt": "2026-11-06",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-06-02",
+    "slug": "openai-pipeline-948-linux-kernel-lpe-vulnerabilities",
+    "category": "ai",
+    "title": "OpenAIの自律パイプライン、Linuxカーネルの権限昇格の脆弱性948件で実証コードと修正案を作成",
+    "summary": "OpenAIは11月4日公表の研究で、脆弱性の発見から再現、実証コードの作成、修正案の生成までを担う自律型パイプラインをLinuxカーネルに適用した10月の実験結果を示した。互いに異なるローカル権限昇格の脆弱性948件について実証コードを作成し、費用はAPIクレジットで約121万ドル、1件当たり平均約1279ドルだった。修正案は人間の研究者が確認してから保守担当者へ報告する運用だとしている。",
+    "whyItMatters": "脆弱性調査の規模と速度が大きく変わり得ることを示す一方、948件すべてに修正が適用されたわけではなく、企業側では発見から本番環境へ修正が届くまでの期間がリスクになる。AIによる攻撃側の高速化も進むため、多人数が使うサーバーやCI環境などでは、ディストリビューションの修正提供時期を確認し優先的に対応する必要がある。",
+    "sourceName": "CSO Online",
+    "sourceUrl": "https://www.csoonline.com/article/4245265/openai-built-an-ai-pipeline-to-find-exploit-and-patch-linux-flaws.html",
+    "publishedAt": "2026-11-05T17:36:46+01:00",
+    "curatedAt": "2026-11-06",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-06-03",
+    "slug": "anthropic-ap-election-data-first-publisher-licensing",
+    "category": "ai",
+    "title": "Anthropic、AP通信と初の出版社ライセンス契約　Claudeに選挙データを有償提供",
+    "summary": "AnthropicがAssociated Press（AP）と有償のライセンス契約を結び、米中間選挙を通じてClaudeが出典付きのリアルタイム選挙データを表示したと報じられた。同社にとってデジタルニュース出版社との初のコンテンツライセンス契約になる。契約金額や期間、選挙以外の範囲まで及ぶかどうかは公表されておらず、今後の出版社戦略全体の転換かどうかは未確定である。",
+    "whyItMatters": "これまでライセンス交渉に応じずウェブ収集をフェアユースとしてきたAnthropicが有償契約に転じたことで、AI企業と報道機関の間のデータ対価をめぐる関係が変わる可能性がある。最新情報へのアクセスがAI回答の品質を左右する以上、利用者にとっても、どの出典と契約しているかがサービス選定の判断材料になり得る。",
+    "sourceName": "AI Weekly",
+    "sourceUrl": "https://aiweekly.co/alerts/anthropic-licenses-ap-election-data-in-first-publisher-deal",
+    "publishedAt": "2026-11-05T01:55:28+00:00",
+    "curatedAt": "2026-11-06",
+    "isSample": false
   }
 ]
