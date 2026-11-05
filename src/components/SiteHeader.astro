@@ -3,11 +3,6 @@ const home = import.meta.env.BASE_URL;
 const isHome = Astro.url.pathname === home;
 const isArchive = Astro.url.pathname.startsWith(`${home}archive/`);
 ---
-<div class="topbar" aria-label="サイト情報">
-  <span>AN EDITORIAL VIEW OF THE WORLD</span>
-  <strong>MADE TO BE READ, NOT SCROLLED.</strong>
-  <span>DAILY EDITION · 2026</span>
-</div>
 <header class="mast">
   <a class="brand" href={home} aria-label="KIZANAMI トップページ">KIZANAMI<span>.</span></a>
   <div class="tagline">兆しを読む、世界を知る。<br />THOUGHTFULLY CURATED.</div>

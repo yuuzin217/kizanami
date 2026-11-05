@@ -6,14 +6,12 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .wrap{width:min(1330px,calc(100% - clamp(36px,8vw,144px)));margin-inline:auto}
 .eyebrow{font-size:10px;font-weight:800;letter-spacing:.2em;line-height:1.5}
 .eyebrow .dot{color:var(--terracotta);font-size:13px}
-.topbar{border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 0;font-size:10px;letter-spacing:.09em;font-weight:750;color:#797369}
-.topbar strong{color:var(--terracotta);letter-spacing:.16em}
 .mast{display:flex;justify-content:space-between;align-items:center;padding:22px 0 17px}
 .brand{font:700 clamp(40px,5.4vw,75px)/.97 var(--serif);letter-spacing:-.077em;white-space:nowrap}
 .brand span{color:var(--terracotta)}
 .mast .tagline{text-align:right;font-size:10px;line-height:1.85;letter-spacing:.13em;font-weight:800;color:#6c665e}
 .nav{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:55px}
-.navlinks{display:flex;align-items:center;gap:clamp(15px,2.5vw,34px);overflow:auto;scrollbar-width:none}
+.navlinks{display:flex;align-items:center;gap:clamp(15px,2.5vw,34px);overflow:auto;scrollbar-width:none;flex:1;justify-content:space-between}
 .navlinks::-webkit-scrollbar{display:none}
 .hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:center;gap:clamp(20px,3.4vw,52px);padding:56px 0 38px;min-height:575px;border-bottom:1px solid var(--line)}
 .hero-copy{position:relative;z-index:1}
@@ -97,8 +95,6 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .side-divider{border:0;padding-top:0}
 .upcoming{grid-column:1/-1}}
 @media(max-width:680px){.wrap{width:calc(100% - 38px)}
-.topbar{font-size:9px}
-.topbar strong{display:none}
 .mast{padding:20px 0}
 .brand{font-size:43px;letter-spacing:-.07em}
 .mast .tagline{font-size:8px;line-height:1.7}
@@ -195,11 +191,11 @@ body{font-family:var(--sans)}
 
 /* Text colors are darker than the decorative accent to meet WCAG AA on paper. */
 :root{--accent-text:#9f432e;--secondary-text:#62594f}
-.topbar,.mast .tagline,.edition-label,.lead,.stat small,.disclaimer,
+.mast .tagline,.edition-label,.lead,.stat small,.disclaimer,
 .section-head .subtitle,.story p,.mini-issue p,.footer,.nav-aside,
 .navlinks a,.navlinks>span,.story-expand small,.art-caption,
 .glass-label small{color:var(--secondary-text)}
-.topbar strong,.story-cat,.disclaimer b,.navlinks a:hover,
+.story-cat,.disclaimer b,.navlinks a:hover,
 .navlinks>span small,.story-expand>summary,.upcoming>div span:last-child,
 .cover-top em{color:var(--accent-text)}
 .story-expand .detail-text{color:var(--secondary-text)}
