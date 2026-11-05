@@ -11,7 +11,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .brand span{color:var(--terracotta)}
 .mast .tagline{text-align:right;font-size:10px;line-height:1.85;letter-spacing:.13em;font-weight:800;color:#6c665e}
 .nav{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:55px}
-.navlinks{display:flex;align-items:center;gap:clamp(15px,2.5vw,34px);overflow:auto;scrollbar-width:none;flex:1;justify-content:space-between}
+.navlinks{display:flex;align-items:center;gap:clamp(15px,2.5vw,34px);overflow:auto;scrollbar-width:none;flex:1;justify-content:space-around}
 .navlinks::-webkit-scrollbar{display:none}
 .hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:center;gap:clamp(20px,3.4vw,52px);padding:56px 0 38px;min-height:575px;border-bottom:1px solid var(--line)}
 .hero-copy{position:relative;z-index:1}
