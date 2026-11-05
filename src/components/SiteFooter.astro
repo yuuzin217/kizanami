@@ -1,4 +1,10 @@
+---
+import { newsArticles } from '../data/news';
+import { getArchiveDays } from '../data/newsModel';
+const latestDate = getArchiveDays(newsArticles)[0];
+const year = latestDate ? latestDate.split('-')[0] : '';
+---
 <footer class="footer">
-  <span>© KIZANAMI — AN EDITORIAL NEWS CONCEPT.</span>
+  <span>©{year ? ` ${year}` : ''} KIZANAMI</span>
   <span>LESS NOISE. MORE MEANING. MORE DEPTH.</span>
 </footer>
