@@ -310,5 +310,83 @@
     "publishedAt": "2026-11-05T01:55:28+00:00",
     "curatedAt": "2026-11-06",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-07-01",
+    "slug": "food-consumption-tax-cut-bill-passes-lower-house",
+    "category": "politics",
+    "title": "食料品の消費税減税法案が衆院通過　給付対象は就業者の3割以上、首相が方針",
+    "summary": "飲食料品の消費税率を8％から1％へ2年間引き下げる法案が11月6日の衆院本会議で与党の賛成多数により可決され、衆院を通過した。全野党が反対し、自民党の石破茂前首相ら4人は採決に参加しなかった。高市首相は所得連動型の新たな給付制度について、支給対象を就業者全体の3割以上とする方針を明言した。",
+    "whyItMatters": "物価高対策の目玉が成立へ一歩進んだが、焦点は11月11日に審議入りする参院へ移る。参院では与党が過半数に届かず、給付の制度設計や財源を巡る修正協議の行方が、2027年4月実施の可否と家計への影響を左右する。なお法案はまだ成立しておらず、参院での可決が前提となる。",
+    "sourceName": "産経新聞",
+    "sourceUrl": "https://www.sankei.com/article/20261106-KQ7US3EG3ZKJBGDKB33VC3KTEU/?outputType=asynd",
+    "publishedAt": "2026-11-06T18:09:49+09:00",
+    "curatedAt": "2026-11-07",
+    "isSample": false
+  },
+  {
+    "id": "economy-2026-11-07-02",
+    "slug": "boj-etf-sale-proceeds-economic-security-fund",
+    "category": "economy",
+    "title": "高市首相、日銀ETF売却益を経済安保分野の財源に　つなぎ国債の償還原資へ",
+    "summary": "高市早苗首相は11月6日の衆院財務金融委員会で、日銀が保有ETFの売却加速で得る追加売却益を「成長の果実」と位置付け、新設する特別会計の財源として経済安全保障上重要な分野の事業に充てる考えを示した。売却益を裏付けに「つなぎ国債」を発行し、計画的な公的支援で民間投資を呼び込むと説明した。日銀は10月30日、ETF売却ペースを年約8600億円へ引き上げることを決めている。",
+    "whyItMatters": "巨額の財政支出の財源を国債増発に頼り過ぎず賄う工夫だが、売却益の規模は株価動向に左右され、見込み額や具体的な充当方法は今後の予算編成で検討される段階にある。首相の方針表明であり、制度の詳細は未確定である点に注意が必要だ。",
+    "sourceName": "日本経済新聞",
+    "sourceUrl": "https://www.nikkei.com/article/DGXZQOUA061C80W6A101C2000000/",
+    "publishedAt": "2026-11-06T10:32:40+09:00",
+    "curatedAt": "2026-11-07",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-07-03",
+    "slug": "iran-diplomacy-russia-gulf-hormuz-demands",
+    "category": "international",
+    "title": "イラン、米国の攻撃再開示唆の中で外交を強化　ホルムズ再開に7条件を提示",
+    "summary": "トランプ米大統領がイランへの本格攻撃再開の可能性を示唆する中、イランは外交攻勢を強めている。イラン高官はロイターに、制裁解除や資産凍結解除など7つの要求が満たされなければホルムズ海峡の再開も和平交渉も行わないと語った。安全保障当局トップのレザエイ氏はモスクワでプーチン大統領と会談し、アラグチ外相は湾岸諸国の外相と相次いで電話会談した。",
+    "whyItMatters": "ホルムズ海峡は世界の石油供給の約5分の1が通る要衝で、緊張の行方は原油価格を通じて日本のエネルギー価格や物価に直結する。米側が提案を検討中とされる一方、双方の主張は対立したままで、合意の成立は未確定である。タンカー被害などの一部情報は海事機関による確認が取れていない。",
+    "sourceName": "アルジャジーラ（WACOCA掲載）",
+    "sourceUrl": "https://www.wacoca.com/news/2977240/",
+    "publishedAt": "2026-11-06T16:53:47+00:00",
+    "curatedAt": "2026-11-07",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-07-01",
+    "slug": "anthropic-claude-personal-finance-beta",
+    "category": "ai",
+    "title": "Anthropic、Claudeに銀行口座連携「Personal Finance」を米国でベータ提供　読み取り専用",
+    "summary": "AnthropicはClaudeの新機能「Personal Finance」を米国でベータ提供し始めた。Plaidを通じて銀行・カード・ローン・投資口座を連携すると、残高や最大24カ月分の取引履歴をもとに支出について質問できる。対象は米国のPro・Max・Ultraプランで、連携は最大16行まで。アクセスは読み取り専用で、資金の移動や運用はできない。",
+    "whyItMatters": "生成AIが個人の金融データに直接触れる段階に入り、家計管理の実務が変わり得る一方、プライバシーと回答精度の検証が不可欠になる。日本を含む米国以外への提供時期は未発表で、現時点ではベータ版の段階的展開にとどまる。",
+    "sourceName": "BetaNews",
+    "sourceUrl": "https://betanews.com/article/claude-personal-finance-bank-accounts-plaid/",
+    "publishedAt": "2026-11-06T14:06:07-05:00",
+    "curatedAt": "2026-11-07",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-07-02",
+    "slug": "metr-anthropic-ai-rd-acceleration-assessment",
+    "category": "ai",
+    "title": "METR、AnthropicのAI開発ペースが約1.9倍に加速と評価　主因はAI自身と推定",
+    "summary": "独立評価機関METRは11月5日、Anthropicの内部データを約11週間調査した評価を公表し、同社のモデル能力の向上ペースが2025年10月以降、それ以前の約1.9倍（95％区間1.5〜2.8倍）に加速したと推定した。加速の主因はAI自身による研究開発支援とみられる一方、最も有益な証拠の多くはAnthropicにより非公開化された。",
+    "whyItMatters": "AIがAI開発を加速させる構図が独立評価で示されたことは、能力進歩の予測や安全評価の前提を変え得る。ただし数値は推定であり方法論の不確実性も大きく、再帰的自己改善が実証されたわけではない。評価側の留保を含めて読む必要がある。",
+    "sourceName": "Mad Robot",
+    "sourceUrl": "https://madrobot.blog/2026/11/05/metr-anthropic-ai-rd-acceleration-twice-as-fast/",
+    "publishedAt": "2026-11-05T20:16:00+00:00",
+    "curatedAt": "2026-11-07",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-07-03",
+    "slug": "openai-data-center-community-compact",
+    "category": "ai",
+    "title": "OpenAI、データセンターの地域合意「National Community Compact」を公表　電力費の全額負担を約束",
+    "summary": "OpenAIは11月5日、自社が所有・運営する今後の米国内データセンター拠点に関する「National Community Compact」と政策提言「Compute Campus Policy Blueprint」を公表した。使用する電力と必要なインフラの費用を全額負担し、公務員との秘密保持契約を取りやめ、水・電力使用量や騒音調査を公開するとしている。",
+    "whyItMatters": "AIデータセンターへの地域反発が米国で強まる中、事業者側が負担と透明性の基準を自ら示した動きで、日本を含む各国のデータセンター立地議論にも影響し得る。ただしこれは自主的な約束であり、提言部分は法規制として決定したものではない。パートナー運営拠点への適用範囲も不明確である。",
+    "sourceName": "The Hindu",
+    "sourceUrl": "https://www.thehindu.com/business/Industry/openai-formalises-future-us-data-centre-safeguards-pledges-union-engagement-environmental-disclosures/article71670304.ece",
+    "publishedAt": "2026-11-05T22:33:00+05:30",
+    "curatedAt": "2026-11-07",
+    "isSample": false
   }
 ]
