@@ -388,5 +388,83 @@
     "publishedAt": "2026-11-05T22:33:00+05:30",
     "curatedAt": "2026-11-07",
     "isSample": false
+  },
+  {
+    "id": "technology-2026-11-08-01",
+    "slug": "cyber-emergency-package-law-revision-japan",
+    "category": "technology",
+    "title": "首相、サイバー対処能力強化法の改正検討を指示　緊急対策に予備費約100億円",
+    "summary": "高市早苗首相は11月6日のサイバーセキュリティに関する関係閣僚会議で、緊急対策パッケージを踏まえ、古川サイバー安全保障担当相にサイバー対処能力強化法の改正検討を指示した。基幹インフラ事業者からの被害報告は「できれば数時間、少なくとも同日中」を目指すよう求め、同日の閣議では対策に充てる予備費99億5913万円の使用を決めた。ただしパッケージ本文は7日時点で官邸サイト等で確認できず、柱ごとの具体策や工程、全体の費用はまだ示されていない。",
+    "whyItMatters": "電気・ガスなど基幹インフラへの攻撃情報を国が数時間で集約できるかどうかは、同じ手口の被害拡大を防ぐ条件になる。法改正の内容や報告期限を命令でどう定めるかが事業者の実務負担と防御速度を左右するため、今後の検討内容が重要だ。なお首相の指示は改正の「検討」であり、改正自体が決定したわけではない。",
+    "sourceName": "日本時事新聞",
+    "sourceUrl": "https://jpjj.jp/articles/cyber-emergency-package-takaichi/",
+    "publishedAt": "2026-11-07T13:14:00+09:00",
+    "curatedAt": "2026-11-08",
+    "isSample": false
+  },
+  {
+    "id": "economy-2026-11-08-02",
+    "slug": "boj-ueda-underlying-inflation-upside-risk-imf",
+    "category": "economy",
+    "title": "日銀総裁、基調インフレに上振れリスク　2％の定着を目指すとIMFで発言",
+    "summary": "日銀の植田和男総裁は11月6日、ワシントンで開かれた国際通貨基金（IMF）主催のイベントで、基調的なインフレ率は2％の物価安定目標付近で推移すると見込む一方、一定の上振れリスクがあると述べた。エネルギー関連製品の価格上昇が消費者物価に影響し始め、物価上昇率は来年初めにかけてさらに加速する可能性があるとの見方も示した。あわせて、2％目標はまだ社会規範として定着していないとの認識を示した。",
+    "whyItMatters": "日銀が10月会合で基調インフレの2％到達を表明した直後の発言で、今後の追加利上げの判断材料になる。ただし植田総裁は今回、具体的な利上げの時期や方向を示しておらず、発言自体を政策変更の決定と受け取るべきではない。物価の上振れが続けば家計の負担と企業の価格・賃金設定に影響する。",
+    "sourceName": "Reuters",
+    "sourceUrl": "https://news.infoseek.co.jp/article/06reutersJAPAN_KCN3WH2HG/",
+    "publishedAt": "2026-11-07T04:04:15+09:00",
+    "curatedAt": "2026-11-08",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-08-03",
+    "slug": "japan-china-dialogue-taiwan-remark-one-year",
+    "category": "international",
+    "title": "「台湾有事」答弁から1年、日中関係の冷え込み続く　政府は対話の機会を探る方針",
+    "summary": "高市首相が国会答弁で、武力を伴う台湾有事は日本の「存立危機事態」になり得ると述べてから11月7日で1年となった。中国の強い反発を受け日中関係は低迷が続いている。高市氏は6日「中国は重要な隣国」として、国家利益を守る対話を進め建設的で安定した関係を築く考えを示し、木原稔官房長官も1972年の日中共同声明に基づく日本の立場に変更はないと重ねて説明した。",
+    "whyItMatters": "今月中旬に中国で開かれるAPEC首脳会議で高市氏と習近平国家主席の会談が実現するかは不透明で、政府内でも関係改善には時間がかかるとの見方が多い。台湾を巡る安全保障と最大の貿易相手の一つである中国との経済関係をどう両立させるかは、日本の外交・企業の事業環境に直接関わる。会談の有無や答弁の扱いについて正式な決定は示されていない。",
+    "sourceName": "NHK WORLD-JAPAN News",
+    "sourceUrl": "https://www3.nhk.or.jp/nhkworld/zh/news/20261107de72004/",
+    "publishedAt": "2026-11-07T14:47:12+09:00",
+    "curatedAt": "2026-11-08",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-08-01",
+    "slug": "thinking-machines-inkling-2-small-tinker-open-weights",
+    "category": "ai",
+    "title": "Thinking Machines、5940億パラメータの「Inkling 2 Small」を公開　オープンウェイトは来週予定",
+    "summary": "Thinking Machines Labは11月5日、第2世代モデル「Inkling 2 Small」を発表した。総パラメータ5940億、推論時に使うのは170億のMixture-of-Experts方式で、画像入力や100万トークンの文脈に対応し、同社のTinker上で推論とファインチューニングが使える。Artificial Analysisの知能指数で約31、SWE-Bench Pro v2 Hardで86.3％といった数値は同社の公表値である。ウェイトは現時点では非公開で、Apache 2.0での公開は外部の安全テストを経て来週の予定としている。",
+    "whyItMatters": "中国勢が強かったオープンウェイト分野で、米国発の大規模モデルがどこまで実務で使えるかが問われる。ただし性能数値は提供元の公表が中心で、ウェイト公開もまだ予定段階のため、導入判断は公開後の第三者評価を待って行うべきだ。",
+    "sourceName": "Elets CIO",
+    "sourceUrl": "https://cio.eletsonline.com/artificial-intelligence/inkling-2-small/76764/",
+    "publishedAt": "2026-11-07T16:10:10+09:00",
+    "curatedAt": "2026-11-08",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-08-02",
+    "slug": "perplexity-teammates-always-on-agents-max",
+    "category": "ai",
+    "title": "Perplexity、常時稼働エージェント「Teammates」を公開　月200ドルのMaxプラン向け",
+    "summary": "Perplexityは、継続的な業務を担う常時稼働型AIエージェント「Teammates」を公開した。各Teammateには役割や継続的な指示、利用者を関与させる条件を与えられ、専用のスレッドやデスクトップ、ブラウザを持ち、Perplexity Computerのプロジェクトや記憶を引き継いでSlack経由で同僚とも連携する。利用はまずWeb版で、月200ドルのMaxプラン加入者が対象となり、モバイル版とデスクトップ版は今後提供される予定だ。",
+    "whyItMatters": "AIの使い方を都度の指示から「継続業務の委託」へ広げる動きで、OpenAIやAnthropicの同種サービスと競合する。一方で料金は高額で、信頼性に関する公開データはまだ示されておらず、常時稼働するエージェントの権限管理や成果確認の仕組みが導入の焦点になる。",
+    "sourceName": "Free Press Journal",
+    "sourceUrl": "https://www.freepressjournal.in/amp/tech/perplexity-launches-teammates-always-on-ai-agents-for-work-taking-on-openais-dots-and-anthropics-claude-duet",
+    "publishedAt": "2026-11-06T14:54:00+09:00",
+    "curatedAt": "2026-11-08",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-08-03",
+    "slug": "agility-robotics-nasdaq-aglt-humanoid-listing",
+    "category": "ai",
+    "title": "Agility RoboticsがNasdaq上場　米国初のヒューマノイド専業の上場企業に",
+    "summary": "倉庫向け二足歩行ロボット「Digit」を手がけるAgility Roboticsは、特別買収目的会社Churchill Capital Corp XIとの合併を11月4日に完了し、11月5日からNasdaqでティッカー「AGLT」として取引を始めた。同社は米国で初めてのヒューマノイド専業の上場企業だとしている。合併等による調達額は費用控除前で約4億6500万ドル、初日の始値はSPAC価格の10ドルを上回る11.26ドルだった。",
+    "whyItMatters": "ヒューマノイドの商用展開がベンチャー資金だけでなく株式市場で評価される段階に入ったことを示す。調達資金は新型Digit 5の市場投入や生産能力の拡大に充てる計画だが、同社自身も普及には年単位の時間がかかるとしており、受注の実行と量産が今後の焦点だ。",
+    "sourceName": "GCN",
+    "sourceUrl": "https://gcn.com/humanoid-robot-agility-robotics-becomes-first/23082/",
+    "publishedAt": "2026-11-07T22:00:00+09:00",
+    "curatedAt": "2026-11-08",
+    "isSample": false
   }
 ]
