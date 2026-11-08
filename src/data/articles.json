@@ -466,5 +466,83 @@
     "publishedAt": "2026-11-07T22:00:00+09:00",
     "curatedAt": "2026-11-08",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-09-01",
+    "slug": "ldp-tax-cut-walkouts-ishiba-explanation-deadline",
+    "category": "politics",
+    "title": "自民党、消費税減税法案の採決退席4人に説明要求　石破前首相ら月曜が期限",
+    "summary": "自民党は、食料品の消費税減税法案の衆院採決前に退席した石破茂前首相ら4人に対し、月曜日までに説明するよう求めていることが分かった。関係者によると、党執行部は説明を踏まえて対応を判断する。石破氏は財源の不透明さを理由に財政規律への懸念が解消されていないと述べている。これは党内の事情聴取段階であり、処分が決まったわけではない。",
+    "whyItMatters": "減税法案は衆院を通過したが、与党が過半数を割る参院では野党の協力がなければ12月の会期末までに成立しない。党内の財政規律派の反発が表面化したことで、財源の裏付けをどう示すかが参院審議の焦点になる。暮らしへの影響が大きい減税の行方は、与党内の調整と参院での合意形成の両方にかかっている。",
+    "sourceName": "Kyodo News",
+    "sourceUrl": "https://english.kyodonews.net/articles/-/90726",
+    "publishedAt": "2026-11-08T12:18:00+09:00",
+    "curatedAt": "2026-11-09",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-09-02",
+    "slug": "takaichi-abduction-rally-kim-summit-willingness",
+    "category": "international",
+    "title": "高市首相、拉致国民大集会で金正恩氏との会談に意欲　「働きかけ続けている」",
+    "summary": "高市早苗首相は11月8日、東京都内で開かれた拉致被害者救出を求める国民大集会に出席し、金正恩朝鮮労働党総書記に対し「対話して具体的に行動する用意がある」と日朝首脳会談の開催を呼び掛け、「具体的成果に結びつけるため働きかけを続けている」と強調した。就任から1年がたつ中で被害者が帰国できていないことを「心苦しく感じている」とも述べた。首脳会談の日程や具体的な進展が発表されたわけではない。",
+    "whyItMatters": "政府認定の拉致被害者17人のうち帰国は2002年の5人だけで、被害者と家族の高齢化が進み、解決までの時間は限られている。首相がトランプ米大統領から改めて支持を得たとしつつ首脳会談への意欲を重ねて示したことで、今後は米朝関係の動きと連動した働きかけが具体的な対話につながるかが焦点になる。",
+    "sourceName": "産経ニュース",
+    "sourceUrl": "https://www.sankei.com/article/20261108-44D5OAOSRJLLDLKHAWXFFBEOK4/",
+    "publishedAt": "2026-11-08T16:13:29+09:00",
+    "curatedAt": "2026-11-09",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-09-03",
+    "slug": "japan-china-summit-uncertainty-apec-taiwan",
+    "category": "international",
+    "title": "APEC前の日中首脳会談、見通し立たず　中国は台湾発言の撤回要求を維持",
+    "summary": "中国が、1972年の日中共同声明の再確認で台湾をめぐる高市首相発言の事実上の撤回とみなす案を受け入れず、発言自体の撤回を引き続き求めていることが報じられた。中国・深圳で11月18〜19日に開かれるAPEC首脳会議に合わせた日中首脳会談について、外務省幹部は「首脳会談はないだろう」と述べ、実現の見通しは立っていない。これは関係者の見通しであり、会談見送りが正式に決定したわけではない。",
+    "whyItMatters": "台湾有事をめぐる発言から1年がたち、日中関係の冷え込みが首脳外交の停滞に直結している。中国はレアアース輸出規制などで圧力を強めており、首脳会談が開けない状態が続けば、経済や安全保障をめぐる意思疎通の機会が失われる。日本政府が共同声明に基づく立場は不変だとしつつ、対話の糸口をどう作るかが焦点になる。",
+    "sourceName": "The Nation Thailand",
+    "sourceUrl": "https://www.nationthailand.com/news/world/40073263",
+    "publishedAt": "2026-11-08T22:27:00+07:00",
+    "curatedAt": "2026-11-09",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-09-01",
+    "slug": "openai-11-billion-first-close-1-25-trillion-valuation",
+    "category": "ai",
+    "title": "OpenAI、評価額1.25兆ドルで110億ドルを調達と報道　当初目標300億ドルには届かず",
+    "summary": "TechCrunchは11月6日、Bloombergの報道として、OpenAIが評価額1.25兆ドルで新たな資金調達のうちこれまでに110億ドルを集めたと伝えた。110億ドルは未だクローズしていない大きなラウンドの一部で、今後数週間で総額約200億ドルまで増える可能性があると一人の関係者が述べた一方、9月に報じられた300億ドルという当初目標は大きく下回る。OpenAIはコメントしておらず、金額は関係者情報に基づく報道段階の内容である。",
+    "whyItMatters": "11月1日に報じられた目標縮小に続き、実際に集まった額が当初目標の3分の1程度にとどまったことで、AI企業への巨額投資に市場の慎重姿勢が強まっていることが具体化した。調達の最終総額が固まらなければ、データセンター投資やモデル開発のペースにも影響し得るため、残りの調達が今後数週間でどこまで進むかが注目される。",
+    "sourceName": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
+    "publishedAt": "2026-11-06T14:53:00-08:00",
+    "curatedAt": "2026-11-09",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-09-02",
+    "slug": "deepmind-ai-agents-rsa-1024-two-weaknesses",
+    "category": "ai",
+    "title": "Google DeepMindのAIエージェント、1024ビットRSAに2つの弱点を発見　2048ビット以上は影響なし",
+    "summary": "Google DeepMindは11月6日、人間の暗号研究者の誘導を受けたAIエージェントが、旧式の1024ビットRSAに2つの弱点を見つけたと発表した。一つは署名データの一部を攻撃者が制御できる場合に署名偽造が大幅に安くなるもので、32バイトの要約値では従来最良の手法より約1600倍効率的だと同社は推定する。もう一つは多数の1024ビット鍵をまとめて因数分解する際の追加コストを約30分の1にする手法で、こちらは理論的な推定であり実装はまだ存在しない。2048ビット以上の鍵は影響を受けないとしている。",
+    "whyItMatters": "1024ビットRSAは新規利用が10年以上前に退役したが、古い組み込み機器や長期利用の証明書などに残っている場合がある。AIエージェントが数週間で暗号解析の成果を出したことは、安全余裕が想定より早く縮む可能性を示す。組織は残存する旧式鍵の棚卸しと移行を、衛生管理ではなく期限付きの課題として扱う必要がある。なお1600倍などの数字は同社の推定で、査読前の研究段階である。",
+    "sourceName": "Data Studios",
+    "sourceUrl": "https://www.datastudios.org/post/google-deepmind-ai-agents-two-weaknesses-legacy-1024-bit-rsa",
+    "publishedAt": "2026-11-07T23:54:46.459Z",
+    "curatedAt": "2026-11-09",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-09-03",
+    "slug": "artex-ai-agents-github-secrets-azure-key-vault",
+    "category": "ai",
+    "title": "AIエージェント型フレームワークARTEX、GitHub上の漏洩認証情報を悪用　Azure Key Vaultまで5分の事例",
+    "summary": "Microsoft Threat Intelligenceが11月5日に公表した調査をGitGuardianが解説したところによると、攻撃者はエージェント型AIフレームワークARTEXを使い、公開GitHubリポジトリに漏れた認証情報を自動で探して悪用している。エージェントがOAuthアプリの秘密を見つけ、サービスプリンシパルとしてサインインしてAzureやMicrosoft 365内を移動した事例があり、1件ではGitHubの走査からAzure Key Vaultのデータ窃取まで5分だった。ARTEX自体はペネトレーションテスト用に公開されたもので、現在はGitHubから削除されている。",
+    "whyItMatters": "認証情報の漏洩自体は新しい手口ではないが、AIエージェントが探索から侵入、失敗したAPI呼び出しの自己修正までを人間の速度を超えて自動化することで、漏洩から悪用までの猶予が分単位に縮んだ。公開リポジトリに認証情報を置いた組織は、ファイルを消しても鍵は無効化されないため、直ちに失効・ローテーションし、利用履歴を調査する必要がある。",
+    "sourceName": "GitGuardian Blog",
+    "sourceUrl": "https://blog.gitguardian.com/the-agents-have-now-found-your-secrets-on-github-artex-is-abusing-public-secrets-right-now/",
+    "publishedAt": "2026-11-06T21:09:00.000Z",
+    "curatedAt": "2026-11-09",
+    "isSample": false
   }
 ]
