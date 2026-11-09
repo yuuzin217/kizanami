@@ -544,5 +544,83 @@
     "publishedAt": "2026-11-06T21:09:00.000Z",
     "curatedAt": "2026-11-09",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-10-01",
+    "slug": "ldp-reprimands-ishiba-four-tax-vote",
+    "category": "politics",
+    "title": "自民党、石破前首相ら4人を戒告処分　消費税減税法案の採決退席で、総裁経験者では初",
+    "summary": "自民党の鈴木俊一幹事長は9日、6日の衆院本会議で消費税減税関連法案の採決前に退席した石破茂前首相、小渕優子元選対委員長、古川禎久元法相、船田元・元経済企画庁長官の4人を戒告処分にしたと明らかにした。戒告は8段階ある党の処分のうち2番目に軽いもので、総裁経験者が戒告を受けるのは初めてという。4人は同日、退席理由を記した文書を党本部に提出しており、石破氏は代替財源が明らかでない点などを挙げた。",
+    "whyItMatters": "前日に報じられた「説明要求」から、実際の処分決定へ進んだ確定事項である。食料品の消費税率を2027年4月から2年間1％に下げる法案は11日から少数与党の参院で審議が始まるため、執行部が党内の引き締めを急いだ形だが、財源をめぐる党内の異論が処分に発展した事実は、参院審議や今後の財政論議の焦点になる。",
+    "sourceName": "日本経済新聞",
+    "sourceUrl": "https://www.nikkei.com/article/DGXZQOUA098AG0Z01C26A1000000/?n_cid=BPRDS001",
+    "publishedAt": "2026-11-09T19:00:07+09:00",
+    "curatedAt": "2026-11-10",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-10-02",
+    "slug": "japan-vietnam-critical-minerals-summit",
+    "category": "international",
+    "title": "日越首脳、重要鉱物で協力加速　LNG事業や安保連携も確認",
+    "summary": "高市早苗首相は9日、ベトナムの最高指導者トー・ラム共産党書記長（国家主席）と東京・元赤坂の迎賓館で会談し、経済安全保障を協力の優先分野として、重要鉱物について官民による具体的な協力を加速する方針で一致した。日本企業が参画するLNGなどを燃料とする発電事業の早期実現に向けた協力も議論し、政府安全保障能力強化支援（OSA）の枠組みによる機材の早期供与や、南シナ海・朝鮮半島情勢についても意見交換した。",
+    "whyItMatters": "レアアースを含む重要鉱物の供給網を中国以外にも広げる動きであり、日本の製造業やエネルギー安全保障に直結する。ベトナムとの連携強化は、進化版「自由で開かれたインド太平洋」の具体策としても位置づけられる。なお共同通信の報道時点で、両政府による共同声明は会談に合わせて発表される予定とされており、協力案件の中身は今後の具体化が焦点になる。",
+    "sourceName": "共同通信",
+    "sourceUrl": "https://www.okinawatimes.co.jp/articles/-/1962618",
+    "publishedAt": "2026-11-09T21:01:25+09:00",
+    "curatedAt": "2026-11-10",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-10-03",
+    "slug": "takaichi-asean-apec-summits-next-week",
+    "category": "international",
+    "title": "高市首相、来週フィリピンと中国を訪問へ　ASEAN・APEC出席、就任後初の訪中",
+    "summary": "高市早苗首相は9日、フィリピンで来週開かれるASEAN関連首脳会議と、中国で開催されるAPEC首脳会議に出席する考えを自民党役員会で明らかにした。フィリピン滞在中は脱炭素の連携枠組み「アジア・ゼロエミッション共同体（AZEC）」首脳会合に参加し、日米豪印のクアッド首脳会合も行われる見通しで、首相はトランプ米大統領との個別会談も目指すとされる。",
+    "whyItMatters": "首相の訪中は就任後初めてで、「台湾有事」発言をきっかけに冷え込んだ日中関係のもと、APECを主催する習近平国家主席と接触するかどうかが注目される。ただし、これは出席の意向表明の段階であり、個別の首脳会談が決まったわけではない。国会日程との調整も含め、実際の会談設定は未確定である。",
+    "sourceName": "時事通信",
+    "sourceUrl": "https://www.jiji.com/jc/article?k=2026110900896&g=pol",
+    "publishedAt": "2026-11-09T19:02:00+09:00",
+    "curatedAt": "2026-11-10",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-10-01",
+    "slug": "anthropic-claude-fable-mythos-5-2",
+    "category": "ai",
+    "title": "Anthropic、Claude Fable 5.2とMythos 5.2を発表　前世代比で最大30％高速化",
+    "summary": "Anthropicは9日、新モデル「Claude Fable 5.2」と「Claude Mythos 5.2」を発表した。Fable 5.2はコーディングや推論、AIエージェント業務向けで幅広く提供され、Mythos 5.2はサイバーセキュリティやライフサイエンス研究の承認済み組織に限られる。同社によると両モデルは5.1世代より最大30％速く出力を生成し、価格は入力100万トークン当たり8ドル、出力100万トークン当たり40ドルで従来のFable／Mythosより安いという。",
+    "whyItMatters": "計画中のIPOを前に、開発者と企業顧客をめぐるOpenAIやGoogle、Metaとの競争が一段と激しくなっている。高速化と値下げはエージェント用途の実務コストに直結する一方、性能数値は同社の発表値であり、第三者による検証はこれからになる。Mythosの提供を承認制に絞る線引きは、高性能モデルの安全管理の実例としても注目される。",
+    "sourceName": "Reuters",
+    "sourceUrl": "https://www.reuters.com/technology/anthropic-unveils-new-fable-mythos-models-competition-heats-up-ahead-ipo-2026-11-09/",
+    "publishedAt": "2026-11-09T20:21:05+00:00",
+    "curatedAt": "2026-11-10",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-10-02",
+    "slug": "google-tpu-8tx-8i-max",
+    "category": "ai",
+    "title": "Google、第8世代TPUに「8tx」と「8i Max」を追加　機密推論と大規模文脈に対応",
+    "summary": "Googleは9日、自社開発AI半導体TPUの第8世代に新システム「TPU 8tx」と「TPU 8i Max」を追加したと発表した。8txは処理中のデータやモデルを保護する機密推論向けで、TPU 8tと同じ半導体と第5世代AMD EPYCホストを組み合わせる。8i MaxはTPU 8iチップ2個を1パッケージに収め、演算性能・SRAM・HBM帯域を8iの2倍にしたとしている。4月の8t、8iと合わせ、第8世代は1年で4システムになった。",
+    "whyItMatters": "AIエージェントの本番運用で課題になる「処理中のデータ保護」と「長大な文脈のメモリ不足」に正面から対応する構成で、NVIDIA製GPUへの対抗軸を広げる動きである。ただしGoogleの公式発表では価格や提供時期、提供リージョンは示されておらず、性能値も同社の主張ベースのため、実際の利用可否や費用対効果は今後の公表待ちである。",
+    "sourceName": "WebProNews",
+    "sourceUrl": "https://www.webpronews.com/google-tpu-8tx-8i-max-confidential-computing-amd-epyc/",
+    "publishedAt": "2026-11-09T13:27:03+00:00",
+    "curatedAt": "2026-11-10",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-10-03",
+    "slug": "takaichi-frontier-ai-international-cooperation",
+    "category": "ai",
+    "title": "高市首相、仏主催のAI会合で国際連携を訴え　高性能AIの悪用や制御喪失に警戒",
+    "summary": "日本政府は9日夜、高市早苗首相がフランス主催のAI関連会議にオンラインで出席したと発表した。首相は高性能AIについて「わが国でも喫緊の課題となっているサイバー攻撃などへの悪用や制御の喪失といった安全保障上の新たな挑戦ともなっている。国際社会の連携が不可欠だ」と訴えた。",
+    "whyItMatters": "最先端AIのリスクを安全保障の課題として首脳レベルで扱う国際議論に、日本がどう関与するかを示す発言である。日本は広島AIプロセスを主導してきた経緯があり、今後の国際的なルール形成や各国の規制の足並みが実務にも影響する。なお今回確認できたのは首相の発言と連携の呼び掛けまでで、具体的な新たな制度や合意が決まったわけではない。",
+    "sourceName": "共同通信",
+    "sourceUrl": "https://news.jp/i/1492542128618225737",
+    "publishedAt": "2026-11-09T15:09:02+00:00",
+    "curatedAt": "2026-11-10",
+    "isSample": false
   }
 ]
