@@ -700,5 +700,83 @@
     "publishedAt": "2026-11-10T05:42:39-05:00",
     "curatedAt": "2026-11-11",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-12-01",
+    "slug": "consumption-tax-cut-bill-upper-house-deliberation",
+    "category": "politics",
+    "title": "消費税減税法案が参院で審議入り、13日から首相出席の特別委で実質審議へ",
+    "summary": "食料品の消費税率を2027年4月から2年間1％に引き下げる消費税減税・支援金法案が11日、参院本会議で審議入りした。高市首相は低所得世帯にとって意義があると強調した。与野党は13日から特別委員会で首相が出席して質疑を行うことで合意した。なお、法案の成立自体はまだ決まっておらず、参院では与党が過半数に届かず、賛意を示す日本保守党を含めても2議席不足する。",
+    "whyItMatters": "家計の食料品負担に直結する今国会最大の焦点であり、成立には一部野党の協力が不可欠な情勢である。財源の裏付けや、働く中低所得者向け支援金の対象範囲が審議でどこまで明確になるかが、12月12日の会期末までの成否を左右する。",
+    "sourceName": "FNNプライムオンライン",
+    "sourceUrl": "https://www.fnn.jp/articles/-/1150319",
+    "publishedAt": "2026-11-11T16:17:00+09:00",
+    "curatedAt": "2026-11-12",
+    "isSample": false
+  },
+  {
+    "id": "economy-2026-11-12-02",
+    "slug": "cef-public-investment-criteria-relaxation-2027",
+    "category": "economy",
+    "title": "高市首相、公共インフラ投資基準の緩和を指示　2027年度からの実行目指す",
+    "summary": "高市首相は11日の経済財政諮問会議で、公共インフラの投資基準の緩和について、できるだけ速やかに結論を出し2027年度から実行に移すよう国土交通相に指示した。道路や橋の投資判断で重視される社会的割引率など、費用対効果の算定が厳格すぎるとの指摘があり、地方での投資を促進して成長につなげる狙いがある。会議では、自治体が地元企業に発注する事業の契約価格が人件費や資材費の上昇を十分に反映できていないことも問題視された。緩和の具体的な内容は今後の検討で決まるもので、現時点では未確定である。",
+    "whyItMatters": "投資基準の見直しは、老朽化する地方インフラの更新や地域経済の活性化に影響する一方、費用対効果の検証が緩めば財政規律との両立が問われる。基準の具体像と対象範囲が今後の焦点となる。",
+    "sourceName": "北國新聞（共同通信）",
+    "sourceUrl": "https://www.hokkoku.co.jp/articles/tym/2287099",
+    "publishedAt": "2026-11-11T19:24:59+09:00",
+    "curatedAt": "2026-11-12",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-12-03",
+    "slug": "g7-foreign-ministers-ukraine-energy-support-paris",
+    "category": "international",
+    "title": "G7外相、ウクライナの電力インフラ支援継続で一致　パリ会合が閉幕",
+    "summary": "パリで開かれた先進7カ国（G7）外相会合は10日、ウクライナのシビハ外相も参加して2日目の協議を行い、ロシアのミサイル攻撃で弱体化している電力インフラなどへの支援継続で一致した。日本の茂木外相が明らかにした。会合は2日間の日程を経て閉幕した。支援継続の一致は確認できたが、追加支援の具体的な規模は公表されていない。",
+    "whyItMatters": "本格的な冬を前に、ウクライナの電力確保は住民生活と戦況の双方に直結する焦点である。米国とロシア、ウクライナによる3者高官協議を控えた時期の会合でもあり、欧州側が米国に公正な解決策を求める動きと合わせて、停戦交渉の行方にも影響し得る。",
+    "sourceName": "東京新聞（共同通信）",
+    "sourceUrl": "https://www.tokyo-np.co.jp/article/527298?rct=world",
+    "publishedAt": "2026-11-11T00:28:00+09:00",
+    "curatedAt": "2026-11-12",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-12-01",
+    "slug": "new-york-raise-act-registration-portal-opens",
+    "category": "ai",
+    "title": "米ニューヨーク州、AI安全法RAISE Actの登録ポータルを開設　大手開発者に安全義務",
+    "summary": "米ニューヨーク州は、大規模フロンティアAI開発者の登録ポータルを開設した。2027年1月1日に施行されるRAISE Actでは、年間売上5億ドル超の開発者に、安全フレームワークの公開、重大な安全インシデントの72時間以内の報告、モデルの透明性レポートの公表が義務付けられる。州は併せて、フロンティアAIを独立に評価するAI安全研究センターを大学に立ち上げた。現時点では施行前の登録受付が始まった段階であり、義務そのものの発効は2027年1月である。",
+    "whyItMatters": "カリフォルニア州などに続き、州レベルのAI規制が立法から実装段階へ移った。連邦レベルの統一ルールがない中、OpenAIやAnthropicなどの大手開発者は複数の州規制への同時対応を迫られ、州規制が事実上の標準になる可能性がある。",
+    "sourceName": "AI News",
+    "sourceUrl": "https://www.artificialintelligence-news.com/news/new-york-launches-frontier-ai-centre-suny-binghamton/",
+    "publishedAt": "2026-11-11T14:27:25+00:00",
+    "curatedAt": "2026-11-12",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-12-02",
+    "slug": "adobe-max-creative-agents-local-mcp-preview",
+    "category": "ai",
+    "title": "アドビ、Adobe MAXでAIエージェントを全面展開　主要製品にローカルMCP連携プレビュー",
+    "summary": "アドビは11月11日のカンファレンス「Adobe MAX」で、Adobe Firefly、Adobe Creative Cloud、Adobe GenStudioにAIエージェントと新機能を導入すると発表した。Photoshop、Illustrator、Premiere、After Effects向けには、利用者が選んだサードパーティ製エージェントがローカルのネイティブプロジェクトファイルを変更できるローカルMCP連携のプレビューを公開した。GenStudioには、キャンペーンワークフローを管理する企業向けのAdobe CX Enterprise Coworkerが導入される。",
+    "whyItMatters": "クリエイティブ制作の現場で、AIエージェントがアセット整理や品質チェックなどの定型作業を代行し、外部のエージェントがネイティブファイルを直接編集できる連携が進む。制作ワークフローの自動化と、ツール間連携の標準化が加速する転機となる。",
+    "sourceName": "デジタルマガジン",
+    "sourceUrl": "https://digimaga.jp/69778/",
+    "publishedAt": "2026-11-11T19:10:00+09:00",
+    "curatedAt": "2026-11-12",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-12-03",
+    "slug": "deepl-voice-aure-emotion-aware-translation",
+    "category": "ai",
+    "title": "DeepL、音声AIモデル「Aure」を発表　感情やトーンの変化を翻訳音声にリアルタイム反映",
+    "summary": "DeepLは11月11日、リアルタイム音声翻訳ソリューション「DeepL Voice」を支える新たな音声AIモデル「Aure」を発表した。会話中の音声を継続的に分析し、話者のトーンや感情、強調の仕方、話すペースの変化を翻訳音声にリアルタイムで反映する。日本語を含む8言語に対応し、オンライン会議、対面会話、APIのいずれでも追加設定なしで自動的に適用される。",
+    "whyItMatters": "音声翻訳が言葉の意味だけでなく「どのように話しているか」というニュアンスまで伝える段階に入った。重要な交渉やグローバルチームの連携など、信頼関係が問われる場面での機械翻訳の実用性が高まる可能性がある。",
+    "sourceName": "PR TIMES",
+    "sourceUrl": "https://news.infoseek.co.jp/article/prtimes_000000073_000112534/",
+    "publishedAt": "2026-11-12T05:10:02+09:00",
+    "curatedAt": "2026-11-12",
+    "isSample": false
   }
 ]
