@@ -778,5 +778,83 @@
     "publishedAt": "2026-11-12T05:10:02+09:00",
     "curatedAt": "2026-11-12",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-13-01",
+    "slug": "ldp-jip-dpp-lower-house-seat-cut-bill-31",
+    "category": "politics",
+    "title": "自民・維新・国民民主、衆院比例31減の法案を共同提出　今国会成立目指す",
+    "summary": "自由民主党と日本維新の会、野党の国民民主党は12日、衆議院の比例代表定数を31削減する法案を共同で衆議院に提出した。削減は比例代表のみで小選挙区は維持し、中国・四国ブロックを統合して比例ブロックを11から10に減らす内容も含む。3党は12月12日までの今国会での成立を目指すが、公明党や共産党などは小選挙区の比重が高まるとして反対している。法案は提出された段階であり、成立は確定していない。",
+    "whyItMatters": "選挙制度は議会における民意の反映のされ方そのものを決める。比例のみの削減は小政党の議席獲得にも影響しうるため、審議の日程合意と他党の対応が焦点となる。成立すれば小選挙区の区割り見直しと合わせて2027年にも効力が生じる可能性がある。",
+    "sourceName": "The Japan Times",
+    "sourceUrl": "https://www.japantimes.co.jp/news/2026/11/12/japan/politics/seat-reduction-bill-submitted/",
+    "publishedAt": "2026-11-12T15:18:20+09:00",
+    "curatedAt": "2026-11-13",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-13-02",
+    "slug": "takaichi-seeks-trump-dialogue-before-us-china-russia",
+    "category": "international",
+    "title": "政府、高市首相とトランプ氏の対話を米側に打診　米中ロ首脳会談の前に日本の立場伝達へ",
+    "summary": "政府が今月中旬にフィリピン・マニラで開かれる東南アジア諸国連合（ASEAN）関連首脳会議に合わせ、高市早苗首相とトランプ米大統領の対話の機会を米側に打診していることが12日、分かった。直後のアジア太平洋経済協力会議（APEC）首脳会議で米国・中国・ロシア3カ国の首脳会談開催が取り沙汰される前に、中ロに対する日本の立場を伝えたい考えで、フィリピンでは日米豪印のクアッド首脳会合も調整されている。対話の実現自体はまだ確定しておらず、複数の日米関係筋に基づく報道段階である。",
+    "whyItMatters": "米中ロの動きが先に固まれば、日本の安全保障や対中政策の前提が揺らぎかねない。事前の対話が実現するかどうかが、日米同盟の確認と日本の立場を反映できるかの鍵となる。",
+    "sourceName": "47NEWS（共同通信）",
+    "sourceUrl": "https://www.47news.jp/15221137.html",
+    "publishedAt": "2026-11-12T19:01:25+09:00",
+    "curatedAt": "2026-11-13",
+    "isSample": false
+  },
+  {
+    "id": "economy-2026-11-13-03",
+    "slug": "boj-asada-cautions-rate-hike-pace-nagasaki",
+    "category": "economy",
+    "title": "日銀・浅田委員、利上げペースに「十分留意を」　消費の弱さと物価下振れリスクを指摘",
+    "summary": "日本銀行の浅田統一郎審議委員は12日、長崎市で講演し、利上げが経済を下振れさせ、基調的な物価上昇率の押し下げにつながるリスクに十分留意する必要があると述べた。個人消費が必ずしも強くないことや、物価上昇が需要主導とは限らないことを理由に挙げた。日銀は9月の金融政策決定会合で政策金利を1.25％に引き上げ、10月は据え置いており、浅田氏は9月会合で利上げに反対していた。12月の次回会合で利上げするかどうかは未定である。",
+    "whyItMatters": "市場では12月の利上げ観測がある一方、慎重論が政策委員の中にあることが改めて示された。利上げのペースは住宅ローンや企業の借り入れ、円相場を通じて暮らしと景気に直結するため、次回会合までの委員発言と物価データが焦点となる。",
+    "sourceName": "産経ニュース",
+    "sourceUrl": "https://www.sankei.com/article/20261112-MYOFD6ROKZKG5IN3M7N43KFBBM/",
+    "publishedAt": "2026-11-12T11:32:06+09:00",
+    "curatedAt": "2026-11-13",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-13-01",
+    "slug": "google-gemini-4-hydrogen-launch",
+    "category": "ai",
+    "title": "Google、高速モデル「Gemini 4 Hydrogen」を発表　検索とGeminiアプリに展開、100万トークン文脈",
+    "summary": "Googleは11月12日、日常のコーディングやエージェント作業向けの高速モデル「Gemini 4 Hydrogen」を発表した。Google検索とGeminiアプリの利用者、Google AI StudioとGemini APIの全プランなどへ展開し、Google Antigravityでは有料プラン向けに提供する。100万トークンの文脈を持ち、価格は入力100万トークンあたり1.50ドル、出力7.50ドルで、思考レベルは4段階から選べる。性能数値はGoogleの発表に基づくもので、独立した検証はこれからである。",
+    "whyItMatters": "低価格で高速な実行モデルが検索や日常のアプリに標準搭載されると、エージェント型作業のコスト構造が変わる。高度な推論モデルと実行モデルを使い分ける多モデル運用が、開発現場の標準になる可能性がある。",
+    "sourceName": "Digital Trends",
+    "sourceUrl": "https://www.digitaltrends.com/cool-tech/googles-next-gen-gemini-4-hydrogen-ai-model-is-here-touting-faster-intelligence-for-all/",
+    "publishedAt": "2026-11-12T18:46:01+00:00",
+    "curatedAt": "2026-11-13",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-13-02",
+    "slug": "amazon-alexa-for-shopping-japan-rufus",
+    "category": "ai",
+    "title": "Amazon、買い物AI「Rufus」を「Alexa for Shopping」に改称し日本展開　価格履歴確認やカート管理に対応",
+    "summary": "Amazonは11月12日、日本で「Rufus（ルーファス）」として提供してきたAIショッピングアシスタントの名称を「Alexa for Shopping」に変更し、AmazonショッピングアプリとAmazon.co.jpで提供すると発表した。商品探しや比較、過去90日間の価格履歴の確認、いつもの商品の再注文やカート管理に対応し、Amazonアカウントにサインインすればプライム会員でなくても無料で使える。RufusとAlexaを、端末やサービスをまたいで記憶を共有する1つのAIアシスタントに統合する取り組みの一環である。",
+    "whyItMatters": "買い物の入口が検索からAIとの会話へ移る流れが日本でも具体化した。商品がAIにどう選ばれ、どう並べて提示されるかが販売側の露出を左右するようになり、小売の集客構造にも影響しうる。",
+    "sourceName": "About Amazon Japan",
+    "sourceUrl": "https://www.aboutamazon.jp/news/retail/alexa-for-shopping-ai-assistant",
+    "publishedAt": "2026-11-12T03:29:56.926Z",
+    "curatedAt": "2026-11-13",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-13-03",
+    "slug": "ntt-ai-credit-screening-default-prediction",
+    "category": "ai",
+    "title": "NTT、貸し倒れ予測の精度を最大約3割向上させるAI与信審査技術を確立　2027年度以降の実務導入目指す",
+    "summary": "NTTとNTT・TCリースは11月12日、多様な顧客データや契約条件の違いを統一的に学習し、将来の貸し倒れリスクを高精度に予測する新たなAI与信審査技術を確立したと発表した。約150万件の法人向けリース与信データを用いた共同実験において、既存の代表的なAIモデルと比べて予測精度を示すAR値（Accuracy Ratio）で最大約3割の向上を確認した。最終的な与信判断は人が行う運用を前提としており、現時点では技術確立と実験結果の段階で、実務導入は確定していない。",
+    "whyItMatters": "与信審査は金融の中核業務であり、予測精度の向上は貸し倒れ損失の抑制と、これまで画一的な基準では評価が難しかった顧客層への与信機会の拡大の両立につながりうる。AIが人の最終判断を前提に基幹業務へ入る事例として注目される。NTT・TCリースは2027年度以降の実審査業務への導入を目指すとしている。",
+    "sourceName": "AI Watch",
+    "sourceUrl": "https://ai.watch.impress.co.jp/docs/news/2155679.html",
+    "publishedAt": "2026-11-12T15:00:00+09:00",
+    "curatedAt": "2026-11-13",
+    "isSample": false
   }
 ]
