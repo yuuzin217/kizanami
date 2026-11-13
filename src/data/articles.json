@@ -856,5 +856,83 @@
     "publishedAt": "2026-11-12T15:00:00+09:00",
     "curatedAt": "2026-11-13",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-14-01",
+    "slug": "takaichi-consumption-tax-support-expansion-50-percent",
+    "category": "politics",
+    "title": "高市首相、消費減税の支援金対象を「現役の5割以上」へ拡大する検討を表明　参院特別委で答弁",
+    "summary": "高市首相は13日の参院特別委員会で、食料品の消費税率を2027年4月から2年間1％に下げる法案とあわせて導入する支援金について、対象を現役勤労者の5割以上とする所得上限額の設定を検討すると表明した。これまでは少なくとも3割以上と示していたが、中所得層には低すぎるとの野党の指摘を重く受け止めたと説明した。参院では自民・維新が過半数に届かず、法案成立には野党の協力が不可欠な状況が続いている。",
+    "whyItMatters": "支援金の対象範囲は、税率を戻す際の中間層の負担緩和策として野党が判断材料に挙げており、拡大検討の表明が参院での合意形成を動かすかが焦点になる。家計にとっては減税そのものに加え、所得上限の水準次第で支援を受けられる層が大きく変わる。なお、表明は検討段階であり、所得上限額や法案の成立自体は正式決定ではない。",
+    "sourceName": "日テレNEWS NNN",
+    "sourceUrl": "https://news.ntv.co.jp/n/sdt/category/politics/sdd7589f45efd6473b8286f39245db2a72",
+    "publishedAt": "2026-11-13T17:02:00+09:00",
+    "curatedAt": "2026-11-14",
+    "isSample": false
+  },
+  {
+    "id": "economy-2026-11-14-02",
+    "slug": "winter-electricity-gas-support-651-9-billion-yen",
+    "category": "economy",
+    "title": "政府、冬の電気・ガス補助に6,519億円を閣議決定　灯油支援も、標準家庭で3カ月約7,000円の負担軽減見通し",
+    "summary": "政府は13日の閣議で、中東情勢によるエネルギー価格上昇を受け、冬の電気・都市ガス料金支援などのため中東情勢等対応予備費から6,519億円を支出することを決めた。内訳は電気・ガス補助に5,219億円、LPガスや灯油の利用者支援として自治体が使える重点支援地方交付金に1,300億円で、電気・ガス補助は12月から来年2月まで実施する。一般家庭の負担軽減効果は3カ月で約7,000円の見通しとされる。",
+    "whyItMatters": "冬場の光熱費を直接抑える決定済みの家計支援で、寒冷地で使う灯油やLPガスも交付金を通じて対象に含めた点が暮らしへの影響を広げる。一方で今回の支出で予備費の残高は大きく減ると報じられており、原油価格の高止まりが続けば追加の予算措置が必要になる可能性がある。来年3月分を実施するかどうかは気候状況などを見極めて判断するとされており、未確定である。",
+    "sourceName": "時事通信",
+    "sourceUrl": "https://www.jiji.com/jc/article?k=2026111300437&g=pol",
+    "publishedAt": "2026-11-13T10:44:00+09:00",
+    "curatedAt": "2026-11-14",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-14-03",
+    "slug": "japan-mexico-foreign-ministers-economic-security",
+    "category": "international",
+    "title": "日メキシコ外相、経済安全保障で協力強化を確認　有識者による「日メキシコ対話」創設でも合意",
+    "summary": "茂木外相は13日、メキシコのベラスコ外相と東京都内で会談し、鉛や亜鉛などの鉱物資源が豊富なメキシコとの間で経済安全保障分野の協力強化を確認した。今年度中の初開催を目指す「ハイレベル経済対話」の調整状況や地域情勢についても意見を交わした。両外相は、外交関係樹立140周年となる2028年を見据え、中長期的な両国関係を有識者が議論する「日メキシコ対話」の創設でも合意した。",
+    "whyItMatters": "重要鉱物の供給源を多様化することは、日本の経済安全保障とサプライチェーンの対中依存低減に直結するテーマである。ハイレベル経済対話と有識者対話という二つの枠組みが動き出せば、エネルギーや重要インフラへの投資拡大の具体化が今後の焦点になる。現時点では協力強化の確認と対話創設の合意の段階で、個別の投資案件などが決まったわけではない。",
+    "sourceName": "時事通信",
+    "sourceUrl": "https://news.infoseek.co.jp/article/jiji_2026111300715/",
+    "publishedAt": "2026-11-13T19:52:11+09:00",
+    "curatedAt": "2026-11-14",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-14-01",
+    "slug": "anthropic-self-hosted-claude-managed-agents-private-beta",
+    "category": "ai",
+    "title": "Anthropic、Claude Managed Agentsのセルフホスト版をプライベートベータで開始　認証情報やセッション履歴を自社環境内に保持可能に",
+    "summary": "Anthropicは11月12日、長時間稼働するAIエージェント向けサービス「Claude Managed Agents」のセルフホスト版をプライベートベータとして開始した。企業はエージェントの実行基盤、サンドボックス、認証情報、セッション履歴を自社のクラウドやオンプレミスで運用でき、顧客側がサーバー、PostgreSQLデータベース、ワーカーを担う。ただしモデル自体は自社環境には置かれず、推論はAnthropicやAmazon Bedrockなど顧客が選ぶ提供先で実行される。",
+    "whyItMatters": "規制産業などでエージェント導入の障壁だった「認証情報や作業履歴が外部に置かれる」問題への直接の回答であり、企業内エージェントの本格導入を後押ししうる。一方で公開価格や一般提供の時期は示されておらず、利用はAnthropicの担当経由で対象企業に限られるプライベートベータの段階である。サーバーやデータベースの運用・保守負担が顧客側に移る点も導入判断の材料になる。",
+    "sourceName": "Help Net Security",
+    "sourceUrl": "https://www.helpnetsecurity.com/2026/11/12/anthropic-self-hosted-claude-managed-agents/",
+    "publishedAt": "2026-11-12T18:07:00+00:00",
+    "curatedAt": "2026-11-14",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-14-02",
+    "slug": "openai-daybreak-red-team-defense-factory",
+    "category": "ai",
+    "title": "OpenAI、AIエージェントで脆弱性を検証・修正する「Daybreak Red Team」と「Defense Factory」を発表",
+    "summary": "OpenAIは11月12日のイベント「Cyber at the Frontier」で、サイバーセキュリティ製品群Daybreakの新製品2件を発表した。「Daybreak Red Team」は複数のAIエージェントがソースコードやアプリの文脈を使ってWebアプリの攻撃経路を調べ、脆弱性が実際に悪用可能かを確認する。「Daybreak Defense Factory」は検出された脆弱性をコード内で追跡して修正案を作成し、エンジニアがレビューとテストを行ったうえでマージする運用を想定している。",
+    "whyItMatters": "脆弱性の発見から修正案の作成までをエージェントが担うことで、セキュリティ対応の初動と修正速度を大きく変える可能性がある。修正は自動適用されず人の承認を前提とする設計で、Red Teamは早期アクセス受付中、Defense FactoryはDaybreak利用ワークスペース向けのプレビュープラグインという段階であり、価格や一般提供時期は未発表である。",
+    "sourceName": "SecurityWeek",
+    "sourceUrl": "https://www.securityweek.com/openai-unveils-daybreak-red-team-defense-factory-security-tools/",
+    "publishedAt": "2026-11-13T09:21:01+00:00",
+    "curatedAt": "2026-11-14",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-14-03",
+    "slug": "sglang-consortium-open-ai-inference-launch",
+    "category": "ai",
+    "title": "LMSYS、オープンソース推論エンジン「SGLang」のコンソーシアムを発足　NVIDIA・AMD・Googleなど8社が創設メンバー",
+    "summary": "オープンソースのAI推論エンジンSGLangを支える非営利団体LMSYS Orgは11月12日、SGLangコンソーシアムの発足を発表した。創設メンバーはNVIDIA、AMD、Intel、Google、Meta、Cloudflare、Modal、RadixArkの8社で、年2回のロードマップ会議などを通じてSGLangのメンテナーと技術的な優先課題を共有し、共同のエンジニアリングを進める。対象領域は最先端モデルのサポート、推論やマルチモーダル処理、分散推論、ハードウェア最適化とされる。",
+    "whyItMatters": "AIの計算量の約3分の2を推論が占めるようになる中、その実行効率を決めるオープンソース基盤に競合する半導体・クラウド各社が共同で関与する体制は、推論コストの低下と特定ベンダーへの依存低減につながりうる。技術判断とコード受け入れの責任は引き続きSGLangのメンテナーが持ち、コンソーシアムは協力の枠組みの発足であって、計画中の最適化がすでに実装されたわけではない。",
+    "sourceName": "Business Wire",
+    "sourceUrl": "https://www.businesswire.com/news/home/20261112052367/en/LMSYS-Org-Launches-SGLang-Consortium-with-NVIDIA-AMD-Intel-Google-Meta-Cloudflare-Modal-and-RadixArk-to-Advance-Open-Source-AI-Inference",
+    "publishedAt": "2026-11-12T19:00:00+00:00",
+    "curatedAt": "2026-11-14",
+    "isSample": false
   }
 ]
