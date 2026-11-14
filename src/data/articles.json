@@ -934,5 +934,83 @@
     "publishedAt": "2026-11-12T19:00:00+00:00",
     "curatedAt": "2026-11-14",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-15-01",
+    "slug": "sdf-salary-increase-law-enacted",
+    "category": "politics",
+    "title": "自衛官の基本給引き上げ法が成立　小泉防衛相「全自衛官の給与が過去最高水準に」",
+    "summary": "全ての年代の自衛官の基本給引き上げなどを盛り込んだ防衛省の職員の給与等に関する法律の改正法が、11月13日の参議院本会議で可決・成立した。高卒で入隊する2士は月額1万800円増の25万300円、一般幹部候補生は1万1300円増の29万9600円となり、転勤に伴う負担を軽くする新たな手当も設けられる。",
+    "whyItMatters": "自衛官の人材確保と定着が課題となる中で、処遇改善を法律で確定させた点が重要だ。小泉防衛相は30代から40代の中核隊員も年収が約20万円以上増え、高卒2士の生涯収入が初めて3億円を超える見込みだと説明した。なお、独自の給与体系の見直しは自衛隊創設以来初めての検討で、年内をめどに取りまとめる方針であり、具体的な制度設計はまだ確定していない。",
+    "sourceName": "Yahoo!ニュース",
+    "sourceUrl": "https://news.yahoo.co.jp/pickup/6602480",
+    "publishedAt": "2026-11-13T23:48:03+09:00",
+    "curatedAt": "2026-11-15",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-15-02",
+    "slug": "japan-probes-takaichi-putin-summit-apec",
+    "category": "international",
+    "title": "政府、高市首相とプーチン大統領の首脳会談を打診　APECに合わせ日本人記者の解放などを協議へ",
+    "summary": "日本政府が高市首相とロシアのプーチン大統領との会談を、来週中国で開かれるAPECに合わせてロシア側に打診したことが分かった。政府関係者によると、会談が実現すれば日本人記者の拘束やJT現地法人を巡る問題について直接懸念を伝え、記者の即時解放を求める考えだ。日ロ首脳の接触が実現すれば、ロシアによるウクライナ侵攻後初めてとなる。",
+    "whyItMatters": "北方領土訪問以降、記者拘束や日系企業への圧力で日ロ関係の悪化が続く中、首脳レベルで事態の悪化を防ぐ接点を作れるかが焦点になる。ただし、これは政府関係者に基づく打診の報道段階であり、会談の実現や日程は確定していない。ロシア側がウクライナ支援や制裁解除を求めてくる可能性も報じられている。",
+    "sourceName": "テレビ朝日ニュース",
+    "sourceUrl": "https://news.tv-asahi.co.jp/news_politics/articles/000547845.html",
+    "publishedAt": "2026-11-14T14:22:11+09:00",
+    "curatedAt": "2026-11-15",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-15-03",
+    "slug": "takaichi-li-qiang-asean-limited-contact",
+    "category": "international",
+    "title": "日中首相、ASEAN関連会議で日程がすれ違い　接触機会は限定的に",
+    "summary": "高市首相と中国の李強首相は15日以降、ASEAN関連首脳会議出席のためフィリピンの首都マニラをそれぞれ訪問するが、両政府発表の日程によると接触の機会は限定的だ。李氏は15日から16日の日程で訪問し16日の中国・ASEAN首脳会議後に帰国する予定で、高市氏が16日にマニラ入りして17日に出席するASEANプラス3首脳会議や東アジアサミットには李氏は欠席する。",
+    "whyItMatters": "日中関係の悪化が続く中で、多国間会議の場でも首脳同士が言葉を交わす機会が乏しいことが改めて示された。関係改善の糸口を探る場として期待されたASEANや、その後のAPECでの接触も見通しが立っておらず、日本の対中外交は当面、接点の確保自体が課題となる。これは両政府発表の日程に基づく見通しであり、現地での非公式な接触の有無はまだ確定していない。",
+    "sourceName": "デイリースポーツ online",
+    "sourceUrl": "https://www.daily.co.jp/society/politics/2026/11/14/0021032942.shtml",
+    "publishedAt": "2026-11-14T08:40:00+09:00",
+    "curatedAt": "2026-11-15",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-15-01",
+    "slug": "openai-chatgpt-wallet-agent-payments",
+    "category": "ai",
+    "title": "OpenAI、エージェント決済「ChatGPT Wallet」を開始　実カード番号を渡さず毎回セキュリティ確認で承認",
+    "summary": "OpenAIは11月13日、AIエージェント「dots」が利用者に代わって購入を完了できるChatGPT Walletを開始した。American Express、Mastercard、Visaと連携し、利用者が商品・金額・カードを確認してFace IDなどのセキュリティ確認で承認すると、決済ネットワークが発行するトークンで支払われ、実際のカード情報はエージェントや店舗に渡らない。開始時は米国の18歳以上のChatGPT Pro契約者に順次提供される。",
+    "whyItMatters": "AIエージェントが調べるだけでなく支払いまで担う「エージェント型コマース」が、カード大手の既存の保護や特典を保った形で実装段階に入った。日本を含む米国外への展開時期は発表されておらず、当面は米国限定の試行で信頼性や加盟店側の対応が検証される段階だ。",
+    "sourceName": "The Statesman",
+    "sourceUrl": "https://www.thestatesman.com/technology/chatgpt-wallet-launched-how-openais-ai-shopping-payments-work-1503662438.html/amp",
+    "publishedAt": "2026-11-14T07:51:25+00:00",
+    "curatedAt": "2026-11-15",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-15-02",
+    "slug": "anthropic-claude-code-projects-coordinator-update",
+    "category": "ai",
+    "title": "Anthropic、Claude Code Projectsのコーディネーターを強化　並行スレッドの進捗をチャットで報告",
+    "summary": "AnthropicはClaude Code Projectsを更新し、作業を振り分けるコーディネーターがプロジェクトチャットで質問に答え、並行して動くスレッドの進捗を能動的に報告するようになった。各スレッドは独立したClaude Codeのクラウドセッションとしてそれぞれのブランチで作業し、結果はプルリクエストなどで統合される。公開ベータはPro、Maxなどの一部プラン向けに順次提供され、TeamとEnterpriseはまだ対象外とされる。",
+    "whyItMatters": "複数のAIエージェントを並行して動かす開発では、進捗確認や待ち状態の把握自体が負担になるため、調整役が能動的に報告する設計は実務の管理コストを下げる可能性がある。一方で並行セッションは利用枠を速く消費する点には注意が必要だ。なお、スレッド共有やリマインダー、/btwや/forkなどの追加機能の一部はAlphaSignalなどによる報告であり、Anthropic自身の発表で全てが確認されたわけではない。",
+    "sourceName": "DEV Community",
+    "sourceUrl": "https://dev.to/delimitter/anthropic-upgrades-claude-code-projects-the-coordinator-now-reports-in-chat-while-parallel-ai-27e5",
+    "publishedAt": "2026-11-14T03:06:29Z",
+    "curatedAt": "2026-11-15",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-15-03",
+    "slug": "deepseek-app-tools-opened-via-api",
+    "category": "ai",
+    "title": "DeepSeek、アプリの検索・ファイル・音声機能をAPIで開放　検索は1000件0.75ドル",
+    "summary": "DeepSeekは11月13日、自社チャットアプリの基盤となっていた機能をAPIで開放した。deepseek-flashモデルではWeb検索、URLの読み取り、PDFやOfficeファイルなどの解析、安全確認を既存のAPI呼び出しの中で使えるほか、Search、Fetch、OCR、音声認識、音声合成は単独のAPIとしても提供される。料金はトークン料金とは別に設定され、検索は1000件あたり0.75ドルとされた。オープンソースのデモクライアントも公開された。",
+    "whyItMatters": "検索や文書解析、音声といったアプリ層の部品を自前で組み立てる必要が減り、低価格なモデルと組み合わせてAIアプリを短期間で構築しやすくなる。公開向けアプリでは安全確認の有効化やコンテンツ管理は開発者側の責任とされており、価格だけでなく運用責任の分担も導入判断の材料になる。",
+    "sourceName": "AI Newsway",
+    "sourceUrl": "https://ainewsway.com/news/deepseek-opens-its-app-tools-to-api-users",
+    "publishedAt": "2026-11-13T23:08:44Z",
+    "curatedAt": "2026-11-15",
+    "isSample": false
   }
 ]
