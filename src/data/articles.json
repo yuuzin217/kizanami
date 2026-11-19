@@ -1324,5 +1324,83 @@
     "publishedAt": "2026-11-18T13:02:43+09:00",
     "curatedAt": "2026-11-19",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-20-01",
+    "slug": "takaichi-tax-cut-early-passage-press-conference",
+    "category": "politics",
+    "title": "高市首相、消費減税法案の「早期成立に全力」と表明　防衛費は財政の持続可能性に配慮",
+    "summary": "高市早苗首相は11月19日、中国・深センでの内外記者会見で、参院で審議中の消費税減税関連法案について「誠実に審議に臨み、早期成立に全力を尽くす」と表明した。今後の防衛費については、財政の持続可能性にも十分配慮しながら議論を進めると述べた。これは首相の発言であり、法案の成立や防衛費の規模が決まったわけではない。",
+    "whyItMatters": "飲食料品の消費税率引下げと支援金を柱とする法案は家計負担に直結し、参院審議と会期末（12月12日）が焦点になる。防衛費の規模と財源をめぐる年末の安保3文書改定議論にもつながるため、財政との両立をどう示すかが日本への影響を左右する。",
+    "sourceName": "時事通信（時事ドットコム）",
+    "sourceUrl": "https://www.jiji.com/jc/article?k=2026111900729&g=use",
+    "publishedAt": "2026-11-19T17:50:00+09:00",
+    "curatedAt": "2026-11-20",
+    "isSample": false
+  },
+  {
+    "id": "politics-2026-11-20-02",
+    "slug": "government-pr-youtuber-no-full-prior-check-diet",
+    "category": "politics",
+    "title": "政府広報に都市伝説系YouTuber起用、政府「過去の発信を全ては事前チェックせず」と国会で答弁",
+    "summary": "安全保障の重要性を説明する政府広報への都市伝説系YouTuber起用をめぐり、政府広報室長は11月19日の国会で、出演者の過去の個別発言について政府として全てを事前にチェックはしていないと答弁した。審査は複数事業者の企画提案をもとに行い、外部有識者を含む審査員が事業者を審査したと説明した。広報企画の取り下げは明言されず、制作準備中として今後の日程への言及も控えた。",
+    "whyItMatters": "政府広報の出演者選定で陰謀論的な発信に公的なお墨付きを与えかねないという指摘が出ており、選定基準と事前確認のあり方が問われる。税金を使う広報の信頼性や、安全保障広報そのものの受け止めにも影響するため、今後の運用見直しの有無が焦点になる。",
+    "sourceName": "日テレNEWS NNN",
+    "sourceUrl": "https://news.ntv.co.jp/category/politics/9cae891de33c4a7a8dfdf6d28c05c01a",
+    "publishedAt": "2026-11-19T13:40:00+09:00",
+    "curatedAt": "2026-11-20",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-20-03",
+    "slug": "apec-declaration-omits-wto-multilateral-trade-second-year",
+    "category": "international",
+    "title": "APEC首脳宣言、WTO・多国間貿易への言及を2年連続で見送り　経済統合の推進は明記",
+    "summary": "中国・深センで開かれたAPEC首脳会議は11月19日、首脳宣言を採択して閉幕した。宣言ではWTOの役割や多角的貿易体制の重要性への言及が2年連続で見送られた一方、アジア太平洋自由貿易圏（FTAAP）構想について「市場主導型で経済統合を引き続き推進していく」と明記した。AIについては表現を「デジタル・新興技術」に置き換える調整が行われた。",
+    "whyItMatters": "多国間貿易体制への支持を宣言で示せなかったことは、自由貿易体制への信頼の揺らぎを映す。輸出依存度の高い日本にとって、FTAAPなど地域統合の行方と、WTO改革へどう関与するかは通商政策の基盤に関わる。高市首相は会見でルールに基づく国際経済秩序の強化とサプライチェーン強靱化を強調した。",
+    "sourceName": "nippon.com（時事通信）",
+    "sourceUrl": "https://www.nippon.com/ja/articles/-/57754",
+    "publishedAt": "2026-11-19T20:53:26+09:00",
+    "curatedAt": "2026-11-20",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-20-01",
+    "slug": "google-gemini-4-neon-launch",
+    "category": "ai",
+    "title": "Google、Gemini 4 Neonを発表　コーディングと知識労働向けに提供開始、入力100万トークン3ドル",
+    "summary": "Googleは11月18日、Gemini 4ファミリーの新モデル「Gemini 4 Neon」を発表した。複雑なソフトウェア開発、知識労働、科学ワークフローで高速なタスク完遂をうたい、価格は入力100万トークン3ドル・出力15ドル、コンテキストは100万トークン。Gemini API（Google AI Studio）、Gemini for business、Google AntigravityとGeminiアプリ（Pro／Ultra加入者）で提供を開始した。ベンチマーク成績はGoogleの発表値である。",
+    "whyItMatters": "最上位モデルに近い性能をより低いタスク単価で使える選択肢が増えると、長時間動くコーディングエージェントや企業ワークフローのコスト設計が変わる。日本企業でもAPIやAntigravity経由で試せるため、既存モデルとの精度・コスト比較が実務の焦点になる。",
+    "sourceName": "Google（blog.google）",
+    "sourceUrl": "https://blog.google/intl/en-in/products/introducing-gemini-4-neon/",
+    "publishedAt": "2026-11-18T21:00:00+00:00",
+    "curatedAt": "2026-11-20",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-20-02",
+    "slug": "anthropic-ipo-priced-83-nasdaq-ant",
+    "category": "ai",
+    "title": "Anthropic、IPO価格を1株83ドルに決定　約813億ドルの大型上場、Nasdaqで「ANT」として取引開始へ",
+    "summary": "Claudeを開発するAnthropicは11月18日、新規株式公開（IPO）の価格を仮条件（70〜78ドル）を上回る1株83ドルに決めたと発表された。Class A普通株9億8000万株で、公開規模は約813億4000万ドルに上る。株式は11月19日にNasdaq Global Select Marketでティッカー「ANT」として取引開始予定で、公開手続きの完了は11月20日の見込みとされる。",
+    "whyItMatters": "AI専業の大手が上場企業になることで、巨額の計算資源投資と収益化の進み具合が四半期開示で検証されるようになる。Claudeを使う企業にとっても、価格・提供体制・長期的な事業継続を判断する材料が増える。なお取引開始直後の初値は未確定で、報道段階の示唆値と混同しない注意が要る。",
+    "sourceName": "The Hindu",
+    "sourceUrl": "https://www.thehindu.com/business/anthropic-raises-81-billion-in-ipo-amid-ai-market-volatility/article71721392.ece",
+    "publishedAt": "2026-11-19T21:41:00+05:30",
+    "curatedAt": "2026-11-20",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-20-03",
+    "slug": "openai-models-amd-gpu-chip-design-ppa-gains",
+    "category": "ai",
+    "title": "OpenAI、自社モデルがAMDの旗艦GPU設計で最大14％のPPA改善と報告　一部は製造向け設計に採用",
+    "summary": "OpenAIは11月18日公開の技術報告で、自社モデルがSystemVerilogのRTLを書き換え、AMDの旗艦GPU IPで電力・性能・面積（PPA）を高度に最適化済みの基準比で最大14％改善したと報告した。一部の変更はAMDが最近製造に送った設計に含まれ、次期CPUでも一桁％の改善をAMDが検証したという。自社推論チップJalapeñoでも標準セル面積の削減が実チップで確認されたとする一方、仕様からの再設計では機能欠落が成績を押し上げる可能性にOpenAI自身が注意を促している。数値はOpenAIの報告値で、AMD独自の数値公表は確認されていない。",
+    "whyItMatters": "AIがAIチップ自体の設計を改善する事例が、実験から製造工程に入った点が重要だ。半導体設計の期間とコストが下がれば、AIインフラ全体の供給と価格にも波及しうる。ただし最大値の内訳や再現条件は未公表で、実務評価には独立した検証を待つ必要がある。",
+    "sourceName": "AI123 NewsHub",
+    "sourceUrl": "https://ai123.com/newshub/18617",
+    "publishedAt": "2026-11-19T07:31:05+00:00",
+    "curatedAt": "2026-11-20",
+    "isSample": false
   }
 ]
