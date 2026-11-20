@@ -1402,5 +1402,83 @@
     "publishedAt": "2026-11-19T07:31:05+00:00",
     "curatedAt": "2026-11-20",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-21-01",
+    "slug": "seki-education-minister-resignation-calls-ldp-tax-bill",
+    "category": "politics",
+    "title": "自民党内に関文科相の辞任論が浮上　減税法案の参院審議への影響に懸念",
+    "summary": "政治資金パーティーに官僚を呼び、企業関係者に政策を説明させた問題をめぐり、自民党内で11月20日、関芳弘文部科学相の辞任論が浮上したと共同通信が報じた。野党は参院への問責決議案の提出を検討しており、関氏は同日の記者会見で「襟を正して職務に全力でまい進し、責任を果たしたい」と強調した。これは辞任が決まった話ではなく、与党内の見方や野党の動きを関係者が語った段階の報道である。",
+    "whyItMatters": "与党が過半数を持たない参院で問責決議案が可決される可能性があり、可決されれば法的拘束力はなくても関氏が関係する国会審議に応じない動きにつながり、高市政権が最重視する消費税減税関連法案の12月上旬成立目標に影響しかねない。首相の人事判断の時期が、政権運営と家計に直結する減税の行方を左右する。",
+    "sourceName": "47NEWS（共同通信）",
+    "sourceUrl": "https://www.47news.jp/15263215.html",
+    "publishedAt": "2026-11-20T21:27:27+09:00",
+    "curatedAt": "2026-11-21",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-21-02",
+    "slug": "takaichi-ukraine-support-unwavering-coalition-message",
+    "category": "international",
+    "title": "高市首相、ウクライナ支援は「揺るぎなく」と有志国会合に書面メッセージ　対ロ制裁の推進も表明",
+    "summary": "高市早苗首相は11月20日、ウクライナを支援する有志国連合が開いた首脳級会合に書面メッセージを寄せ、「日本はウクライナと共にあり、方針に揺るぎはない」と記した。各国と連携して支援と対ロシア制裁を推進する方針を示し、財政支援については各国と連携して検討を進めるとした。具体的な新たな支援額や措置が決まったわけではない。",
+    "whyItMatters": "「力による一方的な現状変更を容認すべきでない」という原則を日本が改めて示したことは、欧州大西洋とインド太平洋の安全保障は不可分だとする日本の立場を裏づける。対ロ制裁の維持とウクライナへの財政支援を今後どの規模で続けるかは、日本の外交姿勢と予算議論の焦点になる。",
+    "sourceName": "日本経済新聞",
+    "sourceUrl": "https://www.nikkei.com/article/DGXZQOUA202MC0Q6A121C2000000/",
+    "publishedAt": "2026-11-20T12:30:00+09:00",
+    "curatedAt": "2026-11-21",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-21-03",
+    "slug": "japan-india-two-plus-two-live-fire-training-loi",
+    "category": "international",
+    "title": "日印2プラス2、自衛隊がインドの射場で初の実弾訓練へ意向書　地対艦ミサイルも対象",
+    "summary": "日本とインドは11月19日、東京で外務・防衛閣僚協議（2プラス2）を開き、自衛隊がインドの射場で地対艦ミサイルを含む実弾訓練を初めて行えるようにする意向書（LOI）の署名を歓迎した。共同声明では、短い予告での二国間・多国間演習など防衛協力の深化や、日本の艦載アンテナ「UNICORN」のインド導入に向けた前進も示された。訓練の具体的な日程や場所が決まったわけではない。",
+    "whyItMatters": "国内で広大な実弾訓練の場所を確保しにくい自衛隊にとって、インドでの訓練機会は運用能力に直結する。両国が輸出規制などによる経済的威圧への懸念を共有する中での防衛協力の深化は、インド太平洋の抑止力だけでなく、日本のサプライチェーンや通商政策にも関わる。",
+    "sourceName": "The Hindu",
+    "sourceUrl": "https://www.thehindu.com/news/national/in-a-first-japanese-forces-will-use-indian-facilities-for-live-fire-training/article71721191.ece",
+    "publishedAt": "2026-11-19T21:49:00+05:30",
+    "curatedAt": "2026-11-21",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-21-01",
+    "slug": "google-gemini-mac-computer-use",
+    "category": "ai",
+    "title": "Google、Mac版Geminiに「コンピュータ操作」を追加　アプリやファイルを横断して作業を代行",
+    "summary": "Googleは11月19日、Mac版Geminiアプリに「computer use」を追加したと発表した。ローカルファイル、デスクトップアプリ、ウェブを横断する複数ステップの作業を、クリックや入力、フォーム記入まで含めて代行し、作業は分離されたバックグラウンドウィンドウで進む。利用者はライブプレビューで進行を確認でき、対象アプリの選択や主要な操作の承認も行える。提供はまず米国で英語版として順次始まる。",
+    "whyItMatters": "AIがチャットで答える段階から、人のパソコン上の実作業を担う段階へ移る転換点であり、反復作業の自動化が個人や企業の働き方を変えうる。一方で、アプリやサイト内の悪意ある指示にエージェントが惑わされるリスクも指摘されており、権限管理と承認の設計が実務上の焦点になる。",
+    "sourceName": "Google（blog.google）",
+    "sourceUrl": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/",
+    "publishedAt": "2026-11-19T17:00:00+00:00",
+    "curatedAt": "2026-11-21",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-21-02",
+    "slug": "openai-performance-factory-codex-chatgpt",
+    "category": "ai",
+    "title": "OpenAI、CodexエージェントでChatGPTの速度低下を自動調査する「Performance Factory」を公開　3か月で1700件超を調査",
+    "summary": "OpenAIは、ChatGPTの性能低下をCodexエージェントが調査し、修正案を提案して本番環境での回復まで確認する内部システム「Performance Factory」を公開した。3か月強で1700件以上の調査を行い、600件以上で根本原因を特定したとされる。修正を実際に取り込む最終判断はエンジニアが行う仕組みで、利用者向けの新機能ではない。調査件数などの数値はOpenAIの公表値である。",
+    "whyItMatters": "大規模サービスの性能障害対応という人手のかかる運用業務を、エージェントが調査から検証まで担う実例であり、AIエージェントの企業内活用が「生成」から「運用」へ広がることを示す。日本の開発現場でも、監視や障害調査へのエージェント適用を検討する具体的な材料になる。",
+    "sourceName": "GIGAZINE",
+    "sourceUrl": "https://gigazine.net/gsc_news/en/20261120-openai-chatgpt-performance-factory",
+    "publishedAt": "2026-11-20T17:09:00+09:00",
+    "curatedAt": "2026-11-21",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-21-03",
+    "slug": "sakana-ai-security-research-group-launch",
+    "category": "ai",
+    "title": "Sakana AI、AI時代のサイバー防御を研究する独立チーム「Security Research Group」を設立",
+    "summary": "東京のSakana AIは11月20日、AIを活用した集合的なサイバー防御と、AIシステム自体の安全性とセキュリティの確保を研究する独立した研究開発チーム「Security Research Group」の設立を発表した。事業活動とは切り離された組織として、研究成果や再現可能なベンチマーク、実践的なガイドラインを公開し、政府や産業界、学術界と連携するとしている。率いるのは梅貝彰大氏と共同創業者でCEOのDavid Ha氏で、具体的な研究成果や提携先は今後の発表待ちである。",
+    "whyItMatters": "AIが脆弱性の発見を加速し、公表される欠陥が修正のペースを上回って増える中、設計段階から欠陥を作らない「予防」と、組織を越えた集合防御を掲げた点が重要だ。人手不足やベンダー依存といった日本の構造課題への処方箋として、今後公開されるベンチマークやガイドラインが実務の判断材料になる。なお同社が挙げるFugu-Cyberのベンチマーク値は同社の公表値であり、独立した検証はこれからである。",
+    "sourceName": "Sakana AI",
+    "sourceUrl": "https://sakana.ai/security-research-group/",
+    "publishedAt": "2026-11-20T00:00:00+09:00",
+    "curatedAt": "2026-11-21",
+    "isSample": false
   }
 ]
