@@ -1558,5 +1558,83 @@
     "publishedAt": "2026-11-21T11:46:17+00:00",
     "curatedAt": "2026-11-22",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-23-01",
+    "slug": "tamaki-seki-minister-censure-motion-worthy",
+    "category": "politics",
+    "title": "国民民主・玉木代表、関文科相は「問責決議案に値する」　参政党も同調の意向",
+    "summary": "国民民主党の玉木雄一郎代表は11月22日、官僚が参加した政治資金パーティー問題をめぐり、関芳弘文部科学相について「参院への問責決議案提出に値する」と熊本市内で記者団に述べた。当初明らかにしていた2件に加え新たに3件あったことを「虚偽答弁だ」と批判し、関氏自ら進退を判断する時に来ていると強調した。参政党の神谷宗幣代表も、決議案が提出されれば賛同する意向を示した。これは各党代表の認識表明であり、問責決議案の提出や可決が決まったわけではない。",
+    "whyItMatters": "決議案提出に必要な野党側の足並みがそろい始めると、与党が過半数を持たない参院で可決される可能性が高まり、消費税減税関連法案など重要法案の審議に影響しかねない。任命権者である高市早苗首相が政治判断を行うかどうかが、12月12日の会期末に向けた政権運営の焦点になる。",
+    "sourceName": "日本経済新聞",
+    "sourceUrl": "https://www.nikkei.com/article/DGXZQOUA220WX0S6A121C2000000/",
+    "publishedAt": "2026-11-22T15:14:09+09:00",
+    "curatedAt": "2026-11-23",
+    "isSample": false
+  },
+  {
+    "id": "politics-2026-11-23-02",
+    "slug": "futenma-burden-reduction-conference-within-year",
+    "category": "politics",
+    "title": "普天間飛行場の負担軽減推進会議、年内に7年ぶり開催へ　木原官房長官が沖縄県知事に伝達",
+    "summary": "木原稔官房長官は11月22日、沖縄県の古謝玄太知事と那覇市内で会談し、米軍普天間飛行場（宜野湾市）を巡り政府と県、市でつくる「普天間飛行場負担軽減推進会議」を年内に開催する方針を伝えた。開かれれば2019年以来となる。古謝氏は基地負担軽減は喫緊の課題だとして早期開催を求めていた。具体的な開催日程は今後、県や市などと調整して決めるとしており、決まったわけではない。",
+    "whyItMatters": "普天間の危険性除去と負担軽減は、沖縄の基地問題で国と県が協議する数少ない公式の枠組みであり、7年ぶりの再開は対話の糸口になる。一方で、会議を開くこと自体と、運用停止など実質的な負担軽減が進むことは別であり、年内の会議で具体的な進展を示せるかが問われる。",
+    "sourceName": "東京新聞（共同通信）",
+    "sourceUrl": "https://www.tokyo-np.co.jp/article/530029",
+    "publishedAt": "2026-11-22T18:01:42+09:00",
+    "curatedAt": "2026-11-23",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-23-03",
+    "slug": "ldp-nuclear-submarine-debate-not-excluded-security-docs",
+    "category": "international",
+    "title": "自民、原潜保有の議論を「排除せず」　安保3文書改定で維新と認識一致、非核三原則の例外明記も選択肢",
+    "summary": "自民党安全保障調査会の大野敬太郎幹事長は11月22日のNHK番組で、安保関連3文書の年内改定を巡り、原子力潜水艦保有の議論を「最初から排除しているわけではない」と述べ、原潜保有を主張する日本維新の会と基本的な認識は一致していると語った。非核三原則の「持ち込ませず」についても、緊急時の例外を明記する案が一つの選択肢だと指摘した。原潜の導入や三原則の見直しが決まったわけではなく、政府素案の段階の議論である。",
+    "whyItMatters": "原潜保有は日本の防衛政策と非核政策の根幹に関わる論点で、与党側が議論自体を排除しない姿勢を示したことは、年末の3文書改定の内容を左右する。立憲民主党など野党の多くは現実的でないとして反対しており、費用や運用体制、周辺国の反応を含めた国会論戦の焦点になる。",
+    "sourceName": "沖縄タイムス（共同通信）",
+    "sourceUrl": "https://www.okinawatimes.co.jp/articles/-/1972012",
+    "publishedAt": "2026-11-22T11:31:30+09:00",
+    "curatedAt": "2026-11-23",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-23-01",
+    "slug": "ibm-microsoft-imagine-enterprise-6000-agents",
+    "category": "ai",
+    "title": "IBMとMicrosoft、6000超の構築済みAIエージェントを備える共同基盤「Imagine Enterprise」を開始",
+    "summary": "IBMとMicrosoftは、6000超の構築済みAIエージェントと統制（ガバナンス）の仕組みを備える共同基盤「Imagine Enterprise」を開始した。IBM Consultingのエージェント資産とMicrosoftのAI・クラウド・ID・セキュリティ技術を組み合わせ、まずは金融、保険、小売を対象とする。エージェントの行動範囲の制限や全行動の記録といった統制機能を前面に出しているが、価格は公表されておらず、製造や公共など他分野への展開も時期未定の計画段階である。",
+    "whyItMatters": "企業のAIエージェント導入が実証実験で止まる主因は、本番業務に触れさせる信頼と統制の不足だとされる。統制を組み込んだ大規模な共同基盤の登場は、エージェントを試験運用から本番運用へ移す動きを加速させる可能性がある一方、費用や初期導入先での成果など、判断材料となる実績はこれから示される。",
+    "sourceName": "Teck Hustlers",
+    "sourceUrl": "https://teckhustlers.com/ibm-and-microsoft-launch-imagine-enterprise-with-6000-prebuilt-ai-agents/",
+    "publishedAt": "2026-11-22T16:00:00+00:00",
+    "curatedAt": "2026-11-23",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-23-02",
+    "slug": "databricks-genie-zeroops-public-beta",
+    "category": "ai",
+    "title": "Databricks、データパイプライン障害を自律調査する「Genie ZeroOps」を公開ベータに　8万件超の障害知見を活用",
+    "summary": "Databricksは、データパイプラインの障害を検知・調査し、修正案のプルリクエスト作成までを行う自律エージェント「Genie ZeroOps」を公開ベータとした。数百社での限定プレビューで観測した8万件超の実際の障害を基に、共有受信箱や通知、カスタム指示、ワンクリックのプルリクエスト作成を追加した。コードやデータを人の承認なしに変更することはない設計で、利用にはワークスペース管理者による有効化が必要である。",
+    "whyItMatters": "パイプライン障害の初動調査はデータエンジニアの負担が大きく、静かに起きるデータ品質の異常は発見も遅れがちだ。監視から原因特定、修正提案までを担う運用特化エージェントの公開ベータは、AIエージェントの活用が生成から運用へ広がる具体例であり、日本のデータ基盤運用でも比較検討の材料になる。",
+    "sourceName": "Databricks",
+    "sourceUrl": "https://www.databricks.com/blog/genie-zeroops-now-public-beta-autonomous-agent-fixes-data-pipelines-lessons-80000-customer",
+    "publishedAt": "2026-11-19T21:30:00+00:00",
+    "curatedAt": "2026-11-23",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-23-03",
+    "slug": "amazon-cairn-agents-monai-label-zero-day",
+    "category": "ai",
+    "title": "AIエージェントが医療画像ソフトのゼロデイを約11分で発見・悪用　Amazonが報告、修正版は未提供",
+    "summary": "Amazonの脅威インテリジェンス部門は、中国と関係するとみる攻撃者がオープンソースの自律ペネトレーションフレームワーク「Cairn」のAIエージェントを使い、医療画像の注釈付けソフト「MONAI Label」の未知の脆弱性（ゼロデイ）を発見して大学のサーバーで管理者権限を得たと報告した。エージェントはAPIの調査から任意ファイル書き込みまでを約11分で行ったとされる。脆弱性はバージョン0.8.5以前に影響し、修正はソースに取り込まれたが、インストール可能な修正版はまだ提供されていない。帰属はAmazonの中程度の確信度による評価であり、患者データへの影響は報じられていない。",
+    "whyItMatters": "攻撃側のAIエージェントが、人手では見落とされがちな研究用ソフトの未知の欠陥を分単位で見つけて悪用した公表事例であり、防御側の対応速度の前提を変える。既定で認証が無効な研究用AIツールを公開状態で動かす運用は危険であり、修正版が出るまでの間は認証有効化やネットワーク分離といった回避策が急務になる。",
+    "sourceName": "SecurityWeek",
+    "sourceUrl": "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/",
+    "publishedAt": "2026-11-21T12:08:50+00:00",
+    "curatedAt": "2026-11-23",
+    "isSample": false
   }
 ]
