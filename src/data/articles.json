@@ -1636,5 +1636,83 @@
     "publishedAt": "2026-11-21T12:08:50+00:00",
     "curatedAt": "2026-11-23",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-24-01",
+    "slug": "seki-education-minister-censure-motion-talks-nov24",
+    "category": "politics",
+    "title": "文科相問責案、24日にも協議　野党が辞任要求を強める",
+    "summary": "野党各党は、政治資金パーティーに官僚を呼び企業関係者に政策を説明させた関芳弘文部科学相について、24日にも参院での問責決議案提出に向けて協議し、辞任要求を強める方針だ。野党の参院幹部は23日、共同通信の取材に「提出することになるだろう。あとはタイミングだ」と語った。関氏は辞任を否定し、高市政権幹部も「法的に問題ない」として説明責任を果たすよう求めるにとどめている。なお、問責決議案の提出自体はまだ決まっておらず、24日以降の野党間協議の結果次第である。",
+    "whyItMatters": "参院は与党少数で問責決議案が可決される可能性があり、可決されれば国会審議の停滞も懸念される。自民党内にも関氏の早期辞任が望ましいとの声があり、今国会の最重要法案とされる消費税減税関連法案の参院審議への影響が焦点になる。閣僚の進退と重要法案の行方が連動する展開だ。",
+    "sourceName": "共同通信（47NEWS）",
+    "sourceUrl": "https://www.47news.jp/15274349.html",
+    "publishedAt": "2026-11-23T18:23:00+09:00",
+    "curatedAt": "2026-11-24",
+    "isSample": false
+  },
+  {
+    "id": "politics-2026-11-24-02",
+    "slug": "disaster-hq-outside-tokyo-area-sub-capital-bcp",
+    "category": "politics",
+    "title": "災害対策本部は東京圏以外に設置へ検討　副首都など、首都直下地震に備え",
+    "summary": "首都直下地震が発生した際の国の緊急災害対策本部について、政府は「副首都」を含めた東京圏以外への設置を検討する方針を固めた。関係者が23日明らかにした。政府の業務継続計画（BCP）を近く改定し、代替拠点の検討を盛り込む方向で、現行の中央合同庁舎8号館、防衛省、立川広域防災基地という代替拠点は維持する。なお、具体的な代替拠点の場所はまだ決まっておらず、まず検討方針を盛り込み、副首都設置の動きを踏まえて再改定する2段階の進め方とされる。",
+    "whyItMatters": "官邸など行政中枢が被災する想定を超える被害でも政府機能を止めないための備えで、防災体制と副首都構想の議論が具体化する一歩になる。代替拠点の選定は地方自治体やインフラ整備にも関わるため、今後のBCP改定と副首都論議の行方が注目される。",
+    "sourceName": "共同通信（東京新聞デジタル）",
+    "sourceUrl": "https://www.tokyo-np.co.jp/article/530195?rct=politics",
+    "publishedAt": "2026-11-23T21:01:00+09:00",
+    "curatedAt": "2026-11-24",
+    "isSample": false
+  },
+  {
+    "id": "economy-2026-11-24-03",
+    "slug": "japan-defense-spending-vs-tax-cut-budget-talks",
+    "category": "economy",
+    "title": "防衛費と消費税減税が年末予算で綱引き　5年で70〜80兆円の見積もりに財政制約",
+    "summary": "日本の年末の予算編成で、消費税減税と防衛費増額のどちらを優先するかが難しい選択として浮上している。防衛省は2027〜2031年度の5年間で70兆〜80兆円と見積もる一方、財政制約への配慮から50兆〜60兆円の範囲へ引き下げる議論が進んでいると報じられた。高市首相は防衛費について「財政の持続可能性に十分配慮しながら議論を進める」と述べ、金額ありきではない姿勢を示した。なお、防衛費の最終規模はまだ決まっておらず、与党や防衛当局との協議を経て首相が判断する段階にある。",
+    "whyItMatters": "食料品の消費税率を8％から1％へ下げる措置には約10兆円が必要とされ、防衛費の規模と財源を奪い合う構図になっている。防衛装備の調達量や国内防衛産業の投資計画にも影響し得るため、12月中旬に予定される安保3文書改定とあわせて、年末予算の最大の焦点の一つになる。",
+    "sourceName": "Nikkei Asia",
+    "sourceUrl": "https://asia.nikkei.com/politics/japan-s-defense-spending-pitted-against-sales-tax-cut-in-budget-tug-of-war",
+    "publishedAt": "2026-11-23T20:49:44+00:00",
+    "curatedAt": "2026-11-24",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-24-01",
+    "slug": "anthropic-enterprise-frontier-safeguards-zdr-beta",
+    "category": "ai",
+    "title": "Anthropic、ゼロデータ保持と両立する「Enterprise Frontier Safeguards」を公開ベータに",
+    "summary": "Anthropicは、企業向けの安全対策「Enterprise Frontier Safeguards（EFS）」を公開ベータとして提供し始めた。最先端モデルではプロンプトと応答を30日間保持する方針だったが、EFSではそのデータを企業自身のクラウドストレージに置き、Anthropic側の自動監視が複数リクエストにまたがる悪用パターンを検出する仕組みにする。100社超の顧客と開発し、Bridgewater、Salesforce、Stripeなどが非公開ベータで評価してきたとされる。",
+    "whyItMatters": "データを保持されたくない規制の厳しい企業でも、最先端モデルと悪用監視を両立できる道が広がる。AI導入のボトルネックであるデータ保持と安全性監視のトレードオフに対する、業界の実務的な解の一つになる。",
+    "sourceName": "Engadget",
+    "sourceUrl": "https://www.engadget.com/2325684/anthropic-softens-its-data-retention-policy-for-mythos-and-fable-model-use/",
+    "publishedAt": "2026-11-23T20:02:30+00:00",
+    "curatedAt": "2026-11-24",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-24-02",
+    "slug": "openai-openworks-local-experts-small-businesses",
+    "category": "ai",
+    "title": "OpenAI、地元AI専門家が中小企業を無料支援する「OpenWorks」を開始　米20地域で試験運用",
+    "summary": "OpenAIは11月23日、地元のAI専門家に資金を提供し、中小企業の経営者を直接支援するプログラム「OpenWorks」を発表した。専門家（パートナー）には月最大8,000ドルの活動費が支払われ、参加企業は個別支援とChatGPT Businessの3か月無料利用を受けられる。まずは米国の20の地域・コミュニティで試験運用し、飲食、小売、サービス、製造などの独立系中小企業が対象とされる。",
+    "whyItMatters": "AI活用の壁はツールの性能だけでなく、現場に合わせた導入支援の不足にある。専門家が対面で伴走するモデルが広がれば、中小企業のAI導入の進め方や、AI企業の普及戦略の形が変わる可能性がある。",
+    "sourceName": "Crypto Briefing",
+    "sourceUrl": "https://cryptobriefing.com/openai-launches-openworks-small-businesses/",
+    "publishedAt": "2026-11-23T19:02:27+00:00",
+    "curatedAt": "2026-11-24",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-24-03",
+    "slug": "deepmind-gemini-agents-verified-quantum-algorithms",
+    "category": "ai",
+    "title": "Google DeepMind、Geminiエージェントチームと形式検証で量子アルゴリズムを高速化　arcsinで290倍",
+    "summary": "Google DeepMindとGoogle Quantum AIは、Gemini 4のエージェントチームに既知の量子アルゴリズムを改善させ、各成果を定理証明支援系Leanで形式検証した研究を発表した。慣性閉じ込め核融合の計算コストを11.8倍下げ、量子ビット数を5,650から4,338へ削減したほか、arcsinルーチンで290倍の高速化を報告した。Leanライブラリや問題仕様、検証済み解法はGitHubで公開される。なお、成果はプレプリント段階で査読は未了であり、改善後も初期の誤り耐性量子コンピュータの資源を超えると研究側も明記している。",
+    "whyItMatters": "AIエージェントが科学計算の設計を担い、形式検証で正しさを担保する進め方が、核融合や創薬につながる量子シミュレーションで具体的な成果を示した。エージェント活用が文章生成を超え、検証可能な科学研究へ広がる例になる。",
+    "sourceName": "Crypto Briefing",
+    "sourceUrl": "https://cryptobriefing.com/google-deepmind-ai-agents-verified-quantum-algorithms/",
+    "publishedAt": "2026-11-23T17:03:43+00:00",
+    "curatedAt": "2026-11-24",
+    "isSample": false
   }
 ]
