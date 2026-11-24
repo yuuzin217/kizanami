@@ -1714,5 +1714,83 @@
     "publishedAt": "2026-11-23T17:03:43+00:00",
     "curatedAt": "2026-11-24",
     "isSample": false
+  },
+  {
+    "id": "politics-2026-11-25-01",
+    "slug": "seki-censure-motion-decided-nov24",
+    "category": "politics",
+    "title": "野党6党、関文科相の問責決議案提出を決定　政府は続投方針を崩さず",
+    "summary": "参院の野党6党国対委員長は11月24日、政治資金パーティーに政府職員を出席させていた関芳弘文部科学相に対する問責決議案を提出することを決めた。提出時期は慎重に判断するとし、関氏が辞任しなければ消費税減税関連法案などの審議に慎重に対応することでも一致した。前日までの「協議」段階から「提出決定」へ進んだもので、関氏と高市首相は辞任を否定し続投方針を示している。問責案自体はまだ提出・採決されておらず、可否は未確定である。",
+    "whyItMatters": "参院で問責案が提出・可決されれば国会審議の停滞につながりかねず、最重要法案とされる消費税減税関連法案の審議日程にも影響する。閣僚の進退を巡る与野党攻防が、年末の法案・予算審議全体の焦点になる。",
+    "sourceName": "nippon.com（時事通信）",
+    "sourceUrl": "https://www.nippon.com/ja/articles/-/57898",
+    "publishedAt": "2026-11-24T19:37:39+09:00",
+    "curatedAt": "2026-11-25",
+    "isSample": false
+  },
+  {
+    "id": "politics-2026-11-25-02",
+    "slug": "house-seat-reduction-experts-oppose-vote-proposal",
+    "category": "politics",
+    "title": "衆院定数31削減、参考人4人全員が否定的　与党の26日採決提案を野党が拒否",
+    "summary": "衆院政治改革特別委員会は11月24日、衆院比例代表定数を31削減する法案の参考人質疑を行い、出席した有識者4人全員が根拠が乏しいなどとして否定的な見解を示した。同委理事会は26日の質疑を決めたが、与党が提案した同日中の採決には野党が審議不十分として応じなかった。法案の成立や採決日程はまだ決まっていない。",
+    "whyItMatters": "議員定数は選挙制度と民意の反映の根幹に関わり、削減の根拠や人口基準の置き方自体が問われている。26日以降の審議で与野党の対立が深まれば、今国会の政治改革論議全体の行方を左右する。",
+    "sourceName": "時事通信（Infoseekニュース）",
+    "sourceUrl": "https://news.infoseek.co.jp/article/jiji_2026112400876/",
+    "publishedAt": "2026-11-24T18:07:09+09:00",
+    "curatedAt": "2026-11-25",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-25-03",
+    "slug": "japan-icc-contribution-advance-payment-2027",
+    "category": "international",
+    "title": "日本、ICC分担金2027年分を年内に前倒し拠出へ　高市首相が赤根所長に表明",
+    "summary": "高市早苗首相は11月24日、国際刑事裁判所（ICC）の赤根智子所長と首相官邸で面会し、2027年分の日本の分担金を年内に全額前倒しで支払う方針を伝えた。米トランプ政権がICCと赤根氏を制裁対象に指定し、本格発動まで180日の猶予がある中で、最大拠出国として組織維持を支える狙いがある。日本は2026年に全体の約15％に当たる約46億円を負担しており、27年分も同程度が見込まれる。",
+    "whyItMatters": "法の支配を掲げる日本が、米中ロの圧力が強まるICCを資金面で支える姿勢を具体化した動きで、他の締約国の前倒し拠出を促す効果も期待される。一方で米国との関係への配慮も必要で、今後の締約国会議や日米協議の行方が注目される。",
+    "sourceName": "朝日新聞",
+    "sourceUrl": "https://www.asahi.com/articles/ASVCS2Q0JVCSUTFK013M.html",
+    "publishedAt": "2026-11-24T20:14:42+09:00",
+    "curatedAt": "2026-11-25",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-25-01",
+    "slug": "anthropic-claude-ship-pr-agents-beta",
+    "category": "ai",
+    "title": "Anthropic、PRのレビュー・修正・承認を担う「Claude Ship」をベータ開始",
+    "summary": "Anthropicは、プルリクエストのレビュー、修正、承認を担うエージェント群「Claude Ship」をベータとして開始した。既存のCode Reviewに、CI失敗や競合への対応を行うPR Stewardと、チームが書いたポリシーファイルに基づいて定型的な変更を承認できるClaude Approvalsを組み合わせる。対象はGitHubを使うClaude Team／Enterpriseプランで、Anthropicは承認機能はまず観察のみのモードで使うよう勧めている。",
+    "whyItMatters": "AIがコードを書く速度にレビューが追いつかないという開発現場のボトルネックに対し、承認権限の一部までエージェントに委ねる設計が登場した。ポリシーで委任範囲を制御する方式が広がれば、ソフトウェア開発の分業と責任の置き方が変わる可能性がある。",
+    "sourceName": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+    "publishedAt": "2026-11-23T22:05:50+00:00",
+    "curatedAt": "2026-11-25",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-25-02",
+    "slug": "openai-cisco-shirudo-linux-shield",
+    "category": "ai",
+    "title": "OpenAIとCisco、パッチ前にLinuxを守るオープンソース「Shirudo」を公開",
+    "summary": "OpenAIとCiscoは、AIエージェントがLinuxの脆弱性悪用を一時的に防ぐ「シールド」を作るオープンソースのランタイム「Shirudo」を公開した。eBPFでサービスを止めずにカーネルの挙動を変え、Codexが生成したシールドが稼働中のElasticsearchへのJava4Shell攻撃を止めた試験結果も示された。なおShirudoはプレリリース段階で本番利用向けではなく、特定のカーネル機能やTPM 2.0などが必要とされる。",
+    "whyItMatters": "AIで脆弱性発見と悪用が高速化する中で、パッチ適用までの空白期間をAIで守る防御側の具体策になる。オープンソースで検証可能にした点も含め、インフラ運用やセキュリティ実務での評価が進むかが焦点になる。",
+    "sourceName": "SecurityWeek",
+    "sourceUrl": "https://www.securityweek.com/openai-cisco-unveil-open-source-tool-to-shield-unpatched-linux-systems/",
+    "publishedAt": "2026-11-24T12:20:41+00:00",
+    "curatedAt": "2026-11-25",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-25-03",
+    "slug": "amazon-decart-dos-trainium-deal",
+    "category": "ai",
+    "title": "Amazon、DecartのAI最適化技術を取得へ　Trainium強化、報道では約75億ドル",
+    "summary": "Amazonは、イスラエルのAI企業Decartの最適化技術「Decart Optimization Stack（DOS）」を取得し、創業者ら研究・開発チームを迎え入れることで合意したと発表した。DOSはAIモデルをNvidiaやAmazon、Googleなど異なるチップ上で効率よく動かすソフトウェアで、自社チップTrainiumの外部販売に向けた強化とみられる。なお、約75億ドルという金額はBloomberg報道によるものでAmazonは条件を公表しておらず、取引完了には規制当局の承認など通常の完了条件が残る。",
+    "whyItMatters": "AIチップ競争がハードウェアだけでなく、モデルを効率よく動かす最適化ソフトウェアの争奪戦になっていることを示す大型取引だ。Trainiumの競争力が上がれば、クラウドのAI推論コストやNvidia依存の構図にも影響し得る。",
+    "sourceName": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/",
+    "publishedAt": "2026-11-23T09:14:00-08:00",
+    "curatedAt": "2026-11-25",
+    "isSample": false
   }
 ]
