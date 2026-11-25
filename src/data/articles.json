@@ -1792,5 +1792,83 @@
     "publishedAt": "2026-11-23T09:14:00-08:00",
     "curatedAt": "2026-11-25",
     "isSample": false
+  },
+  {
+    "id": "economy-2026-11-26-01",
+    "slug": "second-supplementary-budget-no-new-deficit-bonds-tax-upside",
+    "category": "economy",
+    "title": "第2次補正予算、新たな赤字国債は発行せず　税収上振れ分で対応する方針",
+    "summary": "今年度の第2次補正予算案について、政府は新たな赤字国債を発行せず、数兆円程度と見込まれる税収の上振れ分などで対応する方針であることがJNNの取材で分かった。高市首相は前日に編成を指示し、災害対応など真に必要なものに限定する考えを示している。なお、これは取材に基づく方針報道であり、補正予算案そのものはまだ閣議決定・成立していない。",
+    "whyItMatters": "赤字国債に頼らない編成が実現すれば、補正予算依存からの脱却を掲げる政権の財政姿勢を示す一方、規模は小さく抑えられる。熊本地震などの復旧費や公務員給与の引き上げがどこまで盛り込まれるか、年末の当初予算案と合わせた全体像が焦点になる。",
+    "sourceName": "TBS NEWS DIG",
+    "sourceUrl": "https://newsdig.tbs.co.jp/articles/-/3109645",
+    "publishedAt": "2026-11-25T13:16:20+09:00",
+    "curatedAt": "2026-11-26",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-26-02",
+    "slug": "security-three-docs-economic-security-ai-sovereignty",
+    "category": "international",
+    "title": "安保3文書の経済安保概要、AIで「米中に次ぐ立ち位置」　AI主権と社会全体の強靱性を明記へ",
+    "summary": "年末に改定する安全保障関連3文書のうち、国家安全保障戦略に盛り込む経済安保分野の概要が25日判明した。インド太平洋で「信頼できる」AIの経済圏構築を主導し、AI分野で米中に次ぐ立ち位置を狙う方針や、他国への過度な依存を抑える「AI主権」の確立、社会全体の強靱性を高める考え方を明記した。政府が同日の自民党の合同会議に示し、おおむね了承された。正式な改定文書はまだ決定していない。",
+    "whyItMatters": "経済・技術力を外交・防衛力の基盤と位置づけることで、重要鉱物の輸出規制のような「経済の武器化」への対応や、フィジカルAIなどへの重点投資が今後の予算や産業政策に直結する。年末の正式改定で、防衛費の規模や具体策とどう整合させるかが問われる。",
+    "sourceName": "nippon.com（時事通信）",
+    "sourceUrl": "https://www.nippon.com/ja/articles/-/57982",
+    "publishedAt": "2026-11-25T16:03:22+09:00",
+    "curatedAt": "2026-11-26",
+    "isSample": false
+  },
+  {
+    "id": "international-2026-11-26-03",
+    "slug": "japan-singapore-defense-ministers-naval-drills",
+    "category": "international",
+    "title": "日シンガポール防衛相が会談、海軍との共同訓練を継続　潜水艦救難訓練の検討でも合意",
+    "summary": "小泉進次郎防衛相は25日、防衛省内でシンガポールのチャン国防相と会談し、海上自衛隊と同国海軍による共同訓練を継続して実施すると一致した。海上交通路（シーレーン）の安定が重要だとの認識を共有し、潜水艦救難訓練に向けた検討を進めることでも合意した。小泉氏は年内に予定する安保関連3文書の改定についても説明した。",
+    "whyItMatters": "シンガポールはマラッカ海峡に面し、日本のエネルギーや物資の輸送路の要衝にある。同国との訓練や救難協力の積み重ねは、有事だけでなく災害や事故の際の対応力にもつながり、同志国との連携を広げる動きの一環として注目される。",
+    "sourceName": "日本経済新聞",
+    "sourceUrl": "https://www.nikkei.com/article/DGXZQOUA256WE0V21C26A1000000/",
+    "publishedAt": "2026-11-25T19:21:08+09:00",
+    "curatedAt": "2026-11-26",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-26-01",
+    "slug": "openai-gpt-6-2-protein-design-binders",
+    "category": "ai",
+    "title": "OpenAI、GPT-6.2でタンパク質設計　5標的322個中35個が結合陽性、専用モデルの併用も明記",
+    "summary": "OpenAIは11月24日（米国時間）、GPT-6系モデルが推論とコード生成でタンパク質を設計できると発表した。研究パートナーのOnavaと行った実験では、5種類の標的に結合する小型タンパク質322個のうち35個（10.9％）が結合陽性だった。一方、結果の多くは社内の研究用モデルによるもので、候補の絞り込みには専用モデルも使ったと同社は注意点を挙げている。",
+    "whyItMatters": "汎用モデルが創薬の入口であるタンパク質設計でも実証を進めたことで、研究開発へのAI活用の範囲が広がる可能性を示した。ただし、結合は有用性の一段階にすぎず、特異性や安全性、有効性は未検証であり、悪用リスクへの対策とあわせて今後の検証が欠かせない。",
+    "sourceName": "ビジネス＋IT（Yahoo!ニュース）",
+    "sourceUrl": "https://news.yahoo.co.jp/articles/823e70d5aa33142c55bf41282058de3bd927b291",
+    "publishedAt": "2026-11-25T10:55:06+09:00",
+    "curatedAt": "2026-11-26",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-26-02",
+    "slug": "google-workspace-mcp-servers-cli-ga-2027-mandate",
+    "category": "ai",
+    "title": "Google、WorkspaceのMCPサーバーとCLIを正式提供　AIエージェントは2027年2月からMCP経由が必須に",
+    "summary": "Googleは11月24日、GmailやDrive、Calendarなどに対応するWorkspaceのMCPサーバーと公式CLIを正式提供（GA）したと公式ブログで発表した。AIエージェントがWorkspaceデータへアクセスする際はREST APIの直接利用ではなくMCPを使うことが求められ、技術的な適用は2027年2月1日に始まる。利用枠はStandardとScaledの2段階とし、Scaledの課金は2027年4月1日から始まる。",
+    "whyItMatters": "業務データへのエージェント接続が公式の管理された経路に統一されることで、権限管理や監査、利用量の見通しが立てやすくなる。一方、REST APIを直接使う既存のエージェントは移行が必要で、開発チームはOAuthクライアントの区分や課金開始時期を含めた対応計画を早めに立てる必要がある。",
+    "sourceName": "Dataconomy",
+    "sourceUrl": "https://dataconomy.com/2026/11/25/google-mandates-mcp-for-workspace-ai-agents-from-february/",
+    "publishedAt": "2026-11-25T10:22:16+01:00",
+    "curatedAt": "2026-11-26",
+    "isSample": false
+  },
+  {
+    "id": "ai-2026-11-26-03",
+    "slug": "fujitsu-openai-ai-cyber-defense-service",
+    "category": "ai",
+    "title": "富士通、先端AIを使うサイバー防御サービスを開始　脆弱性の発見から修正提示・再診断まで支援",
+    "summary": "富士通は25日、米OpenAIの先端AIを活用したサイバー防御の新サービスを開始したと発表した。顧客企業のシステムの脆弱性を発見し、具体的な修正方法の提示や再診断までを支援する。OpenAIが9月に立ち上げたサイバー防御の連携プログラムに参画して先端AIの利用許可を得ており、富士通の脆弱性診断システムと組み合わせる。",
+    "whyItMatters": "AIを悪用した攻撃が増える中、防御側も先端AIで診断の速度と精度を上げる動きが国内大手でも本格化した。疑似攻撃やソースコード診断で攻撃者に突かれやすい部分を早期に見つけられるかが、企業のセキュリティ運用の実務に直結する。",
+    "sourceName": "47NEWS（共同通信）",
+    "sourceUrl": "https://www.47news.jp/15285327.html",
+    "publishedAt": "2026-11-25T18:19:48+09:00",
+    "curatedAt": "2026-11-26",
+    "isSample": false
   }
 ]
