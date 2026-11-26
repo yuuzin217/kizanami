@@ -85,7 +85,9 @@ const base = import.meta.env.BASE_URL;
   const ROTATE_DEG_PER_PX = 0.12;
   const ROTATE_DEG_MAX = 12;
   const EXIT_MS = 280;
-  const RETURN_MS = 250;
+  const INSERT_SLIDE_MS = 250;
+  const PULL_OUT_MS = 200;
+  const PULL_LAND_MS = 250;
   const SWIPE_WIDTH_RATIO = 0.28;
   const SWIPE_MIN_PX = 64;
 
@@ -124,6 +126,8 @@ const base = import.meta.env.BASE_URL;
     let hiddenPause = document.hidden;
     let dragPause = false;
     let animating = false;
+    let inserting = false;
+    let finalizeInsert: (() => void) | null = null;
 
     let activeCard: HTMLAnchorElement | null = null;
     let activePointerId: number | null = null;
@@ -138,11 +142,17 @@ const base = import.meta.env.BASE_URL;
         'is-dragging',
         'is-exiting',
         'is-snap-back',
-        'is-returning',
+        'is-offset',
+        'is-sliding',
+        'is-landing-text',
       );
       card.style.removeProperty('--dx');
       card.style.removeProperty('--dy');
       card.style.removeProperty('--dr');
+      card.style.removeProperty('--ix');
+      card.style.removeProperty('--iy');
+      card.style.removeProperty('--ir');
+      card.style.removeProperty('--slide-ms');
       card.style.removeProperty('opacity');
     };
 
@@ -200,7 +210,86 @@ const base = import.meta.env.BASE_URL;
       !hiddenPause &&
       !dragPause &&
       !animating &&
+      !inserting &&
       !motionQuery.matches;
+
+    const runFinalizeInsert = () => {
+      if (finalizeInsert) {
+        const fn = finalizeInsert;
+        finalizeInsert = null;
+        fn();
+      }
+    };
+
+    const slideOffsetToPose = (
+      card: HTMLAnchorElement,
+      gen: number,
+      onComplete: () => void,
+    ) => {
+      let done = false;
+      const onDone = (event?: Event) => {
+        if (
+          event instanceof TransitionEvent &&
+          (event.target !== card || event.propertyName !== 'transform')
+        ) {
+          return;
+        }
+        if (done) return;
+        done = true;
+        card.removeEventListener('transitionend', onDone);
+        if (gen !== opGeneration) return;
+        card.classList.remove('is-sliding');
+        card.classList.remove('is-offset');
+        card.style.removeProperty('--ix');
+        card.style.removeProperty('--iy');
+        card.style.removeProperty('--ir');
+        card.style.removeProperty('--slide-ms');
+        onComplete();
+      };
+      void card.offsetWidth;
+      card.classList.add('is-sliding');
+      card.classList.remove('is-offset');
+      card.addEventListener('transitionend', onDone);
+      const ms = Number.parseInt(
+        card.style.getPropertyValue('--slide-ms') || String(INSERT_SLIDE_MS),
+        10,
+      );
+      window.setTimeout(onDone, ms + 80);
+    };
+
+    const slidePoseToOffset = (
+      card: HTMLAnchorElement,
+      gen: number,
+      ix: number,
+      iy: number,
+      ir: number,
+      slideMs: number,
+      onComplete: () => void,
+    ) => {
+      let done = false;
+      const onDone = (event?: Event) => {
+        if (
+          event instanceof TransitionEvent &&
+          (event.target !== card || event.propertyName !== 'transform')
+        ) {
+          return;
+        }
+        if (done) return;
+        done = true;
+        card.removeEventListener('transitionend', onDone);
+        if (gen !== opGeneration) return;
+        card.classList.remove('is-sliding');
+        onComplete();
+      };
+      card.classList.add('is-sliding');
+      card.style.setProperty('--slide-ms', `${slideMs}ms`);
+      card.style.setProperty('--ix', `${ix}px`);
+      card.style.setProperty('--iy', `${iy}px`);
+      card.style.setProperty('--ir', `${ir}deg`);
+      card.classList.add('is-offset');
+      card.addEventListener('transitionend', onDone);
+      window.setTimeout(onDone, slideMs + 80);
+    };
 
     const clearTimer = () => {
       if (intervalId !== undefined) {
@@ -232,55 +321,65 @@ const base = import.meta.env.BASE_URL;
 
     const advanceFront = (delta: number) => {
       const target = (frontIndex + delta + cards.length) % cards.length;
-      peelTo(target, delta < 0 ? { fadeOnly: true } : {});
+      if (delta < 0) {
+        pullTo(target);
+      } else {
+        peelTo(target);
+      }
     };
 
-    const fadeCardInAtDeck = (
-      card: HTMLAnchorElement,
-      gen: number,
-      onComplete: () => void,
-    ) => {
+    const pullTo = (targetIndex: number) => {
+      runFinalizeInsert();
+      if (animating) return;
+      if (targetIndex === frontIndex) return;
+
+      const afterPull = () => {
+        syncTimer();
+      };
+
       if (motionQuery.matches) {
-        onComplete();
+        applyFront(targetIndex);
+        afterPull();
         return;
       }
-      let done = false;
-      const onDone = (event?: Event) => {
-        // Only the card's own opacity transition completes the fade-in.
-        // A transitionend left over from the exit (transform) or bubbled
-        // from a child must not finish it early.
-        if (
-          event instanceof TransitionEvent &&
-          (event.target !== card || event.propertyName !== 'opacity')
-        ) {
-          return;
-        }
-        if (done) return;
-        done = true;
-        card.removeEventListener('transitionend', onDone);
+
+      animating = true;
+      syncTimer();
+
+      const card = cards[targetIndex];
+      const gen = opGeneration;
+      const pullIx = Math.max(120, card.offsetWidth * 0.5);
+      const pullIr = 6;
+
+      slidePoseToOffset(card, gen, pullIx, 0, pullIr, PULL_OUT_MS, () => {
         if (gen !== opGeneration) return;
-        card.classList.remove('is-returning');
-        card.style.removeProperty('opacity');
-        onComplete();
-      };
-      card.classList.add('is-returning');
-      card.style.opacity = '0';
-      void card.offsetWidth;
-      card.style.removeProperty('opacity');
-      card.addEventListener('transitionend', onDone);
-      window.setTimeout(onDone, RETURN_MS + 80);
+
+        applyFront(targetIndex);
+        card.style.setProperty('--ix', `${pullIx}px`);
+        card.style.setProperty('--iy', '0px');
+        card.style.setProperty('--ir', `${pullIr}deg`);
+        card.style.setProperty('--slide-ms', `${PULL_LAND_MS}ms`);
+        card.classList.add('is-offset', 'is-landing-text');
+
+        slideOffsetToPose(card, gen, () => {
+          if (gen !== opGeneration) return;
+          card.classList.remove('is-landing-text');
+          animating = false;
+          afterPull();
+        });
+      });
     };
 
     const peelTo = (
       targetIndex: number,
       options: {
-        fadeOnly?: boolean;
         exitDx?: number;
         exitDy?: number;
         exitDr?: number;
         fromDrag?: boolean;
       } = {},
     ) => {
+      runFinalizeInsert();
       if (animating) return;
       if (targetIndex === frontIndex) return;
 
@@ -317,10 +416,37 @@ const base = import.meta.env.BASE_URL;
         clearDragVisual(returnedCard);
         applyFront(targetIndex);
 
-        fadeCardInAtDeck(returnedCard, gen, () => {
-          if (gen !== opGeneration) return;
+        const exitSign = exitX >= 0 ? 1 : -1;
+        const insertIx = -exitSign * Math.max(120, returnedCard.offsetWidth * 0.5);
+        const insertIr = -exitSign * 6;
+
+        returnedCard.style.setProperty('--ix', `${insertIx}px`);
+        returnedCard.style.setProperty('--iy', '0px');
+        returnedCard.style.setProperty('--ir', `${insertIr}deg`);
+        returnedCard.style.setProperty('--slide-ms', `${INSERT_SLIDE_MS}ms`);
+        returnedCard.classList.add('is-offset');
+
+        inserting = true;
+
+        let insertDone = false;
+        const finishInsert = () => {
+          if (insertDone) return;
+          insertDone = true;
+          inserting = false;
+          finalizeInsert = null;
           animating = false;
           afterPeel();
+        };
+
+        finalizeInsert = () => {
+          if (gen !== opGeneration) return;
+          clearDragVisual(returnedCard);
+          finishInsert();
+        };
+
+        slideOffsetToPose(returnedCard, gen, () => {
+          if (gen !== opGeneration) return;
+          finishInsert();
         });
       };
 
@@ -347,12 +473,10 @@ const base = import.meta.env.BASE_URL;
         exitY = options.exitDy;
         exitDr = options.exitDr;
       } else {
-        const sign = options.fadeOnly ? 1 : -1;
-        exitX = options.fadeOnly
-          ? sign * 48
-          : sign * Math.max(window.innerWidth * 0.55, swipeThreshold(exitCard) * 2);
+        const sign = -1;
+        exitX = sign * Math.max(window.innerWidth * 0.55, swipeThreshold(exitCard) * 2);
         exitY = exitX * 0.12;
-        exitDr = options.fadeOnly ? sign * 4 : sign * 8;
+        exitDr = sign * 8;
       }
 
       exitCard.classList.remove('is-dragging');
@@ -425,6 +549,7 @@ const base = import.meta.env.BASE_URL;
     };
 
     const onPointerDown = (event: PointerEvent) => {
+      runFinalizeInsert();
       if (animating) return;
       if (activeCard) return;
       if (event.button !== 0) return;
@@ -619,6 +744,8 @@ const base = import.meta.env.BASE_URL;
 
     const restart = () => {
       opGeneration++;
+      finalizeInsert = null;
+      inserting = false;
       clearAllDragVisuals();
       animating = false;
       dragPause = false;

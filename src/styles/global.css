@@ -45,7 +45,9 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .fan-card.is-front.is-dragging,.fan-card.is-front.is-snap-back{z-index:15!important;transition:none!important}
 .fan-card.is-front.is-exiting{z-index:15!important;transition:transform .28s cubic-bezier(.4,0,.9,.35)!important}
 .fan-card.is-front.is-snap-back{transition:transform .45s cubic-bezier(.34,1.4,.64,1)!important}
-.fan-card.is-returning{transition:opacity .25s ease}
+.fan-card.is-sliding{transition:transform var(--slide-ms,250ms) ease-out}
+.fan-card.is-front.is-landing-text .fan-card-cat,.fan-card.is-front.is-landing-text .fan-card-title{opacity:0}
+.art-fan .fan-card.is-offset{transform:translate(-50%,-50%) translate(var(--px,0px),var(--py,0px)) rotate(var(--pr,0deg)) translate(var(--ix,0px),var(--iy,0px)) rotate(var(--ir,0deg))}
 .art-fan .fan-card.is-front.is-dragging,.art-fan .fan-card.is-front.is-exiting,.art-fan .fan-card.is-front.is-snap-back{transform:translate(-50%,-50%) translate(var(--px,0px),var(--py,0px)) rotate(var(--pr,0deg)) translate(var(--dx,0px),var(--dy,0px)) rotate(var(--dr,0deg))!important}
 .fan-pose-5-0{--px:-38px;--py:6px;--pr:-14deg;--mx:-12px;--my:2px;--mr:-8deg}
 .fan-pose-5-1{--px:-18px;--py:2px;--pr:-7deg;--mx:-6px;--my:1px;--mr:-4deg}
@@ -97,6 +99,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .art-fan .fan-card.is-front.is-exiting{transition:transform .28s cubic-bezier(.4,0,.9,.35)!important}
 .art-fan .fan-card.is-front.is-snap-back{transition:transform .45s cubic-bezier(.34,1.4,.64,1)!important}
 .art-fan .fan-card.is-front.is-dragging,.art-fan .fan-card.is-front.is-exiting,.art-fan .fan-card.is-front.is-snap-back{transform:translate(var(--mx,0px),var(--my,0px)) rotate(var(--mr,0deg)) translate(var(--dx,0px),var(--dy,0px)) rotate(var(--dr,0deg))!important}
+.art-fan .fan-card.is-offset{transform:translate(var(--mx,0px),var(--my,0px)) rotate(var(--mr,0deg)) translate(var(--ix,0px),var(--iy,0px)) rotate(var(--ir,0deg))}
 .fan-card-title{-webkit-line-clamp:3;font-size:17px;line-height:1.58}}
 @media(max-width:680px){.wrap{width:calc(100% - 38px)}
 .mast{padding:20px 0}
