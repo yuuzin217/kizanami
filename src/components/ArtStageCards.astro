@@ -123,6 +123,7 @@ const base = import.meta.env.BASE_URL;
 
     let activeCard: HTMLAnchorElement | null = null;
     let activePointerId: number | null = null;
+    let opGeneration = 0;
     let startX = 0;
     let startY = 0;
     let dragMoved = false;
@@ -223,11 +224,20 @@ const base = import.meta.env.BASE_URL;
     };
 
     const finishSnapBack = (card: HTMLAnchorElement) => {
+      if (motionQuery.matches) {
+        clearDragVisual(card);
+        endDragPause();
+        return;
+      }
+      animating = true;
+      const gen = opGeneration;
       let done = false;
       const onDone = () => {
         if (done) return;
         done = true;
         card.removeEventListener('transitionend', onDone);
+        if (gen !== opGeneration) return;
+        animating = false;
         clearDragVisual(card);
         endDragPause();
       };
@@ -239,6 +249,7 @@ const base = import.meta.env.BASE_URL;
     };
 
     const abortDrag = (card: HTMLAnchorElement, pointerId: number) => {
+      if (dragMoved) suppressClick = true;
       try {
         if (card.hasPointerCapture(pointerId)) {
           card.releasePointerCapture(pointerId);
@@ -279,11 +290,13 @@ const base = import.meta.env.BASE_URL;
       card.classList.add('is-exiting');
       setDragVars(card, exitX, exitX * 0.12, exitDr);
 
+      const gen = opGeneration;
       let exitDone = false;
       const onExit = () => {
         if (exitDone) return;
         exitDone = true;
         card.removeEventListener('transitionend', onExit);
+        if (gen !== opGeneration) return;
         clearDragVisual(card);
         applyFront((frontIndex + 1) % cards.length);
         animating = false;
@@ -295,7 +308,9 @@ const base = import.meta.env.BASE_URL;
 
     const onPointerDown = (event: PointerEvent) => {
       if (animating) return;
+      if (activeCard) return;
       if (event.button !== 0) return;
+      suppressClick = false;
       const target = event.target;
       if (!(target instanceof Element)) return;
       const card = target.closest<HTMLAnchorElement>('.fan-card');
@@ -303,6 +318,7 @@ const base = import.meta.env.BASE_URL;
         return;
       }
 
+      opGeneration++;
       activeCard = card;
       activePointerId = event.pointerId;
       startX = event.clientX;
@@ -314,7 +330,12 @@ const base = import.meta.env.BASE_URL;
 
       card.classList.add('is-dragging');
       setDragVars(card, 0, 0, 0);
-      card.setPointerCapture(event.pointerId);
+      try {
+        card.setPointerCapture(event.pointerId);
+      } catch {
+        clearDragVisual(card);
+        endDragPause();
+      }
     };
 
     const onPointerMove = (event: PointerEvent) => {
@@ -323,16 +344,16 @@ const base = import.meta.env.BASE_URL;
       const dx = event.clientX - startX;
       const dy = event.clientY - startY;
 
+      if (Math.hypot(dx, dy) >= TAP_PX) {
+        dragMoved = true;
+      }
+
       if (
         Math.abs(dy) > LOCK_PX &&
         Math.abs(dy) > Math.abs(dx)
       ) {
         abortDrag(activeCard, event.pointerId);
         return;
-      }
-
-      if (Math.abs(dx) > TAP_PX || Math.abs(dy) > TAP_PX) {
-        dragMoved = true;
       }
 
       const visualDy = dy * 0.3;
@@ -348,6 +369,10 @@ const base = import.meta.env.BASE_URL;
       const dx = event.clientX - startX;
       const dy = event.clientY - startY;
       const distance = Math.hypot(dx, dy);
+
+      if (distance >= TAP_PX) {
+        dragMoved = true;
+      }
 
       if (Math.abs(dy) > LOCK_PX && Math.abs(dy) > Math.abs(dx)) {
         abortDrag(card, pointerId);
@@ -390,6 +415,7 @@ const base = import.meta.env.BASE_URL;
     const onPointerCancel = (event: PointerEvent) => {
       if (!activeCard || event.pointerId !== activePointerId) return;
       const card = activeCard;
+      if (dragMoved) suppressClick = true;
       try {
         if (card.hasPointerCapture(event.pointerId)) {
           card.releasePointerCapture(event.pointerId);
@@ -468,9 +494,14 @@ const base = import.meta.env.BASE_URL;
     nextBtn?.addEventListener('click', () => advanceFront(1));
 
     const restart = () => {
+      opGeneration++;
       clearAllDragVisuals();
       animating = false;
       dragPause = false;
+      activeCard = null;
+      activePointerId = null;
+      dragMoved = false;
+      suppressClick = false;
       applyFront(frontIndex);
       syncTimer();
     };
