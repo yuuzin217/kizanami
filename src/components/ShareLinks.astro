@@ -1,0 +1,118 @@
+---
+interface Props {
+  title: string;
+  url: string;
+}
+
+const { title, url } = Astro.props;
+
+const enc = encodeURIComponent;
+const xShareUrl = `https://twitter.com/intent/tweet?text=${enc(title)}&url=${enc(url)}`;
+const blueskyShareUrl = `https://bsky.app/intent/compose?text=${enc(`${title}\n${url}`)}`;
+const lineShareUrl = `https://social-plugins.line.me/lineit/share?url=${enc(url)}`;
+const hatenaShareUrl = `https://b.hatena.ne.jp/entry/${url}`;
+const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`;
+const threadsShareUrl = `https://www.threads.com/intent/post?text=${enc(title)}&url=${enc(url)}`;
+
+const shareTargets = [
+  { label: 'X', href: xShareUrl },
+  { label: 'Bluesky', href: blueskyShareUrl },
+  { label: 'LINE', href: lineShareUrl },
+  { label: 'はてなブックマーク', href: hatenaShareUrl },
+  { label: 'Facebook', href: facebookShareUrl },
+  { label: 'Threads', href: threadsShareUrl },
+] as const;
+---
+
+<section aria-labelledby="share-title" class="article-section share-section">
+  <h2 id="share-title">この記事を共有する</h2>
+  <ul class="share-list">
+    {
+      shareTargets.map(({ label, href }) => (
+        <li>
+          <a href={href} target="_blank" rel="noopener noreferrer" class="share-link">
+            {label}
+            <span aria-hidden="true">↗</span>
+            <span class="visually-hidden">（新しいタブで開きます）</span>
+          </a>
+        </li>
+      ))
+    }
+    <li class="share-copy-item">
+      <button type="button" class="share-copy-button" data-share-url={url}>
+        URLをコピー
+      </button>
+      <span class="share-copy-feedback" aria-live="polite"></span>
+      <noscript>
+        <style>
+          .share-copy-fallback {
+            display: block;
+          }
+          .share-copy-button {
+            display: none;
+          }
+        </style>
+      </noscript>
+      <div class="share-copy-fallback" hidden>
+        <label class="share-copy-fallback-label" for="share-url-copy-field">
+          コピー用URL（手動で選択できます）
+        </label>
+        <input
+          id="share-url-copy-field"
+          type="text"
+          class="share-copy-fallback-input"
+          value={url}
+          readonly
+        />
+      </div>
+    </li>
+  </ul>
+</section>
+
+<script>
+  function initShareCopy() {
+    const buttons = document.querySelectorAll('.share-copy-button[data-share-url]');
+
+    buttons.forEach((button) => {
+      const item = button.closest('.share-copy-item');
+      const feedback = item?.querySelector('.share-copy-feedback');
+      const fallback = item?.querySelector('.share-copy-fallback');
+      const fallbackInput = item?.querySelector('.share-copy-fallback-input');
+      const url = button.getAttribute('data-share-url') ?? '';
+
+      const showFeedback = (message: string) => {
+        if (!feedback) return;
+        feedback.textContent = message;
+      };
+
+      const revealFallback = () => {
+        fallback?.removeAttribute('hidden');
+        if (fallbackInput instanceof HTMLInputElement) {
+          fallbackInput.focus();
+          fallbackInput.select();
+        }
+      };
+
+      button.addEventListener('click', async () => {
+        if (!url) return;
+
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(url);
+            fallback?.setAttribute('hidden', '');
+            showFeedback('コピーしました');
+            return;
+          }
+        } catch {
+          // Fall through to manual selection.
+        }
+
+        showFeedback('クリップボードを使えないため、下のURLを選択してコピーしてください');
+        revealFallback();
+      });
+    });
+  }
+
+  initShareCopy();
+  document.addEventListener('astro:page-load', initShareCopy);
+</script>
