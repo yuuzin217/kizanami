@@ -5,11 +5,15 @@ import '../styles/news-pages.css';
 interface Props {
   title?: string;
   description?: string;
+  ogType?: string;
+  canonicalUrl?: string;
 }
 
 const {
   title = 'KIZANAMI — 兆しを読む、世界を知る。',
   description = '世界の変化の兆しを、短く、少し深く。KIZANAMIのニュースポータル。',
+  ogType = 'website',
+  canonicalUrl,
 } = Astro.props;
 const favicon = `${import.meta.env.BASE_URL}favicon.svg`;
 ---
@@ -20,9 +24,14 @@ const favicon = `${import.meta.env.BASE_URL}favicon.svg`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f6f1e8" />
     <meta name="description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" href={favicon} type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShareLinks from '../../components/ShareLinks.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { newsArticles } from '../../data/news';
@@ -13,8 +14,14 @@ export const getStaticPaths = (() => newsArticles.map((article) => ({
 interface Props { article: NewsArticle }
 const { article } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const articleUrl = new URL(`${base}news/${article.slug}/`, Astro.site).href;
 ---
-<BaseLayout title={`${article.title} | KIZANAMI`} description={article.summary}>
+<BaseLayout
+  title={`${article.title} | KIZANAMI`}
+  description={article.summary}
+  ogType="article"
+  canonicalUrl={articleUrl}
+>
   <div class="wrap">
     <SiteHeader />
     <main id="main" class="article-page">
@@ -36,6 +43,7 @@ const base = import.meta.env.BASE_URL;
           <h2 id="source-title">出典</h2>
           {article.sourceUrl ? <p><a href={article.sourceUrl} target="_blank" rel="noopener noreferrer">{article.sourceName} <span aria-hidden="true">↗</span><span class="visually-hidden">（新しいタブで開きます）</span></a></p> : <p>{article.sourceName}（このサンプルには外部リンクがありません）</p>}
         </section>
+        <ShareLinks title={article.title} url={articleUrl} />
       </article>
       <div class="article-bottom"><a href={`${base}archive/${article.curatedAt}/`}>同じ日付の記事を見る <span aria-hidden="true">↗</span></a><a href={base}>トップへ戻る</a></div>
     </main>
