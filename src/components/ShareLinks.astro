@@ -43,6 +43,16 @@ const shareTargets = [
         URLをコピー
       </button>
       <span class="share-copy-feedback" aria-live="polite"></span>
+      <noscript>
+        <style>
+          .share-copy-fallback {
+            display: block;
+          }
+          .share-copy-button {
+            display: none;
+          }
+        </style>
+      </noscript>
       <div class="share-copy-fallback" hidden>
         <label class="share-copy-fallback-label" for="share-url-copy-field">
           コピー用URL（手動で選択できます）
@@ -89,6 +99,7 @@ const shareTargets = [
         try {
           if (navigator.clipboard?.writeText) {
             await navigator.clipboard.writeText(url);
+            fallback?.setAttribute('hidden', '');
             showFeedback('コピーしました');
             return;
           }
