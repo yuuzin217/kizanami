@@ -1,7 +1,10 @@
 ---
+import { categoryOrder, categoryLabels } from '../data/newsModel';
 const home = import.meta.env.BASE_URL;
 const isHome = Astro.url.pathname === home;
 const isArchive = Astro.url.pathname.startsWith(`${home}archive/`);
+const categoryPath = (key: string) => `${home}category/${key}/`;
+const isCategoryActive = (key: string) => Astro.url.pathname.startsWith(categoryPath(key));
 ---
 <header class="mast">
   <a class="brand" href={home} aria-label="KIZANAMI トップページ">KIZANAMI<span>.</span></a>
@@ -10,12 +13,19 @@ const isArchive = Astro.url.pathname.startsWith(`${home}archive/`);
 <nav class="nav" aria-label="ニュースカテゴリ">
   <div class="navlinks">
     <a class:list={{active:isHome}} href={home} aria-current={isHome ? 'page' : undefined}>トップ</a>
-    <a href={`${home}#news`}>AI</a>
+    {categoryOrder.map((key) => {
+      const active = isCategoryActive(key);
+      return (
+        <a
+          class:list={{active}}
+          href={categoryPath(key)}
+          aria-current={active ? 'page' : undefined}
+        >
+          {categoryLabels[key]}
+        </a>
+      );
+    })}
     <a class:list={{active:isArchive}} href={`${home}archive/`} aria-current={isArchive ? 'page' : undefined}>過去の記事</a>
-    <span class="inactive" title="準備中">政治 <small>SOON</small></span>
-    <span class="inactive" title="準備中">経済 <small>SOON</small></span>
-    <span class="inactive" title="準備中">テクノロジー <small>SOON</small></span>
-    <span class="inactive" title="準備中">国際 <small>SOON</small></span>
   </div>
   <div class="nav-aside" aria-label="編集部">EDITORIAL <span aria-hidden="true">↗</span></div>
 </nav>
