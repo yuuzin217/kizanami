@@ -1,0 +1,201 @@
+---
+import { categoryLabels, type NewsCategory } from '../data/newsModel';
+
+export interface ArtStageCard {
+  category: NewsCategory;
+  title: string;
+  slug: string;
+}
+
+interface Props {
+  cards: ArtStageCard[];
+}
+
+const { cards } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+{
+  cards.length > 0 && (
+    <div
+      class="art-fan"
+      role="group"
+      aria-label="今日の注目記事（カテゴリ別ピックアップ）"
+      data-front="0"
+      data-count={String(cards.length)}
+    >
+      {cards.map((card, index) => {
+        const articleUrl = `${base}news/${card.slug}/`;
+        const categoryUrl = `${base}category/${card.category}/`;
+        const isFront = index === 0;
+        const href = isFront ? articleUrl : categoryUrl;
+        const categoryKey = card.category.toUpperCase();
+        const categoryLabel = categoryLabels[card.category];
+        const ariaLabel = isFront
+          ? `${card.title}（記事詳細）`
+          : `${categoryLabel}カテゴリの記事一覧`;
+        return (
+          <a
+            class:list={['fan-card', { 'is-front': isFront }]}
+            href={href}
+            aria-label={ariaLabel}
+            data-index={String(index)}
+            data-article-url={articleUrl}
+            data-category-url={categoryUrl}
+            data-category-label={categoryLabel}
+          >
+            <span class="fan-card-dot" aria-hidden="true" />
+            <span class="fan-card-cat">
+              CATEGORY / {categoryKey}
+            </span>
+            <span class="fan-card-title">{card.title}</span>
+          </a>
+        );
+      })}
+      <div class="fan-caption">FIG. 01 / TODAY IN FIVE CARDS</div>
+    </div>
+  )
+}
+
+<script>
+  const ROTATE_MS = 4500;
+
+  interface FanRoot extends HTMLElement {
+    __fanRestart?: () => void;
+  }
+
+  function setupFan(root: FanRoot) {
+    const cards = Array.from(
+      root.querySelectorAll<HTMLAnchorElement>('.fan-card'),
+    );
+    if (cards.length < 2) return;
+
+    // Re-entry (e.g. astro:page-load): reuse the single closure created on
+    // first setup so pause flags, listeners and the timer never split.
+    if (root.__fanRestart) {
+      root.__fanRestart();
+      return;
+    }
+
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    let frontIndex = Number(root.dataset.front) || 0;
+    if (frontIndex < 0 || frontIndex >= cards.length) frontIndex = 0;
+
+    let intervalId: number | undefined;
+    let hoverPause = false;
+    let focusPause = false;
+    let touchPause = false;
+    let hiddenPause = document.hidden;
+
+    const applyFront = (index: number) => {
+      frontIndex = index;
+      root.dataset.front = String(index);
+      cards.forEach((card, i) => {
+        const isFront = i === index;
+        card.classList.toggle('is-front', isFront);
+        const articleUrl = card.dataset.articleUrl ?? card.href;
+        const categoryUrl = card.dataset.categoryUrl ?? card.href;
+        card.href = isFront ? articleUrl : categoryUrl;
+        const title =
+          card.querySelector('.fan-card-title')?.textContent ?? '';
+        card.setAttribute(
+          'aria-label',
+          isFront
+            ? `${title}（記事詳細）`
+            : `${card.dataset.categoryLabel ?? ''}カテゴリの記事一覧`,
+        );
+        if (window.matchMedia('(max-width: 900px)').matches) {
+          card.tabIndex = isFront ? 0 : -1;
+        } else {
+          card.removeAttribute('tabindex');
+        }
+      });
+    };
+
+    const shouldRun = () =>
+      !hoverPause &&
+      !focusPause &&
+      !touchPause &&
+      !hiddenPause &&
+      !motionQuery.matches;
+
+    const clearTimer = () => {
+      if (intervalId !== undefined) {
+        window.clearInterval(intervalId);
+        intervalId = undefined;
+      }
+    };
+
+    const startTimer = () => {
+      clearTimer();
+      if (!shouldRun()) return;
+      intervalId = window.setInterval(() => {
+        if (!shouldRun()) return;
+        applyFront((frontIndex + 1) % cards.length);
+      }, ROTATE_MS);
+    };
+
+    const syncTimer = () => {
+      if (shouldRun()) startTimer();
+      else clearTimer();
+    };
+
+    root.addEventListener('mouseenter', () => {
+      hoverPause = true;
+      syncTimer();
+    });
+    root.addEventListener('mouseleave', () => {
+      hoverPause = false;
+      syncTimer();
+    });
+
+    root.addEventListener('focusin', () => {
+      focusPause = true;
+      syncTimer();
+    });
+    root.addEventListener('focusout', (event) => {
+      const next = event.relatedTarget;
+      if (next instanceof Node && root.contains(next)) return;
+      focusPause = false;
+      syncTimer();
+    });
+
+    const resumeTouch = () => {
+      window.setTimeout(() => {
+        touchPause = false;
+        syncTimer();
+      }, 400);
+    };
+    root.addEventListener(
+      'touchstart',
+      () => {
+        touchPause = true;
+        syncTimer();
+      },
+      { passive: true },
+    );
+    root.addEventListener('touchend', resumeTouch);
+    root.addEventListener('touchcancel', resumeTouch);
+
+    document.addEventListener('visibilitychange', () => {
+      hiddenPause = document.hidden;
+      syncTimer();
+    });
+    motionQuery.addEventListener('change', syncTimer);
+
+    const restart = () => {
+      applyFront(frontIndex);
+      syncTimer();
+    };
+    root.__fanRestart = restart;
+    restart();
+  }
+
+  function initArtFan() {
+    document.querySelectorAll<FanRoot>('.art-fan').forEach(setupFan);
+  }
+
+  initArtFan();
+  document.addEventListener('astro:page-load', initArtFan);
+</script>
