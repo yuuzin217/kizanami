@@ -82,6 +82,7 @@ const base = import.meta.env.BASE_URL;
   const ROTATE_DEG_PER_PX = 0.12;
   const ROTATE_DEG_MAX = 12;
   const EXIT_MS = 280;
+  const RETURN_MS = 250;
   const SWIPE_WIDTH_RATIO = 0.28;
   const SWIPE_MIN_PX = 64;
 
@@ -130,10 +131,17 @@ const base = import.meta.env.BASE_URL;
     let suppressClick = false;
 
     const clearDragVisual = (card: HTMLAnchorElement) => {
-      card.classList.remove('is-dragging', 'is-exiting', 'is-snap-back');
+      card.classList.remove(
+        'is-dragging',
+        'is-exiting',
+        'is-snap-back',
+        'is-returning',
+        'is-promoting',
+      );
       card.style.removeProperty('--dx');
       card.style.removeProperty('--dy');
       card.style.removeProperty('--dr');
+      card.style.removeProperty('opacity');
     };
 
     const clearAllDragVisuals = () => {
@@ -201,7 +209,7 @@ const base = import.meta.env.BASE_URL;
       if (!shouldRun()) return;
       intervalId = window.setInterval(() => {
         if (!shouldRun()) return;
-        applyFront((frontIndex + 1) % cards.length);
+        peelTo((frontIndex + 1) % cards.length);
       }, ROTATE_MS);
     };
 
@@ -218,9 +226,126 @@ const base = import.meta.env.BASE_URL;
     };
 
     const advanceFront = (delta: number) => {
+      const target = (frontIndex + delta + cards.length) % cards.length;
+      peelTo(target, delta < 0 ? { fadeOnly: true } : {});
+    };
+
+    const fadeCardInAtDeck = (
+      card: HTMLAnchorElement,
+      gen: number,
+      onComplete: () => void,
+    ) => {
+      if (motionQuery.matches) {
+        onComplete();
+        return;
+      }
+      let done = false;
+      const onDone = () => {
+        if (done) return;
+        done = true;
+        card.removeEventListener('transitionend', onDone);
+        if (gen !== opGeneration) return;
+        card.classList.remove('is-returning');
+        card.style.removeProperty('opacity');
+        onComplete();
+      };
+      card.classList.add('is-returning');
+      card.style.opacity = '0';
+      void card.offsetWidth;
+      card.style.removeProperty('opacity');
+      card.addEventListener('transitionend', onDone);
+      window.setTimeout(onDone, RETURN_MS + 80);
+    };
+
+    const peelTo = (
+      targetIndex: number,
+      options: {
+        fadeOnly?: boolean;
+        exitDx?: number;
+        exitDy?: number;
+        exitDr?: number;
+        fromDrag?: boolean;
+      } = {},
+    ) => {
       if (animating) return;
-      applyFront((frontIndex + delta + cards.length) % cards.length);
-      syncTimer();
+      if (targetIndex === frontIndex) return;
+
+      const afterPeel = () => {
+        if (options.fromDrag) {
+          endDragPause();
+        } else {
+          syncTimer();
+        }
+      };
+
+      if (motionQuery.matches) {
+        applyFront(targetIndex);
+        afterPeel();
+        return;
+      }
+
+      animating = true;
+      if (!options.fromDrag) {
+        syncTimer();
+      }
+
+      const exitCard = cards[frontIndex];
+      const gen = opGeneration;
+      let exitDone = false;
+
+      const finishPeel = () => {
+        if (exitDone) return;
+        exitDone = true;
+        exitCard.removeEventListener('transitionend', onExit);
+        if (gen !== opGeneration) return;
+
+        const returnedCard = exitCard;
+        clearDragVisual(returnedCard);
+        applyFront(targetIndex);
+
+        fadeCardInAtDeck(returnedCard, gen, () => {
+          if (gen !== opGeneration) return;
+          animating = false;
+          afterPeel();
+        });
+      };
+
+      const onExit = (event: Event) => {
+        if (
+          event instanceof TransitionEvent &&
+          event.propertyName !== 'opacity'
+        ) {
+          return;
+        }
+        finishPeel();
+      };
+
+      let exitX: number;
+      let exitY: number;
+      let exitDr: number;
+
+      if (
+        options.exitDx !== undefined &&
+        options.exitDy !== undefined &&
+        options.exitDr !== undefined
+      ) {
+        exitX = options.exitDx;
+        exitY = options.exitDy;
+        exitDr = options.exitDr;
+      } else {
+        const sign = options.fadeOnly ? 1 : -1;
+        exitX = options.fadeOnly
+          ? sign * 48
+          : sign * Math.max(window.innerWidth * 0.55, swipeThreshold(exitCard) * 2);
+        exitY = exitX * 0.12;
+        exitDr = options.fadeOnly ? sign * 4 : sign * 8;
+      }
+
+      exitCard.classList.remove('is-dragging');
+      exitCard.classList.add('is-exiting');
+      setDragVars(exitCard, exitX, exitY, exitDr);
+      exitCard.addEventListener('transitionend', onExit);
+      window.setTimeout(finishPeel, EXIT_MS + 80);
     };
 
     const finishSnapBack = (card: HTMLAnchorElement) => {
@@ -277,33 +402,12 @@ const base = import.meta.env.BASE_URL;
       dragPause = true;
       syncTimer();
 
-      if (motionQuery.matches) {
-        clearDragVisual(card);
-        applyFront((frontIndex + 1) % cards.length);
-        animating = false;
-        endDragPause();
-        return;
-      }
-
-      animating = true;
-      card.classList.remove('is-dragging');
-      card.classList.add('is-exiting');
-      setDragVars(card, exitX, exitX * 0.12, exitDr);
-
-      const gen = opGeneration;
-      let exitDone = false;
-      const onExit = () => {
-        if (exitDone) return;
-        exitDone = true;
-        card.removeEventListener('transitionend', onExit);
-        if (gen !== opGeneration) return;
-        clearDragVisual(card);
-        applyFront((frontIndex + 1) % cards.length);
-        animating = false;
-        endDragPause();
-      };
-      card.addEventListener('transitionend', onExit);
-      window.setTimeout(onExit, EXIT_MS + 80);
+      peelTo((frontIndex + 1) % cards.length, {
+        exitDx: exitX,
+        exitDy: exitX * 0.12,
+        exitDr,
+        fromDrag: true,
+      });
     };
 
     const onPointerDown = (event: PointerEvent) => {
