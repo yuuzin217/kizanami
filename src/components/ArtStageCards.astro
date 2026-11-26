@@ -22,7 +22,6 @@ const base = import.meta.env.BASE_URL;
       role="group"
       aria-label="今日の注目記事（カテゴリ別ピックアップ）"
       data-front="0"
-      data-count={String(cards.length)}
     >
       {cards.map((card, index) => {
         const articleUrl = `${base}news/${card.slug}/`;
@@ -36,10 +35,14 @@ const base = import.meta.env.BASE_URL;
           : `${categoryLabel}カテゴリの記事一覧`;
         return (
           <a
-            class:list={['fan-card', { 'is-front': isFront }]}
+            class:list={[
+              'fan-card',
+              `fan-pose-${cards.length}-${index}`,
+              { 'is-front': isFront },
+            ]}
+            style={`z-index:${10 - index}`}
             href={href}
             aria-label={ariaLabel}
-            data-index={String(index)}
             data-article-url={articleUrl}
             data-category-url={categoryUrl}
             data-category-label={categoryLabel}
@@ -164,8 +167,11 @@ const base = import.meta.env.BASE_URL;
     const applyFront = (index: number) => {
       frontIndex = index;
       root.dataset.front = String(index);
+      const n = cards.length;
       cards.forEach((card, i) => {
         clearDragVisual(card);
+        const dist = (i - index + n) % n;
+        card.style.zIndex = String(10 - dist);
         const isFront = i === index;
         card.classList.toggle('is-front', isFront);
         const articleUrl = card.dataset.articleUrl ?? card.href;
