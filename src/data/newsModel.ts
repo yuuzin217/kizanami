@@ -9,6 +9,15 @@ export const categoryLabels = {
 
 export type NewsCategory = keyof typeof categoryLabels;
 
+/** Display order for navigation and category-grouped layouts. */
+export const categoryOrder = [
+  'ai',
+  'politics',
+  'economy',
+  'technology',
+  'international',
+] as const satisfies readonly NewsCategory[];
+
 export interface NewsArticle {
   id: string;
   slug: string;
@@ -127,6 +136,29 @@ export function getArticlesForDate(articles: readonly NewsArticle[], date: strin
 export function getLatestArticles(articles: readonly NewsArticle[], limit = 3): NewsArticle[] {
   const date = getArchiveDays(articles)[0];
   return date ? getArticlesForDate(articles, date).slice(0, limit) : [];
+}
+
+export function getArticlesByCategory(
+  articles: readonly NewsArticle[],
+  category: NewsCategory,
+): NewsArticle[] {
+  return articles.filter((article) => article.category === category);
+}
+
+export function getLatestArticlesByCategory(
+  articles: readonly NewsArticle[],
+  perCategory = 3,
+): { category: NewsCategory; articles: NewsArticle[] }[] {
+  const date = getArchiveDays(articles)[0];
+  if (!date) return [];
+  const latestDay = getArticlesForDate(articles, date);
+  const groups: { category: NewsCategory; articles: NewsArticle[] }[] = [];
+  for (const category of categoryOrder) {
+    const inCategory = latestDay.filter((article) => article.category === category);
+    if (inCategory.length === 0) continue;
+    groups.push({ category, articles: inCategory.slice(0, perCategory) });
+  }
+  return groups;
 }
 
 export function getArticleBySlug(articles: readonly NewsArticle[], slug: string): NewsArticle | undefined {

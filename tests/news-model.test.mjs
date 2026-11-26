@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateNewsItems, getLatestArticles, getArchiveDays, getEditionNumber, getActiveCategoryCount, estimateReadingMinutes, getArticlesForDate, getArticleBySlug, formatJstDate } from '../src/data/newsModel.ts';
+import { validateNewsItems, getLatestArticles, getArchiveDays, getEditionNumber, getActiveCategoryCount, estimateReadingMinutes, getArticlesForDate, getArticleBySlug, formatJstDate, categoryOrder, getArticlesByCategory, getLatestArticlesByCategory } from '../src/data/newsModel.ts';
 
 const sample = (extra = {}) => ({
   id: 'sample-1', slug: 'first-sample', category: 'ai', title: '架空のニュース',
@@ -93,6 +93,33 @@ test('getActiveCategoryCount counts distinct categories, or 0 for empty array', 
     sample({ id: 's2', slug: 's2', category: 'politics' }),
   ];
   assert.equal(getActiveCategoryCount(twoCategories), 2);
+});
+
+test('getArticlesByCategory keeps order and filters by category', () => {
+  const list = validateNewsItems([
+    sample({ id: 'a1', slug: 'a1', category: 'ai', curatedAt: '2026-10-30' }),
+    sample({ id: 'p1', slug: 'p1', category: 'politics', curatedAt: '2026-10-30' }),
+    sample({ id: 'a2', slug: 'a2', category: 'ai', curatedAt: '2026-10-29' }),
+  ]);
+  assert.deepEqual(getArticlesByCategory(list, 'ai').map((x) => x.id), ['a1', 'a2']);
+  assert.deepEqual(getArticlesByCategory(list, 'economy'), []);
+});
+
+test('getLatestArticlesByCategory groups latest edition day by categoryOrder with perCategory cap', () => {
+  const list = validateNewsItems([
+    sample({ id: 'a1', slug: 'a1', category: 'ai', curatedAt: '2026-10-30' }),
+    sample({ id: 'a2', slug: 'a2', category: 'ai', curatedAt: '2026-10-30', publishedAt: '2026-10-30T08:00:00+09:00' }),
+    sample({ id: 'a3', slug: 'a3', category: 'ai', curatedAt: '2026-10-30', publishedAt: '2026-10-30T07:00:00+09:00' }),
+    sample({ id: 'a4', slug: 'a4', category: 'ai', curatedAt: '2026-10-30', publishedAt: '2026-10-30T06:00:00+09:00' }),
+    sample({ id: 'p1', slug: 'p1', category: 'politics', curatedAt: '2026-10-30' }),
+    sample({ id: 'e1', slug: 'e1', category: 'economy', curatedAt: '2026-10-29' }),
+  ]);
+  assert.deepEqual(getLatestArticlesByCategory([]), []);
+  const groups = getLatestArticlesByCategory(list, 2);
+  assert.deepEqual(groups.map((g) => g.category), ['ai', 'politics']);
+  assert.equal(groups[0].articles.length, 2);
+  assert.deepEqual(groups[0].articles.map((x) => x.id), ['a2', 'a3']);
+  assert.deepEqual(categoryOrder, ['ai', 'politics', 'economy', 'technology', 'international']);
 });
 
 test('estimateReadingMinutes uses 500 chars/min with ceil and minimum 1 when articles exist', () => {
