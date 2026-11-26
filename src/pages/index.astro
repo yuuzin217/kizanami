@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import Hero from '../components/Hero.astro';
 import StoryCard from '../components/StoryCard.astro';
-import EditorialSidebar from '../components/EditorialSidebar.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { newsArticles } from '../data/news';
 import { getLatestArticles, getArchiveDays, getEditionNumber, getActiveCategoryCount, estimateReadingMinutes, formatJstDate } from '../data/newsModel';
@@ -13,7 +12,6 @@ const hasSamples = latest.some((story) => story.isSample);
 const editionNumber = getEditionNumber(newsArticles);
 const categoryCount = getActiveCategoryCount(newsArticles);
 const readingMinutes = estimateReadingMinutes(latest);
-const year = latestDate ? latestDate.split('-')[0] : '';
 ---
 <BaseLayout>
   <div class="wrap">
@@ -32,7 +30,6 @@ const year = latestDate ? latestDate.split('-')[0] : '';
             {latest.map((story, index) => <StoryCard story={story} number={index + 1} />)}
             <a class="archive-link" href={`${import.meta.env.BASE_URL}archive/`}>過去の記事を読む <span aria-hidden="true">↗</span></a>
           </div>
-          <EditorialSidebar editionNumber={editionNumber} storyCount={latest.length} year={year} />
         </div>
       </section>
     </main>

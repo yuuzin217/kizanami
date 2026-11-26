@@ -54,8 +54,8 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .section-head{display:flex;align-items:end;justify-content:space-between;margin:44px 0 24px;gap:18px}
 .section-head h2{margin:5px 0 0;font:500 clamp(28px,3vw,40px)/1.4 var(--serif);letter-spacing:-.05em}
 .section-head .subtitle{font-size:10px;letter-spacing:.12em;color:#8b8176;font-weight:750}
-.content-grid{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(270px,.75fr);gap:40px}
-.stories{display:flex;flex-direction:column;gap:14px}
+.content-grid{display:block}
+.stories{display:flex;flex-direction:column;gap:14px;max-width:860px;width:100%}
 .story{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) 75px;gap:14px;min-height:169px;padding:23px 19px 22px 22px;background:var(--paper2);border:1px solid #dfd5c6;box-shadow:var(--shadow);transform:translateZ(0);transition:box-shadow .25s,transform .25s,border-color .25s;isolation:isolate}
 .story:before{content:"";position:absolute;inset:5px -5px -5px 5px;background:#e7dbcc;z-index:-1;border:1px solid #d5c6b6;box-shadow:3px 5px 9px #4c382215;transition:transform .25s}
 .story:hover{transform:translateY(-5px) rotateX(1deg);border-color:#ccac98;box-shadow:0 24px 32px -17px #493b2f42,0 8px 13px #493b2f13}
@@ -65,35 +65,16 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .story-cat{color:var(--terracotta);font-size:10px;font-weight:850;letter-spacing:.11em}
 .story h3{font:600 clamp(18px,2vw,24px)/1.58 var(--serif);letter-spacing:-.04em;margin:9px 0}
 .story p{font-size:11px;line-height:1.85;color:#847b71;margin:0}
-.sidebar{border-top:2px solid var(--ink)}
-.aside-kicker{font:italic 26px var(--serif);margin:24px 0 18px}
-.note{font:400 17px/2 var(--serif);letter-spacing:-.02em;margin:0 0 24px}
-.signature{color:var(--terracotta);font:italic 28px var(--serif);margin-bottom:30px}
-.side-divider{border-top:1px solid var(--line);padding-top:25px}
-.side-head{font-size:10px;font-weight:850;letter-spacing:.17em;margin:0 0 19px}
-.mini-issue{background:#ebe3d6;border:1px solid #d7c8b6;padding:14px;box-shadow:8px 10px 0 #d8cabc;display:flex;gap:17px;align-items:center}
-.issue-cover{width:86px;min-width:86px;height:112px;position:relative;box-shadow:6px 6px 12px #42362927;background:linear-gradient(145deg,#f7ece0,#d5bca0);overflow:hidden;padding:10px 8px}
-.issue-cover:after{content:"";position:absolute;width:66px;height:66px;border-radius:50%;top:32px;left:12px;background:radial-gradient(circle at 25% 23%,#ffd4ae,#d35a3b 52%,#582b2a);box-shadow:5px 6px 10px #482e2955}
-.issue-cover b{position:relative;z-index:2;font:700 11px Georgia,serif}
-.issue-cover span{position:absolute;bottom:8px;left:8px;z-index:2;font:700 8px Georgia,serif}
-.mini-issue strong{display:block;font:500 21px var(--serif);margin-bottom:8px}
-.mini-issue p{font-size:10px;line-height:1.8;color:#756e64;margin:0}
-.upcoming{margin:34px 0 0}
 .footer{margin:73px 0 0;padding:25px 0 45px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;gap:15px;color:#8b8075;font-size:10px;letter-spacing:.08em;font-weight:750}
 @media(max-width:1100px){.hero{gap:12px}
 .art-stage{height:385px}
-.content-grid{gap:27px}
 .story{grid-template-columns:40px minmax(0,1fr) 67px;padding:20px 16px}
 .story-num{font-size:30px}}
 @media(max-width:900px){.hero{grid-template-columns:1fr 1fr;min-height:0}
 .hero h1{font-size:44px}
 .art-stage{height:320px}
 .glass-label{right:0}
-.floating-seal{width:70px;height:70px;font-size:13px;left:0}
-.content-grid{grid-template-columns:1fr}
-.sidebar{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
-.side-divider{border:0;padding-top:0}
-.upcoming{grid-column:1/-1}}
+.floating-seal{width:70px;height:70px;font-size:13px;left:0}}
 @media(max-width:680px){.wrap{width:calc(100% - 38px)}
 .mast{padding:20px 0}
 .brand{font-size:43px;letter-spacing:-.07em}
@@ -129,8 +110,6 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .story-cat{font-size:9px}
 .story h3{font-size:18px}
 .story p{font-size:10px}
-.sidebar{display:block}
-.sidebar .side-divider{border-top:1px solid var(--line);padding-top:22px}
 .footer{margin-top:45px;display:block;line-height:2}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 .story:hover{transform:none}
@@ -140,7 +119,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
   --sans:"Zen Kaku Gothic New","Noto Sans CJK JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
 }
 body{font-family:var(--sans)}
-.hero h1,.story h3,.section-head h2,.note{font-family:var(--serif);font-feature-settings:"palt" 1;letter-spacing:-.012em}
+.hero h1,.story h3,.section-head h2{font-family:var(--serif);font-feature-settings:"palt" 1;letter-spacing:-.012em}
 .hero h1{font-weight:500;line-height:1.54}
 .story h3{font-weight:600;line-height:1.62}
 .section-head h2{font-weight:600}
@@ -168,9 +147,6 @@ body{font-family:var(--sans)}
 .story-expand[open]{border-top:1px solid var(--line);padding-top:10px}
 .story-expand .detail-text{max-width:70ch;color:#655b51;font-size:12px;margin:8px 0 8px}
 .story-expand small{display:block;color:#8c8175;font-size:10px;line-height:1.7}
-.upcoming>div{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);color:var(--ink);gap:8px}
-.upcoming>div span:first-child{font-size:13px;font-family:Georgia,serif;text-decoration:line-through}
-.upcoming>div span:last-child{font-size:9px;letter-spacing:.08em;color:var(--terracotta)}
 .skip-link{position:absolute;left:1rem;top:-5rem;background:var(--ink);color:#fff;padding:.8rem 1rem;z-index:1000}
 .skip-link:focus{top:1rem}
 :where(a,summary):focus-visible{outline:2px solid var(--terracotta);outline-offset:4px}
@@ -192,10 +168,10 @@ body{font-family:var(--sans)}
 /* Text colors are darker than the decorative accent to meet WCAG AA on paper. */
 :root{--accent-text:#9f432e;--secondary-text:#62594f}
 .mast .tagline,.edition-label,.lead,.stat small,.disclaimer,
-.section-head .subtitle,.story p,.mini-issue p,.footer,.nav-aside,
+.section-head .subtitle,.story p,.footer,.nav-aside,
 .navlinks a,.navlinks>span,.story-expand small,.art-caption,
 .glass-label small{color:var(--secondary-text)}
 .story-cat,.disclaimer b,.navlinks a:hover,
-.navlinks>span small,.story-expand>summary,.upcoming>div span:last-child,
+.navlinks>span small,.story-expand>summary,
 .cover-top em{color:var(--accent-text)}
 .story-expand .detail-text{color:var(--secondary-text)}
