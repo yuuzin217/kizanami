@@ -83,9 +83,28 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .story-num{font-size:30px}}
 @media(max-width:900px){.hero{grid-template-columns:1fr 1fr;min-height:0}
 .hero h1{font-size:44px}
-.art-fan{height:240px;perspective:none}
-.fan-card{width:100%;max-width:100%;min-height:0;height:auto;padding:20px 18px 22px;left:0;top:0;transform:none!important;opacity:1;box-shadow:var(--shadow);pointer-events:none;visibility:hidden}
-.fan-card.is-front{position:relative;left:auto;top:auto;transform:none!important;visibility:visible;pointer-events:auto}
+.art-fan{display:grid;height:auto;perspective:none;padding-bottom:6px}
+.fan-card{grid-area:1/1;position:relative;justify-self:center;align-self:end;left:auto;top:auto;width:calc(100% - 36px);max-width:100%;min-height:0;height:auto;margin:0;padding:20px 18px 22px;transform-origin:50% 100%;opacity:.72;pointer-events:none;box-shadow:2px 2px 0 #fff9ed inset,17px 25px 0 -16px #7c6c5a40,23px 39px 35px #2f261e42;transition:transform .6s cubic-bezier(.25,.8,.25,1),opacity .6s ease,box-shadow .6s ease}
+.fan-card.is-front{z-index:10;opacity:1;pointer-events:auto;box-shadow:2px 2px 0 #fff9ed inset,1px 0 0 #c2a894,17px 25px 0 -16px #7c6c5a,23px 39px 35px #2f261e4a}
+.art-fan .fan-card[data-index="0"]{transform:translateX(-12px) translateY(2px) rotate(-8deg)}
+.art-fan .fan-card[data-index="1"]{transform:translateX(-6px) translateY(1px) rotate(-4deg)}
+.art-fan .fan-card[data-index="2"]{transform:translateY(0) rotate(0deg)}
+.art-fan .fan-card[data-index="3"]{transform:translateX(6px) translateY(1px) rotate(4deg)}
+.art-fan .fan-card[data-index="4"]{transform:translateX(12px) translateY(2px) rotate(8deg)}
+.art-fan[data-count="4"] .fan-card[data-index="0"]{transform:translateX(-10px) translateY(2px) rotate(-7deg)}
+.art-fan[data-count="4"] .fan-card[data-index="1"]{transform:translateX(-4px) translateY(1px) rotate(-3deg)}
+.art-fan[data-count="4"] .fan-card[data-index="2"]{transform:translateX(4px) translateY(1px) rotate(3deg)}
+.art-fan[data-count="4"] .fan-card[data-index="3"]{transform:translateX(10px) translateY(2px) rotate(7deg)}
+.art-fan[data-count="3"] .fan-card[data-index="0"]{transform:translateX(-8px) translateY(2px) rotate(-6deg)}
+.art-fan[data-count="3"] .fan-card[data-index="1"]{transform:translateY(0) rotate(0deg)}
+.art-fan[data-count="3"] .fan-card[data-index="2"]{transform:translateX(8px) translateY(2px) rotate(6deg)}
+.art-fan[data-count="2"] .fan-card[data-index="0"]{transform:translateX(-8px) translateY(2px) rotate(-6deg)}
+.art-fan[data-count="2"] .fan-card[data-index="1"]{transform:translateX(8px) translateY(2px) rotate(6deg)}
+.art-fan .fan-card[data-index="0"].is-front{transform:rotate(-1deg) scale(1.02)}
+.art-fan .fan-card[data-index="1"].is-front{transform:rotate(-1deg) scale(1.02)}
+.art-fan .fan-card[data-index="2"].is-front{transform:rotate(0deg) scale(1.02)}
+.art-fan .fan-card[data-index="3"].is-front{transform:rotate(1deg) scale(1.02)}
+.art-fan .fan-card[data-index="4"].is-front{transform:rotate(1deg) scale(1.02)}
 .fan-card-title{-webkit-line-clamp:3;font-size:17px;line-height:1.58}}
 @media(max-width:680px){.wrap{width:calc(100% - 38px)}
 .mast{padding:20px 0}
@@ -100,7 +119,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .stats{margin-top:30px;gap:37px}
 .stat strong{font-size:31px}
 .stat small{font-size:8px}
-.art-fan{height:220px;margin-top:30px;margin-left:0;margin-right:0;overflow:hidden}
+.art-fan{margin-top:30px;margin-left:0;margin-right:0}
 .art-fan:before{inset:12px 0 22px 0}
 .fan-caption{bottom:-10px;font-size:8px;right:0}
 .section-head{margin:35px 0 18px}
