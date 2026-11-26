@@ -28,14 +28,14 @@ const { category } = Astro.props;
 const label = categoryLabels[category];
 const base = import.meta.env.BASE_URL;
 const allInCategory = getArticlesByCategory(newsArticles, category);
-const latestGlobalDate = getArchiveDays(newsArticles)[0];
+const latestCategoryDate = getArchiveDays(allInCategory)[0];
 const latestInCategory =
-  latestGlobalDate != null
-    ? allInCategory.filter((article) => article.curatedAt === latestGlobalDate)
+  latestCategoryDate != null
+    ? allInCategory.filter((article) => article.curatedAt === latestCategoryDate)
     : [];
 const pastInCategory =
-  latestGlobalDate != null
-    ? allInCategory.filter((article) => article.curatedAt !== latestGlobalDate)
+  latestCategoryDate != null
+    ? allInCategory.filter((article) => article.curatedAt !== latestCategoryDate)
     : allInCategory;
 const keyUpper = category.toUpperCase();
 let storyNumber = 0;
@@ -57,7 +57,7 @@ let storyNumber = 0;
       {latestInCategory.length > 0 && (
         <section class="category-latest" aria-labelledby="category-latest-heading">
           <h2 id="category-latest-heading" class="category-subhead">
-            最新 <span>{formatJstDate(latestGlobalDate)}（JST）</span>
+            最新 <span>{formatJstDate(latestCategoryDate)}（JST）</span>
           </h2>
           <div class="archive-stories">
             {latestInCategory.map((story) => {
