@@ -25,7 +25,7 @@ const base = import.meta.env.BASE_URL;
         <p class="article-lead">{article.summary}</p>
         <div class="article-meta">
           <div><span>掲載日（JST）</span><time datetime={article.curatedAt}>{formatJstDate(article.curatedAt)}</time></div>
-          <div><span>原情報の発表日（JST）</span><time datetime={article.publishedAt}>{formatPublicationDate(article.publishedAt)}</time></div>
+          <div><span>出典の発表日（JST）</span><time datetime={article.publishedAt}>{formatPublicationDate(article.publishedAt)}</time></div>
         </div>
         {article.isSample && <div class="article-notice" role="note">この記事はデザイン検証用の架空サンプルです。実際のニュースや出典を表すものではありません。</div>}
         <section aria-labelledby="importance-title" class="article-section">
