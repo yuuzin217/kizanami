@@ -52,6 +52,24 @@ const base = import.meta.env.BASE_URL;
           </a>
         );
       })}
+      {cards.length >= 2 && (
+        <div class="fan-nav">
+          <button
+            type="button"
+            class="fan-nav-btn fan-nav-prev"
+            aria-label="前のカード"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            class="fan-nav-btn fan-nav-next"
+            aria-label="次のカード"
+          >
+            ›
+          </button>
+        </div>
+      )}
       <div class="fan-caption">FIG. 01 / TODAY IN FIVE CARDS</div>
     </div>
   )
@@ -59,9 +77,20 @@ const base = import.meta.env.BASE_URL;
 
 <script>
   const ROTATE_MS = 4500;
+  const TAP_PX = 8;
+  const LOCK_PX = 10;
+  const ROTATE_DEG_PER_PX = 0.12;
+  const ROTATE_DEG_MAX = 12;
+  const EXIT_MS = 280;
+  const SWIPE_WIDTH_RATIO = 0.28;
+  const SWIPE_MIN_PX = 64;
 
   interface FanRoot extends HTMLElement {
     __fanRestart?: () => void;
+  }
+
+  function clamp(value: number, min: number, max: number) {
+    return Math.min(max, Math.max(min, value));
   }
 
   function setupFan(root: FanRoot) {
@@ -78,6 +107,8 @@ const base = import.meta.env.BASE_URL;
     }
 
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const prevBtn = root.querySelector<HTMLButtonElement>('.fan-nav-prev');
+    const nextBtn = root.querySelector<HTMLButtonElement>('.fan-nav-next');
 
     let frontIndex = Number(root.dataset.front) || 0;
     if (frontIndex < 0 || frontIndex >= cards.length) frontIndex = 0;
@@ -87,11 +118,46 @@ const base = import.meta.env.BASE_URL;
     let focusPause = false;
     let touchPause = false;
     let hiddenPause = document.hidden;
+    let dragPause = false;
+    let animating = false;
+
+    let activeCard: HTMLAnchorElement | null = null;
+    let activePointerId: number | null = null;
+    let startX = 0;
+    let startY = 0;
+    let dragMoved = false;
+    let suppressClick = false;
+
+    const clearDragVisual = (card: HTMLAnchorElement) => {
+      card.classList.remove('is-dragging', 'is-exiting', 'is-snap-back');
+      card.style.removeProperty('--dx');
+      card.style.removeProperty('--dy');
+      card.style.removeProperty('--dr');
+    };
+
+    const clearAllDragVisuals = () => {
+      cards.forEach((card) => clearDragVisual(card));
+    };
+
+    const setDragVars = (
+      card: HTMLAnchorElement,
+      dx: number,
+      dy: number,
+      dr: number,
+    ) => {
+      card.style.setProperty('--dx', `${dx}px`);
+      card.style.setProperty('--dy', `${dy}px`);
+      card.style.setProperty('--dr', `${dr}deg`);
+    };
+
+    const swipeThreshold = (card: HTMLAnchorElement) =>
+      Math.max(card.getBoundingClientRect().width * SWIPE_WIDTH_RATIO, SWIPE_MIN_PX);
 
     const applyFront = (index: number) => {
       frontIndex = index;
       root.dataset.front = String(index);
       cards.forEach((card, i) => {
+        clearDragVisual(card);
         const isFront = i === index;
         card.classList.toggle('is-front', isFront);
         const articleUrl = card.dataset.articleUrl ?? card.href;
@@ -118,6 +184,8 @@ const base = import.meta.env.BASE_URL;
       !focusPause &&
       !touchPause &&
       !hiddenPause &&
+      !dragPause &&
+      !animating &&
       !motionQuery.matches;
 
     const clearTimer = () => {
@@ -140,6 +208,211 @@ const base = import.meta.env.BASE_URL;
       if (shouldRun()) startTimer();
       else clearTimer();
     };
+
+    const endDragPause = () => {
+      dragPause = false;
+      activeCard = null;
+      activePointerId = null;
+      syncTimer();
+    };
+
+    const advanceFront = (delta: number) => {
+      if (animating) return;
+      applyFront((frontIndex + delta + cards.length) % cards.length);
+      syncTimer();
+    };
+
+    const finishSnapBack = (card: HTMLAnchorElement) => {
+      const onDone = () => {
+        card.removeEventListener('transitionend', onDone);
+        clearDragVisual(card);
+        endDragPause();
+      };
+      card.classList.remove('is-dragging');
+      card.classList.add('is-snap-back');
+      setDragVars(card, 0, 0, 0);
+      card.addEventListener('transitionend', onDone);
+    };
+
+    const abortDrag = (card: HTMLAnchorElement, pointerId: number) => {
+      try {
+        if (card.hasPointerCapture(pointerId)) {
+          card.releasePointerCapture(pointerId);
+        }
+      } catch {
+        /* already released */
+      }
+      clearDragVisual(card);
+      endDragPause();
+    };
+
+    const commitSwipe = (card: HTMLAnchorElement, dx: number, pointerId: number) => {
+      const sign = dx >= 0 ? 1 : -1;
+      const exitX = sign * Math.max(window.innerWidth * 0.55, swipeThreshold(card) * 2);
+      const exitDr = clamp(dx * ROTATE_DEG_PER_PX, -ROTATE_DEG_MAX, ROTATE_DEG_MAX) + sign * 8;
+
+      try {
+        if (card.hasPointerCapture(pointerId)) {
+          card.releasePointerCapture(pointerId);
+        }
+      } catch {
+        /* already released */
+      }
+
+      dragPause = true;
+      syncTimer();
+
+      if (motionQuery.matches) {
+        clearDragVisual(card);
+        applyFront((frontIndex + 1) % cards.length);
+        animating = false;
+        endDragPause();
+        return;
+      }
+
+      animating = true;
+      card.classList.remove('is-dragging');
+      card.classList.add('is-exiting');
+      setDragVars(card, exitX, exitX * 0.12, exitDr);
+
+      const onExit = () => {
+        card.removeEventListener('transitionend', onExit);
+        clearDragVisual(card);
+        applyFront((frontIndex + 1) % cards.length);
+        animating = false;
+        endDragPause();
+      };
+      card.addEventListener('transitionend', onExit);
+      window.setTimeout(onExit, EXIT_MS + 80);
+    };
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (animating) return;
+      if (event.button !== 0) return;
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const card = target.closest<HTMLAnchorElement>('.fan-card');
+      if (!card || !root.contains(card) || !card.classList.contains('is-front')) {
+        return;
+      }
+
+      activeCard = card;
+      activePointerId = event.pointerId;
+      startX = event.clientX;
+      startY = event.clientY;
+      dragMoved = false;
+
+      dragPause = true;
+      syncTimer();
+
+      card.classList.add('is-dragging');
+      setDragVars(card, 0, 0, 0);
+      card.setPointerCapture(event.pointerId);
+    };
+
+    const onPointerMove = (event: PointerEvent) => {
+      if (!activeCard || event.pointerId !== activePointerId) return;
+
+      const dx = event.clientX - startX;
+      const dy = event.clientY - startY;
+
+      if (
+        Math.abs(dy) > LOCK_PX &&
+        Math.abs(dy) > Math.abs(dx)
+      ) {
+        abortDrag(activeCard, event.pointerId);
+        return;
+      }
+
+      if (Math.abs(dx) > TAP_PX || Math.abs(dy) > TAP_PX) {
+        dragMoved = true;
+      }
+
+      const visualDy = dx * 0.3;
+      const dr = clamp(dx * ROTATE_DEG_PER_PX, -ROTATE_DEG_MAX, ROTATE_DEG_MAX);
+      setDragVars(activeCard, dx, visualDy, dr);
+    };
+
+    const onPointerUp = (event: PointerEvent) => {
+      if (!activeCard || event.pointerId !== activePointerId) return;
+
+      const card = activeCard;
+      const pointerId = event.pointerId;
+      const dx = event.clientX - startX;
+      const dy = event.clientY - startY;
+      const distance = Math.hypot(dx, dy);
+
+      if (Math.abs(dy) > LOCK_PX && Math.abs(dy) > Math.abs(dx)) {
+        abortDrag(card, pointerId);
+        return;
+      }
+
+      if (distance < TAP_PX) {
+        try {
+          if (card.hasPointerCapture(pointerId)) {
+            card.releasePointerCapture(pointerId);
+          }
+        } catch {
+          /* already released */
+        }
+        clearDragVisual(card);
+        endDragPause();
+        return;
+      }
+
+      if (dragMoved) {
+        suppressClick = true;
+      }
+
+      const threshold = swipeThreshold(card);
+      if (Math.abs(dx) >= threshold) {
+        commitSwipe(card, dx, pointerId);
+        return;
+      }
+
+      try {
+        if (card.hasPointerCapture(pointerId)) {
+          card.releasePointerCapture(pointerId);
+        }
+      } catch {
+        /* already released */
+      }
+      finishSnapBack(card);
+    };
+
+    const onPointerCancel = (event: PointerEvent) => {
+      if (!activeCard || event.pointerId !== activePointerId) return;
+      const card = activeCard;
+      try {
+        if (card.hasPointerCapture(event.pointerId)) {
+          card.releasePointerCapture(event.pointerId);
+        }
+      } catch {
+        /* already released */
+      }
+      clearDragVisual(card);
+      endDragPause();
+    };
+
+    root.addEventListener('pointerdown', onPointerDown);
+    root.addEventListener('pointermove', onPointerMove);
+    root.addEventListener('pointerup', onPointerUp);
+    root.addEventListener('pointercancel', onPointerCancel);
+
+    root.addEventListener('dragstart', (event) => {
+      event.preventDefault();
+    });
+
+    root.addEventListener(
+      'click',
+      (event) => {
+        if (!suppressClick) return;
+        event.preventDefault();
+        event.stopPropagation();
+        suppressClick = false;
+      },
+      true,
+    );
 
     root.addEventListener('mouseenter', () => {
       hoverPause = true;
@@ -184,7 +457,13 @@ const base = import.meta.env.BASE_URL;
     });
     motionQuery.addEventListener('change', syncTimer);
 
+    prevBtn?.addEventListener('click', () => advanceFront(-1));
+    nextBtn?.addEventListener('click', () => advanceFront(1));
+
     const restart = () => {
+      clearAllDragVisuals();
+      animating = false;
+      dragPause = false;
       applyFront(frontIndex);
       syncTimer();
     };
