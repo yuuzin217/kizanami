@@ -1,0 +1,87 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { newsArticles } from '../../data/news';
+import {
+  categoryLabels,
+  categoryOrder,
+  getArchiveDays,
+  getArticlesByCategory,
+  formatJstDate,
+  type NewsCategory,
+} from '../../data/newsModel';
+
+export const getStaticPaths = (() =>
+  categoryOrder.map((category) => ({
+    params: { category },
+    props: { category },
+  }))) satisfies GetStaticPaths;
+
+interface Props {
+  category: NewsCategory;
+}
+
+const { category } = Astro.props;
+const label = categoryLabels[category];
+const base = import.meta.env.BASE_URL;
+const allInCategory = getArticlesByCategory(newsArticles, category);
+const latestCategoryDate = getArchiveDays(allInCategory)[0];
+const latestInCategory =
+  latestCategoryDate != null
+    ? allInCategory.filter((article) => article.curatedAt === latestCategoryDate)
+    : [];
+const pastInCategory =
+  latestCategoryDate != null
+    ? allInCategory.filter((article) => article.curatedAt !== latestCategoryDate)
+    : allInCategory;
+const keyUpper = category.toUpperCase();
+let storyNumber = 0;
+---
+<BaseLayout
+  title={`${label}の記事 | KIZANAMI`}
+  description={`${label}カテゴリのニュースピックアップ一覧。`}
+>
+  <div class="wrap">
+    <SiteHeader />
+    <main id="main" class="archive-page category-page">
+      <div class="eyebrow">CATEGORY / {keyUpper}</div>
+      <h1>{label}</h1>
+      <p class="archive-intro">
+        {allInCategory.length === 0
+          ? 'まだ記事がありません。'
+          : `${label}の掲載記事：${allInCategory.length}件。`}
+      </p>
+      {latestInCategory.length > 0 && (
+        <section class="category-latest" aria-labelledby="category-latest-heading">
+          <h2 id="category-latest-heading" class="category-subhead">
+            最新 <span>{formatJstDate(latestCategoryDate)}（JST）</span>
+          </h2>
+          <div class="archive-stories">
+            {latestInCategory.map((story) => {
+              storyNumber += 1;
+              return <StoryCard story={story} number={storyNumber} />;
+            })}
+          </div>
+        </section>
+      )}
+      {pastInCategory.length > 0 && (
+        <section class="category-past" aria-labelledby="category-past-heading">
+          <h2 id="category-past-heading" class="category-subhead">これまでの記事</h2>
+          <div class="archive-stories">
+            {pastInCategory.map((story) => {
+              storyNumber += 1;
+              return <StoryCard story={story} number={storyNumber} />;
+            })}
+          </div>
+        </section>
+      )}
+      <div class="article-bottom">
+        <a href={`${base}archive/`}>過去の記事（アーカイブ）へ <span aria-hidden="true">↗</span></a>
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

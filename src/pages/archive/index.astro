@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import { newsArticles } from '../../data/news';
-import { categoryLabels, getArchiveDays, getArticlesForDate, formatJstDate } from '../../data/newsModel';
+import { categoryLabels, categoryOrder, getArchiveDays, getArticlesForDate, formatJstDate } from '../../data/newsModel';
 const days = getArchiveDays(newsArticles);
 const base = import.meta.env.BASE_URL;
 ---
@@ -14,6 +14,11 @@ const base = import.meta.env.BASE_URL;
       <div class="eyebrow">THE ARCHIVE / ISSUES</div>
       <h1>過去の記事</h1>
       <p class="archive-intro">日付ごとに、これまでのピックアップを振り返る。<br />掲載日は日本時間（JST）です。</p>
+      <nav class="archive-categories" aria-label="カテゴリ別一覧">
+        {categoryOrder.map((key) => (
+          <a href={`${base}category/${key}/`}>{categoryLabels[key]}</a>
+        ))}
+      </nav>
       {days.length === 0 && <p>記事はまだありません。</p>}
       {days.map((day) => <section class="archive-day" aria-labelledby={`day-${day}`}>
         <div class="archive-day-head"><h2 id={`day-${day}`}><a href={`${base}archive/${day}/`} data-astro-prefetch="hover">{formatJstDate(day)}</a></h2><span>{getArticlesForDate(newsArticles, day).length}件</span></div>

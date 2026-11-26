@@ -47,6 +47,11 @@
 .archive-items li>span{color:var(--accent-text)}
 .archive-category{color:var(--accent-text);font-size:10px;letter-spacing:.08em;font-weight:800}
 .archive-stories{display:flex;flex-direction:column;gap:16px;margin:36px auto;max-width:860px}
+.category-subhead{font:600 clamp(20px,2.5vw,26px)/1.45 var(--serif);margin:28px 0 0;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.category-subhead span{font-size:12px;color:var(--secondary-text);font-weight:750;margin-left:10px}
+.category-latest .archive-stories,.category-past .archive-stories{margin-top:20px}
+.archive-categories{display:flex;flex-wrap:wrap;gap:12px 20px;margin:20px 0 8px}
+.archive-categories a{font-size:13px;font-weight:800;color:var(--accent-text);text-underline-offset:4px}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 @media(max-width:680px){
  .article-page,.archive-page{padding-top:25px}

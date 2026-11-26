@@ -6,8 +6,10 @@ import articles from '../src/data/articles.json' with { type: 'json' };
 const dist = resolve('dist');
 const base = '/kizanami/';
 const dates = [...new Set(articles.map((article) => article.curatedAt))];
+const categoryKeys = ['ai', 'politics', 'economy', 'technology', 'international'];
 const requiredPages = [
   'index.html', 'archive/index.html',
+  ...categoryKeys.map((key) => 'category/' + key + '/index.html'),
   ...dates.map((day) => 'archive/' + day + '/index.html'),
   ...articles.map((article) => 'news/' + article.slug + '/index.html'),
 ];
@@ -48,7 +50,10 @@ for (const relativePath of requiredPages) {
 }
 const home = readPage('index.html');
 const latestDate = dates.sort().at(-1);
-const latestCount = Math.min(6, articles.filter((article) => article.curatedAt === latestDate).length);
+const latestCount = categoryKeys.reduce((sum, key) => {
+  const count = articles.filter((article) => article.curatedAt === latestDate && article.category === key).length;
+  return sum + Math.min(3, count);
+}, 0);
 assert.equal((home.match(/class="story"/g) || []).length, latestCount, 'Wrong number of featured articles');
 for (const article of articles) {
   const html = readPage('news/' + article.slug + '/index.html');
