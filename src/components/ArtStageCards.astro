@@ -321,7 +321,7 @@ const base = import.meta.env.BASE_URL;
       const onExit = (event: Event) => {
         if (
           event instanceof TransitionEvent &&
-          event.propertyName !== 'opacity'
+          event.propertyName !== 'transform'
         ) {
           return;
         }

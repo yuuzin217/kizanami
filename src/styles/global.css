@@ -35,7 +35,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .fan-card-cat{font-size:9px;font-weight:800;letter-spacing:.16em;color:var(--accent-text,#9f432e)}
 .fan-card-title{display:-webkit-box;font:600 clamp(18px,2.2vw,26px)/1.55 var(--serif);letter-spacing:-.03em;margin:0;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden;word-break:auto-phrase;overflow-wrap:anywhere}
 .fan-card:not(.is-front) .fan-card-cat,.fan-card:not(.is-front) .fan-card-title{opacity:0}
-.fan-card.is-front .fan-card-cat,.fan-card.is-front .fan-card-title{opacity:1;transition:opacity .25s ease}
+.fan-card.is-front .fan-card-cat,.fan-card.is-front .fan-card-title{opacity:1}
 .fan-caption{position:absolute;bottom:-18px;right:2px;color:#998b7d;font-size:9px;letter-spacing:.13em;font-weight:800;z-index:20}
 .fan-nav{position:absolute;bottom:-18px;left:2px;display:flex;gap:6px;z-index:20}
 .fan-nav-btn{margin:0;padding:4px 11px 5px;font:600 17px/1 var(--serif);letter-spacing:-.02em;color:var(--ink);background:linear-gradient(145deg,#faf4e8 0%,#ebe0d0 100%);border:1px solid #c9bda9;box-shadow:1px 1px 0 #fff9ed inset;cursor:pointer;transition:border-color .2s,box-shadow .2s}
@@ -43,7 +43,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .fan-nav-btn:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
 .fan-card.is-front{z-index:10;opacity:1;touch-action:pan-y;-webkit-user-drag:none;user-select:none;box-shadow:2px 2px 0 #fff9ed inset,1px 0 0 #c2a894,17px 25px 0 -16px #7c6c5a,23px 39px 35px #2f261e4a}
 .fan-card.is-front.is-dragging,.fan-card.is-front.is-snap-back{z-index:15!important;transition:none!important}
-.fan-card.is-front.is-exiting{z-index:15!important;opacity:0!important;transition:transform .28s cubic-bezier(.4,0,.9,.35),opacity .28s ease!important}
+.fan-card.is-front.is-exiting{z-index:15!important;transition:transform .28s cubic-bezier(.4,0,.9,.35)!important}
 .fan-card.is-front.is-snap-back{transition:transform .45s cubic-bezier(.34,1.4,.64,1)!important}
 .fan-card.is-returning{transition:opacity .25s ease}
 .art-fan .fan-card.is-front.is-dragging,.art-fan .fan-card.is-front.is-exiting,.art-fan .fan-card.is-front.is-snap-back{transform:translate(calc(-50% + var(--dx,0px)),calc(-50% + var(--dy,0px))) rotate(var(--dr,0deg)) scale(1.02)!important}
@@ -118,7 +118,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kak
 .art-fan .fan-card[data-index="4"].is-front{transform:rotate(1deg) scale(1.02)}
 .art-fan .fan-card.is-front.is-dragging,.art-fan .fan-card.is-front.is-exiting,.art-fan .fan-card.is-front.is-snap-back{z-index:15!important}
 .art-fan .fan-card.is-front.is-dragging,.art-fan .fan-card.is-front.is-snap-back{transition:none!important}
-.art-fan .fan-card.is-front.is-exiting{opacity:0!important;transition:transform .28s cubic-bezier(.4,0,.9,.35),opacity .28s ease!important}
+.art-fan .fan-card.is-front.is-exiting{transition:transform .28s cubic-bezier(.4,0,.9,.35)!important}
 .art-fan .fan-card.is-front.is-snap-back{transition:transform .45s cubic-bezier(.34,1.4,.64,1)!important}
 .art-fan .fan-card.is-front.is-dragging,.art-fan .fan-card.is-front.is-exiting,.art-fan .fan-card.is-front.is-snap-back{transform:translate(var(--dx,0px),var(--dy,0px)) rotate(var(--dr,0deg)) scale(1.02)!important}
 .fan-card-title{-webkit-line-clamp:3;font-size:17px;line-height:1.58}}
