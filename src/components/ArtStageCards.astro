@@ -379,6 +379,10 @@ const base = import.meta.env.BASE_URL;
         return;
       }
 
+      if (dragMoved) {
+        suppressClick = true;
+      }
+
       if (distance < TAP_PX) {
         try {
           if (card.hasPointerCapture(pointerId)) {
@@ -390,10 +394,6 @@ const base = import.meta.env.BASE_URL;
         clearDragVisual(card);
         endDragPause();
         return;
-      }
-
-      if (dragMoved) {
-        suppressClick = true;
       }
 
       const threshold = swipeThreshold(card);
@@ -446,6 +446,12 @@ const base = import.meta.env.BASE_URL;
       },
       true,
     );
+
+    // A click generated from the keyboard has no preceding pointerdown to
+    // clear a stale suppression flag; clear it on keydown instead.
+    root.addEventListener('keydown', () => {
+      suppressClick = false;
+    });
 
     root.addEventListener('mouseenter', () => {
       hoverPause = true;
