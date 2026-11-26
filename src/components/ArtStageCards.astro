@@ -136,7 +136,6 @@ const base = import.meta.env.BASE_URL;
         'is-exiting',
         'is-snap-back',
         'is-returning',
-        'is-promoting',
       );
       card.style.removeProperty('--dx');
       card.style.removeProperty('--dy');
@@ -240,7 +239,16 @@ const base = import.meta.env.BASE_URL;
         return;
       }
       let done = false;
-      const onDone = () => {
+      const onDone = (event?: Event) => {
+        // Only the card's own opacity transition completes the fade-in.
+        // A transitionend left over from the exit (transform) or bubbled
+        // from a child must not finish it early.
+        if (
+          event instanceof TransitionEvent &&
+          (event.target !== card || event.propertyName !== 'opacity')
+        ) {
+          return;
+        }
         if (done) return;
         done = true;
         card.removeEventListener('transitionend', onDone);
