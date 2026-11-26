@@ -20,6 +20,17 @@ const hasSamples = displayedArticles.some((story) => story.isSample);
 const editionNumber = getEditionNumber(newsArticles);
 const categoryCount = latestByCategory.length;
 const readingMinutes = estimateReadingMinutes(displayedArticles);
+const heroCards = latestByCategory
+  .map((group) => {
+    const lead = group.articles[0];
+    if (!lead) return null;
+    return {
+      category: group.category,
+      title: lead.title,
+      slug: lead.slug,
+    };
+  })
+  .filter((card): card is NonNullable<typeof card> => card != null);
 const base = import.meta.env.BASE_URL;
 let storyNumber = 0;
 ---
@@ -27,7 +38,13 @@ let storyNumber = 0;
   <div class="wrap">
     <SiteHeader />
     <main id="main">
-      <Hero storyCount={displayedArticles.length} editionNumber={editionNumber} categoryCount={categoryCount} readingMinutes={readingMinutes} />
+      <Hero
+        storyCount={displayedArticles.length}
+        editionNumber={editionNumber}
+        categoryCount={categoryCount}
+        readingMinutes={readingMinutes}
+        cards={heroCards}
+      />
       {hasSamples && <div class="disclaimer" role="note"><b>DESIGN PREVIEW</b><span>「SAMPLE」と表示された記事は架空のサンプルであり、実際の報道ではありません。</span></div>}
       <section id="news" aria-labelledby="stories-title">
         <div class="section-head">

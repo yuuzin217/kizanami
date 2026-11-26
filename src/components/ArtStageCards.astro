@@ -1,0 +1,184 @@
+---
+import type { NewsCategory } from '../data/newsModel';
+
+export interface ArtStageCard {
+  category: NewsCategory;
+  title: string;
+  slug: string;
+}
+
+interface Props {
+  cards: ArtStageCard[];
+}
+
+const { cards } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+{
+  cards.length > 0 && (
+    <div
+      class="art-fan"
+      role="group"
+      aria-label="今日の注目記事（カテゴリ別ピックアップ）"
+      data-front="0"
+    >
+      {cards.map((card, index) => {
+        const articleUrl = `${base}news/${card.slug}/`;
+        const categoryUrl = `${base}category/${card.category}/`;
+        const isFront = index === 0;
+        const href = isFront ? articleUrl : categoryUrl;
+        const categoryKey = card.category.toUpperCase();
+        return (
+          <a
+            class:list={['fan-card', { 'is-front': isFront }]}
+            href={href}
+            data-index={String(index)}
+            data-article-url={articleUrl}
+            data-category-url={categoryUrl}
+          >
+            <span class="fan-card-dot" aria-hidden="true" />
+            <span class="fan-card-cat">
+              CATEGORY / {categoryKey}
+            </span>
+            <span class="fan-card-title">{card.title}</span>
+          </a>
+        );
+      })}
+      <div class="fan-caption">FIG. 01 / TODAY IN FIVE CARDS</div>
+    </div>
+  )
+}
+
+<script>
+  const ROTATE_MS = 4500;
+
+  function initArtFan() {
+    const fans = document.querySelectorAll<HTMLElement>('.art-fan');
+
+    fans.forEach((root) => {
+      const cards = Array.from(
+        root.querySelectorAll<HTMLAnchorElement>('.fan-card'),
+      );
+      if (cards.length < 2) return;
+
+      const existingId = root.dataset.fanIntervalId;
+      if (existingId) {
+        window.clearInterval(Number(existingId));
+        delete root.dataset.fanIntervalId;
+      }
+
+      const reducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)',
+      ).matches;
+
+      let frontIndex = Number(root.dataset.front) || 0;
+      if (frontIndex < 0 || frontIndex >= cards.length) frontIndex = 0;
+
+      let intervalId: number | undefined;
+      let hoverPause = false;
+      let focusPause = false;
+      let touchPause = false;
+      let hiddenPause = document.hidden;
+
+      const applyFront = (index: number) => {
+        frontIndex = index;
+        root.dataset.front = String(index);
+        cards.forEach((card, i) => {
+          const isFront = i === index;
+          card.classList.toggle('is-front', isFront);
+          const articleUrl = card.dataset.articleUrl ?? card.href;
+          const categoryUrl = card.dataset.categoryUrl ?? card.href;
+          card.href = isFront ? articleUrl : categoryUrl;
+          if (window.matchMedia('(max-width: 900px)').matches) {
+            card.tabIndex = isFront ? 0 : -1;
+          } else {
+            card.removeAttribute('tabindex');
+          }
+        });
+      };
+
+      const shouldRun = () =>
+        !hoverPause &&
+        !focusPause &&
+        !touchPause &&
+        !hiddenPause &&
+        !reducedMotion;
+
+      const clearTimer = () => {
+        if (intervalId !== undefined) {
+          window.clearInterval(intervalId);
+          intervalId = undefined;
+          delete root.dataset.fanIntervalId;
+        }
+      };
+
+      const startTimer = () => {
+        clearTimer();
+        if (!shouldRun()) return;
+        intervalId = window.setInterval(() => {
+          if (!shouldRun()) return;
+          const next = (frontIndex + 1) % cards.length;
+          applyFront(next);
+        }, ROTATE_MS);
+        root.dataset.fanIntervalId = String(intervalId);
+      };
+
+      const syncTimer = () => {
+        if (shouldRun()) startTimer();
+        else clearTimer();
+      };
+
+      applyFront(frontIndex);
+
+      if (root.dataset.fanBound !== '1') {
+        root.dataset.fanBound = '1';
+
+        root.addEventListener('mouseenter', () => {
+          hoverPause = true;
+          syncTimer();
+        });
+        root.addEventListener('mouseleave', () => {
+          hoverPause = false;
+          syncTimer();
+        });
+
+        root.addEventListener('focusin', () => {
+          focusPause = true;
+          syncTimer();
+        });
+        root.addEventListener('focusout', (event) => {
+          const next = event.relatedTarget;
+          if (next instanceof Node && root.contains(next)) return;
+          focusPause = false;
+          syncTimer();
+        });
+
+        root.addEventListener(
+          'touchstart',
+          () => {
+            touchPause = true;
+            syncTimer();
+          },
+          { passive: true },
+        );
+        root.addEventListener('touchend', () => {
+          window.setTimeout(() => {
+            touchPause = false;
+            syncTimer();
+          }, 400);
+        });
+
+        document.addEventListener('visibilitychange', () => {
+          hiddenPause = document.hidden;
+          syncTimer();
+        });
+      }
+
+      if (!reducedMotion) syncTimer();
+    });
+  }
+
+  initArtFan();
+  document.addEventListener('astro:page-load', initArtFan);
+</script>

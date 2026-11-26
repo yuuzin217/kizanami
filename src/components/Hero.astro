@@ -1,11 +1,17 @@
 ---
+import ArtStageCards, {
+  type ArtStageCard,
+} from './ArtStageCards.astro';
+
 interface Props {
   storyCount: number;
   editionNumber: number;
   categoryCount: number;
   readingMinutes: number;
+  cards: ArtStageCard[];
 }
-const { storyCount, editionNumber, categoryCount, readingMinutes } = Astro.props;
+const { storyCount, editionNumber, categoryCount, readingMinutes, cards } =
+  Astro.props;
 const padded = String(editionNumber).padStart(3, '0');
 ---
 <section class="hero" aria-labelledby="hero-title">
@@ -20,20 +26,5 @@ const padded = String(editionNumber).padStart(3, '0');
       <div class="stat"><strong>{`${readingMinutes}′`}</strong><small>TO READ</small></div>
     </div>
   </div>
-  <div class="art-stage" role="img" aria-label="重なる紙面とテラコッタ色の球体を使った立体的なブランドイメージ">
-    <div class="stage-wash"></div>
-    <div class="sheet sheet-back"></div>
-    <div class="sheet sheet-middle"></div>
-    <div class="sheet sheet-main">
-      <div class="cover-border"></div>
-      <div class="cover-top"><span>KIZANAMI / EDITION {padded}</span><em>2026</em></div>
-      <div class="sphere"></div>
-      <div class="orb-rings"></div>
-      <div class="cover-corner">Ideas in<br /><span>motion.</span></div>
-      <div class="cover-bottom">SIGNS OF CHANGE<br />IN EVERY STORY</div>
-    </div>
-    <div class="glass-label"><small>CURATED FOR YOU</small><strong>Every morning.</strong></div>
-    <div class="floating-seal">A quieter<br />view of<br />today.</div>
-    <div class="art-caption">FIG. 01 / LAYERS OF PERSPECTIVE</div>
-  </div>
+  <ArtStageCards cards={cards} />
 </section>
