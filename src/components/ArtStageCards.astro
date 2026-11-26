@@ -223,7 +223,10 @@ const base = import.meta.env.BASE_URL;
     };
 
     const finishSnapBack = (card: HTMLAnchorElement) => {
+      let done = false;
       const onDone = () => {
+        if (done) return;
+        done = true;
         card.removeEventListener('transitionend', onDone);
         clearDragVisual(card);
         endDragPause();
@@ -232,6 +235,7 @@ const base = import.meta.env.BASE_URL;
       card.classList.add('is-snap-back');
       setDragVars(card, 0, 0, 0);
       card.addEventListener('transitionend', onDone);
+      window.setTimeout(onDone, 560);
     };
 
     const abortDrag = (card: HTMLAnchorElement, pointerId: number) => {
@@ -275,7 +279,10 @@ const base = import.meta.env.BASE_URL;
       card.classList.add('is-exiting');
       setDragVars(card, exitX, exitX * 0.12, exitDr);
 
+      let exitDone = false;
       const onExit = () => {
+        if (exitDone) return;
+        exitDone = true;
         card.removeEventListener('transitionend', onExit);
         clearDragVisual(card);
         applyFront((frontIndex + 1) % cards.length);
@@ -328,7 +335,7 @@ const base = import.meta.env.BASE_URL;
         dragMoved = true;
       }
 
-      const visualDy = dx * 0.3;
+      const visualDy = dy * 0.3;
       const dr = clamp(dx * ROTATE_DEG_PER_PX, -ROTATE_DEG_MAX, ROTATE_DEG_MAX);
       setDragVars(activeCard, dx, visualDy, dr);
     };
