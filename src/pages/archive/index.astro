@@ -16,10 +16,10 @@ const base = import.meta.env.BASE_URL;
       <p class="archive-intro">日付ごとに、これまでのピックアップを振り返る。<br />掲載日は日本時間（JST）です。</p>
       {days.length === 0 && <p>記事はまだありません。</p>}
       {days.map((day) => <section class="archive-day" aria-labelledby={`day-${day}`}>
-        <div class="archive-day-head"><h2 id={`day-${day}`}><a href={`${base}archive/${day}/`}>{formatJstDate(day)}</a></h2><span>{getArticlesForDate(newsArticles, day).length}件</span></div>
+        <div class="archive-day-head"><h2 id={`day-${day}`}><a href={`${base}archive/${day}/`} data-astro-prefetch="hover">{formatJstDate(day)}</a></h2><span>{getArticlesForDate(newsArticles, day).length}件</span></div>
         <ul class="archive-items">
           {getArticlesForDate(newsArticles, day).map((article) => <li>
-            <div><span class="archive-category">{categoryLabels[article.category]} / {article.isSample ? 'SAMPLE' : 'NEWS'}</span><a href={`${base}news/${article.slug}/`}>{article.title}</a></div>
+            <div><span class="archive-category">{categoryLabels[article.category]} / {article.isSample ? 'SAMPLE' : 'NEWS'}</span><a href={`${base}news/${article.slug}/`} data-astro-prefetch="hover">{article.title}</a></div>
             <span aria-hidden="true">↗</span>
           </li>)}
         </ul>
